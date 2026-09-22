@@ -103,8 +103,7 @@ O FieldOps está sendo desenvolvido como um projeto acadêmico com o objetivo de
 ---
 
 ## 🗂️ Estrutura Conceitual
-
-/
+```text
 ├── /login
 └── /app
     ├── /dashboard
@@ -125,6 +124,7 @@ O FieldOps está sendo desenvolvido como um projeto acadêmico com o objetivo de
     │   └── /:inspectionId/review
     ├── /non-conformities
     └── /audit
+```
 
 **🚧 FieldOps — Organizando inspeções em campo.**
 
