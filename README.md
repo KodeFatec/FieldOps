@@ -1,8 +1,5 @@
 # README
 
-Criado em: 22 de setembro de 2026 08:37
-Tags: KODE
-
 # FieldOps
 
 Sistema para gerenciamento de inspeções técnicas em campo.
