@@ -21,7 +21,7 @@ Sistema para gerenciamento de inspeções técnicas em campo.
 > Nicolas Trabachini Spinelli,
 > 
 
-> Raphael Scapin Pereira e
+> Raphael Scapin Pereira,
 > 
 
 > Vinícius de Lúcio Porto
@@ -105,7 +105,9 @@ O FieldOps está sendo desenvolvido como um projeto acadêmico com o objetivo de
 ## 🗂️ Estrutura Conceitual
 
 /login
+
 /app
+
 ├── /dashboard
 ├── /users
 ├── /clients
