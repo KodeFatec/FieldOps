@@ -95,7 +95,6 @@ Os dados são armazenados localmente no dispositivo e, quando a conexão é rest
 
 ---
 
----
 
 ## 🎓 Projeto acadêmico
 
