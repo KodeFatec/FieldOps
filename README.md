@@ -104,28 +104,27 @@ O FieldOps está sendo desenvolvido como um projeto acadêmico com o objetivo de
 
 ## 🗂️ Estrutura Conceitual
 
-/login
-
-/app
-
-├── /dashboard
-├── /users
-├── /clients
-│   └── /:clientId/sites
-├── /sites
-│   └── /:siteId/equipment
-├── /equipment
-├── /inspection-templates
-│   ├── /new
-│   ├── /:templateId/edit
-│   ├── /:templateId/preview
-│   └── /:templateId/versions
-├── /inspections
-│   ├── /new
-│   ├── /:inspectionId
-│   └── /:inspectionId/review
-├── /non-conformities
-└── /audit
+/
+├── /login
+└── /app
+    ├── /dashboard
+    ├── /users
+    ├── /clients
+    │   └── /:clientId/sites
+    ├── /sites
+    │   └── /:siteId/equipment
+    ├── /equipment
+    ├── /inspection-templates
+    │   ├── /new
+    │   ├── /:templateId/edit
+    │   ├── /:templateId/preview
+    │   └── /:templateId/versions
+    ├── /inspections
+    │   ├── /new
+    │   ├── /:inspectionId
+    │   └── /:inspectionId/review
+    ├── /non-conformities
+    └── /audit
 
 **🚧 FieldOps — Organizando inspeções em campo.**
 
