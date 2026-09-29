@@ -1,8 +1,5 @@
 # README
 
-Criado em: 22 de setembro de 2026 08:37
-Tags: KODE
-
 # FieldOps
 
 Sistema para gerenciamento de inspeções técnicas em campo.
@@ -21,7 +18,7 @@ Sistema para gerenciamento de inspeções técnicas em campo.
 > Nicolas Trabachini Spinelli,
 > 
 
-> Raphael Scapin Pereira e
+> Raphael Scapin Pereira,
 > 
 
 > Vinícius de Lúcio Porto
@@ -103,27 +100,28 @@ O FieldOps está sendo desenvolvido como um projeto acadêmico com o objetivo de
 ---
 
 ## 🗂️ Estrutura Conceitual
-
-/login
-/app
-├── /dashboard
-├── /users
-├── /clients
-│   └── /:clientId/sites
-├── /sites
-│   └── /:siteId/equipment
-├── /equipment
-├── /inspection-templates
-│   ├── /new
-│   ├── /:templateId/edit
-│   ├── /:templateId/preview
-│   └── /:templateId/versions
-├── /inspections
-│   ├── /new
-│   ├── /:inspectionId
-│   └── /:inspectionId/review
-├── /non-conformities
-└── /audit
+```text
+├── /login
+└── /app
+    ├── /dashboard
+    ├── /users
+    ├── /clients
+    │   └── /:clientId/sites
+    ├── /sites
+    │   └── /:siteId/equipment
+    ├── /equipment
+    ├── /inspection-templates
+    │   ├── /new
+    │   ├── /:templateId/edit
+    │   ├── /:templateId/preview
+    │   └── /:templateId/versions
+    ├── /inspections
+    │   ├── /new
+    │   ├── /:inspectionId
+    │   └── /:inspectionId/review
+    ├── /non-conformities
+    └── /audit
+```
 
 **🚧 FieldOps — Organizando inspeções em campo.**
 
