@@ -37,17 +37,37 @@
 }
 
 @media (min-width: 992px) {
+  #sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: 260px;
+    z-index: 1040;
+    transition: width 0.25s ease;
+  }
+
   .sb-card {
-    position: sticky;
-    top: 0;
-    align-self: flex-start;
+    position: relative;
     width: 260px;
     height: 100vh;
     transition: width 0.25s ease;
   }
 
+  #sidebar:has(.sb-card.is-collapsed),
+  #sidebar:has(.sb-card.is-collapsed) .sb-card {
+    width: 76px;
+  }
+
   .sb-card.is-collapsed {
     width: 76px;
+  }
+
+  .tb-col {
+    margin-left: 260px;
+    transition: margin-left 0.25s ease;
+  }
+
+  body:has(.sb-card.is-collapsed) .tb-col {
+    margin-left: 76px;
   }
 
   .is-collapsed .sb-label {
@@ -88,9 +108,23 @@
   right: -14px;
   width: 28px;
   height: 28px;
-  z-index: 5;
+  z-index: 1041;
 }
 
 .sb-toggle i {
-  transition: transform 0.25s ease;
+  transition: transform .25s ease;
+}
+
+.tb-col {
+  min-width: 0;
+}
+
+.tb-search {
+  max-width: 220px;
+}
+
+.tb-avatar {
+  width: 36px;
+  height: 36px;
+  flex: none;
 }
