@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="informacoes-header">
+            <span>Terça-feira, 24 de Outubro de 2024</span>
+            <span>• 99.8% Operacional</span>
+        </div>
+
+        <h1>Painel Operacional • Supervisão de Campo</h1>
+        <p>Há 12 inspeções aguardando sua revisão técnica.</p>
+
+        <button>Fila de Trabalho</button>
+    </header>
+
+
+    <section>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>TOTAL DE INSPEÇÕES</h3>
+
+                <div class="numero-linha">
+                    <p class="numero">1.248</p>
+                    <span class="variacao">↑ +14%</span>
+                </div>
+
+                <div class="barra">
+                    <div class="progresso total-progresso"></div>
+                </div>
+
+                <p class="descricao">Meta mensal 1.400</p>
+            </div>
+
+
+            <div class="card">
+                <h3>EM ANDAMENTO</h3>
+
+                <div class="numero-linha">
+                    <p class="numero">18</p>
+                    <span class="variacao andamento-variacao">↓ -3%</span>
+                </div>
+
+                <div class="barra">
+                    <div class="progresso andamento-progresso"></div>
+                </div>
+
+                <p class="descricao">Com 6 técnicos em trânsito</p>
+            </div>
+
+
+            <div class="card">
+                <h3>EM REVISÃO</h3>
+
+                <div class="numero-linha">
+                    <p class="numero">12</p>
+
+                    <div class="atencao">
+                        <span>Atenção</span>
+                    </div>
+                </div>
+
+                <div class="barra">
+                    <div class="progresso revisao-progresso"></div>
+                </div>
+
+                <p class="descricao revisao-descricao">Aguardando seu parecer</p>
+            </div>
+
+
+           <div class="card">
+                <h3>APROVADAS</h3>
+
+            <div class="numero-linha">
+                <p class="numero">1.142</p>
+                <span class="porcentagem aprovada-porcentagem">94%</span>
+            </div>
+
+            <div class="barra">
+                <div class="progresso aprovada-progresso"></div>
+            </div>
+
+            <p class="descricao">Em conformidade de campo</p>
+        </div>
+
+
+        <div class="card">
+            <h3>REPROVADAS</h3>
+
+        <div class="numero-linha">
+            <p class="numero">76</p>
+            <span class="porcentagem reprovada-porcentagem">6%</span>
+        </div>
+
+        <div class="barra">
+            <div class="progresso reprovada-progresso"></div>
+        </div>
+
+            <p class="descricao">Abertas como NC</p>
+        </div>
+    </div>
+
+    </section>
+
+
+    <div class="painel-central">
+
+    <section class="grafico">
+
+        <div class="titulo-grafico">
+
+            <h2>Evolução de Inspeções dos Últimos 30 Dias</h2>
+
+            <div class="legenda">
+                <span class="concluidas">■ Concluídas (94%)</span>
+                <span class="andamento-legenda">■ Em Andamento</span>
+                <span class="reprovadas-legenda">■ Reprovadas (6%)</span>
+            </div>
+
+        </div>
+
+
+        <div class="area-grafico">
+
+            <svg viewBox="0 0 800 300">
+
+                <line x1="50" y1="50" x2="780" y2="50" class="linha-grade"/>
+                <line x1="50" y1="110" x2="780" y2="110" class="linha-grade"/>
+                <line x1="50" y1="170" x2="780" y2="170" class="linha-grade"/>
+                <line x1="50" y1="230" x2="780" y2="230" class="linha-grade"/>
+
+                <text x="15" y="55">60</text>
+                <text x="15" y="115">40</text>
+                <text x="15" y="175">20</text>
+                <text x="20" y="235">0</text>
+
+                <rect x="180" y="160" width="15" height="70" class="barra-grafico"/>
+                <rect x="340" y="135" width="15" height="95" class="barra-grafico"/>
+                <rect x="500" y="105" width="15" height="125" class="barra-grafico"/>
+                <rect x="660" y="80" width="15" height="150" class="barra-grafico"/>
+                <rect x="760" y="70" width="15" height="160" class="barra-grafico"/>
+
+                <polyline
+                    points="50,210 180,125 340,140 500,80 660,100 760,45"
+                    class="linha-concluidas"/>
+
+                <polyline
+                    points="50,215 180,205 340,210 500,230 660,200 760,215"
+                    class="linha-reprovadas"/>
+
+                    <circle cx="760" cy="45" r="6" class="ponto-concluidas"/>
+                    <circle cx="760" cy="215" r="6" class="ponto-reprovadas"/>
+
+            </svg>
+
+            <div class="semanas">
+                <span>Semana 1</span>
+                <span>Semana 2</span>
+                <span>Semana 3</span>
+                <span>Semana 4</span>
+                <strong>Hoje</strong>
+            </div>
+
+        </div>
+
+        <div class="informacao-grafico">
+            Volume de auditoria cresceu 18% no polo industrial Alpha em relação ao ciclo anterior.
+            <strong>MTTR: 3.4 hrs</strong>
+        </div>
+
+    </section>
+        
+        <section class="nao-conformidades">
+
+    <div class="titulo-nao-conformidades">
+        <h2>Não Conformidades</h2>
+        <span>4 Ativas</span>
+    </div>
+
+
+    <div class="criticidades">
+
+        <div class="criticidade">
+
+            <div class="topo-criticidade">
+                <span class="criticidade-nivel critica">Crítica</span>
+                <span class="codigo-nc">#NC-0089</span>
+            </div>
+
+            <h3>Pressão de linha em 12.4 bar (Max 8.5)</h3>
+
+            <div class="info-criticidade">
+                <p>Compressor de Ar 01 • Indústria Alpha</p>
+                <button>Tratar →</button>
+            </div>
+
+        </div>
+
+
+        <div class="criticidade">
+
+            <div class="topo-criticidade">
+                <span class="criticidade-nivel alta">Alta</span>
+                <span class="codigo-nc">#NC-0088</span>
+            </div>
+
+            <h3>Vazamento hidráulico no retentor de óleo</h3>
+
+            <div class="info-criticidade">
+                <p>Bomba Hidráulica 03 • Metalúrgica Horizonte</p>
+                <button>Tratar →</button>
+            </div>
+
+        </div>
+
+
+        <div class="criticidade">
+
+            <div class="topo-criticidade">
+                <span class="criticidade-nivel media">Média</span>
+                <span class="codigo-nc">#NC-0087</span>
+            </div>
+
+            <h3>Extintor de CO₂ com lacre de inspeção vencido</h3>
+
+            <div class="info-criticidade">
+                <p>Sala Técnica • Energia Sul</p>
+                <button>Tratar →</button>
+            </div>
+
+        </div>
+
+    </div>
+
+
+        <button class="gerenciar-nc">
+            Gerenciar Todas as Não Conformidades (4)
+        </button>
+
+    </section>
+    
+
+    </div>
+
+
+    <section class="inspecoes-recentes">
+
+    <div class="titulo-inspecoes">
+
+        <div>
+            <h2>Inspeções Recentes em Campo</h2>
+            <p>Acompanhamento em tempo real das ordens executadas</p>
+        </div>
+
+        <button>Ver tabela completa ›</button>
+
+    </div>
+
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>CÓDIGO</th>
+                <th>EQUIPAMENTO</th>
+                <th>CLIENTE / LOCAL</th>
+                <th>TÉCNICO</th>
+                <th>DATA/HORA</th>
+                <th>STATUS</th>
+                <th>AÇÕES</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td class="codigo-inspecao">#INS-00125</td>
+                <td>Compressor de Ar 01</td>
+                <td>Indústria Alpha Ltda. • Setor A</td>
+                <td>
+                    <div class="tecnico">
+                        <span>CM</span>
+                        Carlos Mendes
+                    </div>
+                </td>
+                <td>Hoje, 14:20</td>
+                <td><span class="status revisao">● Em revisão</span></td>
+                <td>
+                    <button class="acao">Detalhes</button>
+                    <button class="acao revisar">Revisar</button>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="codigo-inspecao">#INS-00124</td>
+                <td>Gerador Diesel 02</td>
+                <td>Indústria Alpha Ltda. • Subestação</td>
+                <td>
+                    <div class="tecnico">
+                        <span>CM</span>
+                        Carlos Mendes
+                    </div>
+                </td>
+                <td>Hoje, 11:05</td>
+                <td><span class="status aprovada">● Aprovada</span></td>
+                <td>
+                    <button class="acao">Ver Laudo</button>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="codigo-inspecao">#INS-00123</td>
+                <td>Bomba Hidráulica 03</td>
+                <td>Metalúrgica Horizonte • Galpão 2</td>
+                <td>
+                    <div class="tecnico">
+                        <span>AR</span>
+                        Ana Ribeiro
+                    </div>
+                </td>
+                <td>Hoje, 09:30</td>
+                <td><span class="status andamento">● Em andamento</span></td>
+                <td>
+                    <button class="acao">Acompanhar</button>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="codigo-inspecao">#INS-00122</td>
+                <td>Transformador Principal 01</td>
+                <td>Energia Sul • Subestação Leste</td>
+                <td>
+                    <div class="tecnico">
+                        <span>RO</span>
+                        Rafael Oliveira
+                    </div>
+                </td>
+                <td>Ontem, 16:45</td>
+                <td><span class="status reprovada">● Reprovada</span></td>
+                <td>
+                    <button class="acao">Ver NC</button>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="codigo-inspecao">#INS-00121</td>
+                <td>Ponte Rolante 15T</td>
+                <td>Metalúrgica Horizonte • Laminação</td>
+                <td>
+                    <div class="tecnico">
+                        <span>CM</span>
+                        Carlos Mendes
+                    </div>
+                </td>
+                <td>Amanhã, 08:00</td>
+                <td><span class="status atribuida">● Atribuída</span></td>
+                <td>
+                    <button class="acao">Reatribuir</button>
+                </td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</section>
+
+</body>
+</html>

@@ -1,0 +1,555 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    border: 1px solid #ddd;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.informacoes-header span:last-child {
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #16803c;
+}
+
+header h1 {
+    margin: 8px 0;
+    font-size: 28px;
+}
+
+header p {
+    margin: 5px 0;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+header button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    right: 25px;
+    top: 50px;
+    background-color: #0057c8;
+    color: white;
+}
+
+
+/* CARDS */
+
+.cards {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    padding: 16px;
+    width: 180px;
+    border-radius: 8px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.card h3 {
+    font-size: 12px;
+    color: #5c6470;
+    margin: 0 0 10px 0;
+}
+
+.card .numero {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.numero-linha {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.variacao {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 4px 6px;
+    border-radius: 3px;
+    background-color: #e0f8ec;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.andamento-variacao {
+    background-color: #9ca3af;
+}
+
+.barra {
+    width: 100%;
+    height: 6px;
+    background-color: #dce8f8;
+    border-radius: 5px;
+    margin-top: 12px;
+}
+
+.progresso {
+    height: 100%;
+    border-radius: 5px;
+}
+
+.total-progresso {
+    width: 85%;
+    background-color: #1261d6;
+}
+
+.andamento-progresso {
+    width: 45%;
+    background-color: #9ca3af;
+}
+
+.revisao-progresso {
+    width: 60%;
+    background-color: #7b2cbf;
+}
+
+.atencao {
+    padding: 7px 10px;
+    background-color: #fff3cd;
+    border: 1px solid #f5b400;
+    border-radius: 4px;
+}
+
+.atencao span {
+    font-size: 15px;
+    font-weight: bold;
+    color: #a35a00;
+}
+
+.porcentagem {
+    padding: 7px 10px;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.aprovada-porcentagem {
+    background-color: #d9fbe5;
+    color: #087f5b;
+    border: 1px solid #5ee7b7;
+}
+
+.reprovada-porcentagem {
+    background-color: #ffdede;
+    color: #c62828;
+    border: 1px solid #f5a3a3;
+}
+
+.aprovada-progresso {
+    width: 94%;
+    background-color: #087f5b;
+}
+
+.reprovada-progresso {
+    width: 6%;
+    background-color: #c62828;
+}
+
+.descricao {
+    font-size: 12px;
+    color: #697386;
+    margin: 7px 0 0 0;
+}
+
+.revisao-descricao {
+    color: #a35a00;
+    font-size: 16px;
+}
+
+
+/* PAINEL CENTRAL */
+
+.painel-central {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.grafico {
+    flex: 2;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.nao-conformidades {
+    flex: 1;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+
+/* GRÁFICO */
+
+.titulo-grafico {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titulo-grafico h2 {
+    max-width: 450px;
+    margin: 0;
+}
+
+.legenda {
+    display: flex;
+    gap: 25px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.concluidas {
+    color: #087f5b;
+}
+
+.andamento-legenda {
+    color: #f59e0b;
+}
+
+.reprovadas-legenda {
+    color: #c62828;
+}
+
+.area-grafico {
+    margin-top: 20px;
+}
+
+.area-grafico svg {
+    display: block;
+    width: 100%;
+    height: 300px;
+}
+
+.linha-grade {
+    stroke: #dce8f8;
+    stroke-dasharray: 4;
+}
+
+.area-grafico text {
+    fill: #697386;
+    font-size: 14px;
+}
+
+.barra-grafico {
+    fill: #f5aa22;
+    rx: 4;
+}
+
+.linha-concluidas {
+    fill: none;
+    stroke: #159947;
+    stroke-width: 4;
+}
+
+.linha-reprovadas {
+    fill: none;
+    stroke: #d62828;
+    stroke-width: 3;
+}
+
+.ponto-concluidas {
+    fill: #159947;
+    stroke: white;
+    stroke-width: 3;
+}
+
+.ponto-reprovadas {
+    fill: #d62828;
+    stroke: white;
+    stroke-width: 3;
+}
+
+.semanas {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 20px 0 65px;
+    color: #697386;
+}
+
+.informacao-grafico {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #eef4ff;
+    border: 1px solid #dce8f8;
+    border-radius: 6px;
+    color: #697386;
+    font-size: 16px;
+}
+
+.informacao-grafico strong {
+    color: #0057c8;
+}
+
+
+/* NÃO CONFORMIDADES */
+
+.nao-conformidades {
+    flex: 1;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.titulo-nao-conformidades {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #dce8f8;
+    padding-bottom: 20px;
+}
+
+.titulo-nao-conformidades h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.titulo-nao-conformidades > span {
+    padding: 7px 15px;
+    background-color: #ffdede;
+    color: #b91c1c;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.criticidades {
+    margin-top: 20px;
+}
+
+.criticidade {
+    padding: 10px 0 20px;
+    border-bottom: 2px solid #dce8f8;
+}
+
+.topo-criticidade {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.criticidade-nivel {
+    padding: 7px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.critica {
+    background-color: #ffdede;
+    color: #c62828;
+}
+
+.alta {
+    background-color: #fff0d6;
+    color: #c65a00;
+}
+
+.media {
+    background-color: #fff4c2;
+    color: #b56700;
+}
+
+.codigo-nc {
+    color: #697386;
+    font-size: 14px;
+}
+
+.criticidade h3 {
+    margin: 15px 0 10px;
+    font-size: 17px;
+}
+
+.info-criticidade {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-criticidade p {
+    margin: 0;
+    color: #697386;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.info-criticidade button {
+    border: none;
+    background: none;
+    color: #0057c8;
+    font-size: 15px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.gerenciar-nc {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    border: 1px solid #dce8f8;
+    border-radius: 6px;
+    background-color: #eef4ff;
+    color: #152238;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* INSPEÇÕES RECENTES */
+
+.inspecoes-recentes {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.titulo-inspecoes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.titulo-inspecoes h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.titulo-inspecoes p {
+    margin: 5px 0 0;
+    color: #697386;
+    font-size: 14px;
+}
+
+.titulo-inspecoes button {
+    border: none;
+    background: none;
+    color: #0057c8;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.inspecoes-recentes table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.inspecoes-recentes th {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #dce8f8;
+    color: #5c6470;
+    font-size: 12px;
+}
+
+.inspecoes-recentes td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #dce8f8;
+    font-size: 14px;
+}
+
+.codigo-inspecao {
+    color: #0057c8;
+    font-weight: bold;
+}
+
+.tecnico {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tecnico span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #dce8f8;
+    color: #152238;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.revisao {
+    background-color: #f0e0ff;
+    color: #7b2cbf;
+}
+
+.aprovada {
+    background-color: #d9fbe5;
+    color: #16803c;
+}
+
+.andamento {
+    background-color: #fff1b8;
+    color: #a35a00;
+}
+
+.reprovada {
+    background-color: #ffdede;
+    color: #c62828;
+}
+
+.atribuida {
+    background-color: #dcefff;
+    color: #006fa6;
+}
+
+.acao {
+    padding: 6px 10px;
+    border: 1px solid #dce3ef;
+    background-color: #eef4ff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    color: #152238;
+}
+
+.revisar {
+    background-color: #9635e8;
+    color: white;
+    border-color: #9635e8;
+}
+
+/* BOTÕES DA TABELA */
+
+.acao {
+    padding: 6px 10px;
+    border: 1px solid #ddd;
+    background-color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.revisar {
+    background-color: #7b2cbf;
+    color: white;
+    border-color: #7b2cbf;
+}
