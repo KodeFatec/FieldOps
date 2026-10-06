@@ -15,5 +15,136 @@ span .bi-circle-fill {
 }
 
 .h3.title {
-margin-top: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.alert-subtitle i {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.tu-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: #e8f0fe;
+  color: #1d4ed8;
+}
+
+.tu-table {
+  font-size: 0.8125rem;
+}
+.tu-table thead {
+  --bs-table-bg: #f4f7fb;
+  --bs-table-color: #6b7686;
+}
+.tu-table thead th {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding-block: 0.75rem;
+}
+.tu-table tbody td {
+  padding-block: 1.1rem;
+}
+
+.tu-avatar,
+.tu-badge {
+  border: 1px solid;
+}
+.tu-avatar {
+  width: 2.25rem;
+  height: 2.25rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+.tu-av-gray {
+  background: #e2e8f0;
+  color: #334155;
+  border-color: #cbd5e1;
+}
+.tu-av-purple {
+  background: #f3e8ff;
+  color: #7e22ce;
+  border-color: #e4cdfb;
+}
+.tu-av-blue {
+  background: #dbeafe;
+  color: #1d4ed8;
+  border-color: #bfdbfe;
+}
+
+.tu-mat,
+.tu-sub {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #6b7686;
+}
+.tu-mat {
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.tu-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  border-radius: 0.25rem;
+}
+.tu-tecnico {
+  background: #dff3fd;
+  color: #0f4c75;
+  border-color: #bde4f7;
+}
+.tu-supervisor {
+  background: #f3e8ff;
+  color: #6b21a8;
+  border-color: #e4cdfb;
+}
+.tu-admin {
+  background: #e0e7f5;
+  color: #1e293b;
+  border-color: #c7d2ea;
+}
+.tu-ativo {
+  background: #dcfce7;
+  color: #15803d;
+  border-color: #bbf7d0;
+  font-weight: 700;
+}
+
+.tu-page-active {
+  --bs-btn-bg: #0b4fc4;
+  --bs-btn-border-color: #0b4fc4;
+  --bs-btn-hover-bg: #0a45ab;
+  --bs-btn-hover-border-color: #0a45ab;
+  --bs-btn-active-bg: #0a45ab;
+  --bs-btn-active-border-color: #0a45ab;
+}
+
+.kpi-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #6b7686;
+}
+.kpi-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+}
+.kpi-blue {
+  background: #e8f0fe;
+  color: #1d4ed8;
+}
+.kpi-indigo {
+  background: #dfe3f7;
+  color: #1e2a4a;
+}
+.kpi-green {
+  background: #dcfce7;
+  color: #15803d;
 }

@@ -300,7 +300,9 @@
           class="flex-grow-1 p-3 p-lg-4"
           style="background: var(--bg); height: auto"
         >
-          <div class="d-flex flex-row card border-0 rounded-3 shadow-sm p-3 p-lg-4">
+          <div
+            class="d-flex flex-row card border-0 rounded-3 shadow-sm p-3 p-lg-4"
+          >
             <div class="col-7">
               <div class="d-flex align-items-center">
                 <div class="alert alert-subtitle" role="alert">
@@ -319,7 +321,9 @@
                 imutável de ações em campo.
               </p>
             </div>
-            <div class="col-5 d-flex justify-content-center align-items-center gap-2">
+            <div
+              class="col-5 d-flex justify-content-center align-items-center gap-2"
+            >
               <button
                 type="button"
                 class="btn btn-outline-secondary btn text-body d-none d-md-inline-flex align-items-center gap-2"
@@ -330,12 +334,345 @@
               </button>
               <button
                 type="button"
-                class="btn btn-primary btn d-inline-flex align-items-center gap-2" style="padding: 0rem 0.5rem;"
+                class="btn btn-primary btn d-inline-flex align-items-center gap-2"
+                style="padding: 0rem 0.5rem"
                 title="Novo Usuário"
               >
-                <i class="bi bi-person-fill-add" style="font-size: 1.5rem;"></i
+                <i class="bi bi-person-fill-add" style="font-size: 1.5rem"></i
                 ><span class="d-none d-sm-inline">+ Novo Usuário</span>
               </button>
+            </div>
+          </div>
+
+          <div class="row g-3 mb-4 mt-2">
+            <div class="col-12 col-sm-6 col-xl-3">
+              <div class="card shadow-sm border-0 rounded-3 h-100">
+                <div
+                  class="card-body d-flex align-items-center justify-content-between gap-3"
+                >
+                  <div>
+                    <div class="kpi-label mb-1">Usuários ativos</div>
+                    <div class="d-flex align-items-baseline gap-2">
+                      <span class="fs-5 fw-bold">24</span>
+                      <small class="text-success fw-semibold"
+                        >+2 esse mês</small
+                      >
+                    </div>
+                  </div>
+                  <span
+                    class="kpi-icon kpi-blue rounded-3 d-inline-flex align-items-center justify-content-center fs-5 flex-shrink-0"
+                    ><i class="bi bi-person-vcard"></i
+                  ></span>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-3">
+              <div class="card shadow-sm border-0 rounded-3 h-100">
+                <div
+                  class="card-body d-flex align-items-center justify-content-between gap-3"
+                >
+                  <div>
+                    <div class="kpi-label mb-1">Inspeções hoje</div>
+                    <div class="d-flex align-items-baseline gap-2">
+                      <span class="fs-5 fw-bold">18</span>
+                      <small class="text-body-secondary">/ 22 planejadas</small>
+                    </div>
+                  </div>
+                  <span
+                    class="kpi-icon kpi-blue rounded-3 d-inline-flex align-items-center justify-content-center fs-5 flex-shrink-0"
+                    ><i class="bi bi-card-checklist"></i
+                  ></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-xl-3">
+              <div class="card shadow-sm border-0 rounded-3 h-100">
+                <div
+                  class="card-body d-flex align-items-center justify-content-between gap-3"
+                >
+                  <div>
+                    <div class="kpi-label mb-1">Eventos auditados</div>
+                    <div class="d-flex align-items-baseline gap-2">
+                      <span class="fs-5 fw-bold">1.482</span>
+                      <small class="text-body-secondary">24h</small>
+                    </div>
+                  </div>
+                  <span
+                    class="kpi-icon kpi-indigo rounded-3 d-inline-flex align-items-center justify-content-center fs-5 flex-shrink-0"
+                    ><i class="bi bi-clock-history"></i
+                  ></span>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-3">
+              <div class="card shadow-sm border-0 rounded-3 h-100">
+                <div
+                  class="card-body d-flex align-items-center justify-content-between gap-3"
+                >
+                  <div>
+                    <div class="kpi-label mb-1">Integridade da trilha</div>
+                    <div class="d-flex align-items-baseline gap-2">
+                      <span class="fs-5 fw-bold text-success">100%</span>
+                      <small class="text-success fw-semibold">Validado</small>
+                    </div>
+                  </div>
+                  <span
+                    class="kpi-icon kpi-green rounded-3 d-inline-flex align-items-center justify-content-center fs-5 flex-shrink-0"
+                    ><i class="bi bi-patch-check"></i
+                  ></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card shadow-sm rounded-3 border-0 overflow-hidden">
+            <div
+              class="card-header bg-white d-flex flex-wrap align-items-center justify-content-between gap-3 px-4 py-3"
+            >
+              <div class="d-flex align-items-center gap-3">
+                <span
+                  class="tu-icon rounded-2 d-inline-flex align-items-center justify-content-center fs-5 flex-shrink-0"
+                  ><i class="bi bi-person-gear"></i
+                ></span>
+                <div class="lh-sm">
+                  <h2 class="h6 fw-semibold mb-1">
+                    Diretório de Usuários Operacionais
+                  </h2>
+                  <small class="text-body-secondary"
+                    >Controle de acessos, perfis técnicos e auditoria de
+                    autenticação.</small
+                  >
+                </div>
+              </div>
+              <div class="d-flex gap-2">
+                <div class="dropdown">
+                  <button
+                    class="btn btn-sm bg-white border text-body dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i class="bi bi-funnel me-2"></i>Todos os Perfis
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <a class="dropdown-item active" href="#"
+                        >Todos os Perfis</a
+                      >
+                    </li>
+                    <li><a class="dropdown-item" href="#">Técnico</a></li>
+                    <li><a class="dropdown-item" href="#">Supervisor</a></li>
+                    <li><a class="dropdown-item" href="#">Administrador</a></li>
+                  </ul>
+                </div>
+                <div class="dropdown">
+                  <button
+                    class="btn btn-sm bg-white border text-body dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Status: Todos
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item active" href="#">Todos</a></li>
+                    <li><a class="dropdown-item" href="#">Ativo</a></li>
+                    <li><a class="dropdown-item" href="#">Inativo</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="tu-table table table-hover align-middle mb-0">
+                <thead>
+                  <tr>
+                    <th class="ps-4">Usuário</th>
+                    <th class="d-none d-xl-table-cell">E-mail</th>
+                    <th>Perfil</th>
+                    <th>Status</th>
+                    <th class="d-none d-lg-table-cell">Último acesso</th>
+                    <th class="text-end pe-4">Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="ps-4">
+                      <div class="d-flex align-items-center gap-3">
+                        <span
+                          class="tu-avatar tu-av-gray rounded-2 d-inline-flex align-items-center justify-content-center flex-shrink-0"
+                          >CM</span
+                        >
+                        <div class="lh-sm">
+                          <div class="fw-semibold fs-6">Carlos Mendes</div>
+                          <small class="d-xl-none d-block text-body-secondary"
+                            >carlos.mendes@fieldops.com</small
+                          >
+                          <small class="tu-mat">Mat: FO-9082</small>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="d-none d-xl-table-cell">
+                      carlos.mendes@fieldops.com
+                    </td>
+                    <td>
+                      <span class="tu-badge tu-tecnico"
+                        ><i class="bi bi-person-gear"></i>Técnico</span
+                      >
+                    </td>
+                    <td><span class="tu-badge tu-ativo">Ativo</span></td>
+                    <td class="d-none d-lg-table-cell lh-sm">
+                      <div class="fw-medium">Hoje às 14:20</div>
+                      <small class="tu-sub">Terminal Tablet #04</small>
+                    </td>
+                    <td class="text-end pe-4 text-nowrap">
+                      <button
+                        class="btn btn-sm btn-link text-secondary p-1 me-1"
+                        aria-label="Visualizar"
+                      >
+                        <i class="bi bi-eye"></i>
+                      </button>
+                      <button
+                        class="btn btn-sm btn-link text-secondary p-1 me-1"
+                        aria-label="Editar"
+                      >
+                        <i class="bi bi-pencil"></i>
+                      </button>
+                      <button
+                        class="btn btn-sm btn-link text-secondary p-1"
+                        aria-label="Bloquear acesso"
+                      >
+                        <i class="bi bi-person-slash"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="ps-4">
+                      <div class="d-flex align-items-center gap-3">
+                        <span
+                          class="tu-avatar tu-av-purple rounded-2 d-inline-flex align-items-center justify-content-center flex-shrink-0"
+                          >MS</span
+                        >
+                        <div class="lh-sm">
+                          <div class="fw-semibold fs-6">Mariana Souza</div>
+                          <small class="d-xl-none d-block text-body-secondary"
+                            >mariana.souza@fieldops.com</small
+                          >
+                          <small class="tu-mat">Mat: FO-4410</small>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="d-none d-xl-table-cell">
+                      mariana.souza@fieldops.com
+                    </td>
+                    <td>
+                      <span class="tu-badge tu-supervisor"
+                        ><i class="bi bi-people"></i>Supervisor</span
+                      >
+                    </td>
+                    <td><span class="tu-badge tu-ativo">Ativo</span></td>
+                    <td class="d-none d-lg-table-cell lh-sm">
+                      <div class="fw-medium">Hoje às 14:32</div>
+                      <small class="tu-sub">Console Web Desk</small>
+                    </td>
+                    <td class="text-end pe-4 text-nowrap">
+                      <button
+                        class="btn btn-sm btn-link text-secondary p-1 me-1"
+                        aria-label="Visualizar"
+                      >
+                        <i class="bi bi-eye"></i>
+                      </button>
+                      <button
+                        class="btn btn-sm btn-link text-secondary p-1 me-1"
+                        aria-label="Editar"
+                      >
+                        <i class="bi bi-pencil"></i>
+                      </button>
+                      <button
+                        class="btn btn-sm btn-link text-secondary p-1"
+                        aria-label="Bloquear acesso"
+                      >
+                        <i class="bi bi-person-slash"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="ps-4">
+                      <div class="d-flex align-items-center gap-3">
+                        <span
+                          class="tu-avatar tu-av-blue rounded-2 d-inline-flex align-items-center justify-content-center flex-shrink-0"
+                          >RO</span
+                        >
+                        <div class="lh-sm">
+                          <div class="fw-semibold fs-6">Rafael Oliveira</div>
+                          <small class="d-xl-none d-block text-body-secondary"
+                            >rafael.oliveira@fieldops.com</small
+                          >
+                          <small class="tu-mat">Mat: FO-1001</small>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="d-none d-xl-table-cell">
+                      rafael.oliveira@fieldops.com
+                    </td>
+                    <td>
+                      <span class="tu-badge tu-admin"
+                        ><i class="bi bi-shield-lock"></i>Administrador</span
+                      >
+                    </td>
+                    <td><span class="tu-badge tu-ativo">Ativo</span></td>
+                    <td class="d-none d-lg-table-cell lh-sm">
+                      <div class="fw-medium">Agora (Conectado)</div>
+                      <small class="tu-sub text-success"
+                        >IP: 192.168.1.104</small
+                      >
+                    </td>
+                    <td class="text-end pe-4 text-nowrap">
+                      <button
+                        class="btn btn-sm btn-link text-secondary p-1 me-1"
+                        aria-label="Visualizar"
+                      >
+                        <i class="bi bi-eye"></i>
+                      </button>
+                      <button
+                        class="btn btn-sm btn-link text-secondary p-1 me-1"
+                        aria-label="Editar"
+                      >
+                        <i class="bi bi-pencil"></i>
+                      </button>
+                      <button
+                        class="btn btn-sm btn-link text-secondary p-1"
+                        aria-label="Bloquear acesso"
+                        disabled
+                      >
+                        <i class="bi bi-slash-circle"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div
+              class="card-footer bg-white d-flex flex-wrap align-items-center justify-content-between gap-2 px-4 py-3"
+            >
+              <small class="text-body-secondary"
+                >Exibindo 3 de 24 operadores registrados</small
+              >
+              <nav class="d-flex gap-1" aria-label="Paginação">
+                <button class="btn btn-sm btn-light border" disabled>
+                  Anterior
+                </button>
+                <button
+                  class="btn btn-sm btn-primary tu-page-active"
+                  aria-current="page"
+                >
+                  1
+                </button>
+                <button class="btn btn-sm bg-white border">2</button>
+                <button class="btn btn-sm bg-white border">Próximo</button>
+              </nav>
             </div>
           </div>
         </main>
