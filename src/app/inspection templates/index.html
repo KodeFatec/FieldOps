@@ -4,10 +4,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Modelos de inspeção</title>
+  <title>OPS – Inspeções Técnicas</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="./../menu-base/styles.css" />
+  <link rel="stylesheet" href="./styles.css" />
   <link rel="stylesheet" href="./../../../styles.css" />
 </head>
 
@@ -174,24 +175,160 @@
       </header>
 
       <main class="flex-grow-1 p-3 p-lg-4" style="background: var(--bg); height: auto;">
-        <h1 class="h4 mb-3">Dashboard</h1>
-        <div class="row g-3">
-          <div class="col-12 col-md-6 col-xl-4">
-            <div class="card card-body">Inspeções em andamento</div>
+        <h2 class="h6 text-uppercase text-body-secondary mb-3">Modelos de inspeção</h2>
+        <h1 class="h4 text-bold mb-3">Modelos de inspeção & construtor de Checklists</h1>
+        <h3 class="text-uppercase text-body-secondary mb-3" style="font-size: 0.7rem; line-height: 1.5;">Gerencie e padronize auditorias com validação condicioais e controle escrito de versões operacionais</h3>
+        <section class=" catalog-page card catalog-panel shadow-sm" aria-labelledby="catalogTitle">
+          <div class="card-body p-3 p-md-4">
+            <header class="d-flex align-items-center justify-content-between gap-3 mb-3">
+              <h1 class="h6 mb-0 d-flex align-items-center gap-2" id="catalogTitle">
+                <i class="bi bi-folder-plus text-primary" aria-hidden="true"></i>
+                Catálogo de Modelos
+              </h1>
+              <span class="badge catalog-count">3 ativos</span>
+            </header>
+
+            <label class="visually-hidden" for="modelFilter">Filtrar modelos</label>
+            <div class="input-group catalog-filter mb-3">
+              <span class="input-group-text" aria-hidden="true"><i class="bi bi-filter"></i></span>
+              <input class="form-control" id="modelFilter" type="search"
+                placeholder="Filtrar por nome ou versão..." autocomplete="off">
+            </div>
+
+            <div class="d-grid gap-2" id="modelList">
+              <article class="card model-card is-selected" role="link" tabindex="0" aria-label="Editar modelo Preventiva de Compressor" data-editor-href="./templateId/index.html?model=compressor" data-search="preventiva de compressor v1.2 publicado sistemas rotativos industriais compressores de pistão e parafuso">
+                <div class="card-body p-3">
+                  <div class="d-flex align-items-start gap-2">
+                    <div class="flex-grow-1 min-w-0">
+                      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-1">
+                        <h2 class="h6 model-title mb-0">Preventiva de Compressor</h2>
+                        <span class="badge model-status status-published">v1.2&nbsp; Publicado</span>
+                      </div>
+                      <p class="model-description mb-2">Sistemas rotativos industriais, compressores de pistão e parafuso.</p>
+                    </div>
+                    <div class="dropdown model-menu">
+                      <button class="btn btn-sm btn-link text-body-secondary p-0" type="button"
+                        data-bs-toggle="dropdown" aria-expanded="false" aria-label="Ações para Preventiva de Compressor">
+                        <i class="bi bi-three-dots-vertical"></i>
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li><button class="dropdown-item" type="button">Editar modelo</button></li>
+                        <li><button class="dropdown-item" type="button">Duplicar</button></li>
+                        <li><button class="dropdown-item text-danger" type="button">Arquivar</button></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <footer class="model-meta d-flex flex-wrap justify-content-between gap-2">
+                    <span><i class="bi bi-check-circle" aria-hidden="true"></i> 18 Verificações</span>
+                    <span><i class="bi bi-clock" aria-hidden="true"></i> Atualizado há 3 dias</span>
+                  </footer>
+                </div>
+              </article>
+
+              <article class="card model-card" role="link" tabindex="0" aria-label="Editar modelo Segurança Elétrica" data-editor-href="./templateId/index.html?model=eletrica" data-search="segurança elétrica v2.0 rascunho inspeção de painéis de distribuição nr-10 aterramentos">
+                <div class="card-body p-3">
+                  <div class="d-flex align-items-start gap-2">
+                    <div class="flex-grow-1 min-w-0">
+                      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-1">
+                        <h2 class="h6 model-title mb-0">Segurança Elétrica</h2>
+                        <span class="badge model-status status-draft">v2.0&nbsp; Rascunho</span>
+                      </div>
+                      <p class="model-description mb-2">Inspeção de painéis de distribuição, NR-10 e aterramentos.</p>
+                    </div>
+                    <div class="dropdown model-menu">
+                      <button class="btn btn-sm btn-link text-body-secondary p-0" type="button"
+                        data-bs-toggle="dropdown" aria-expanded="false" aria-label="Ações para Segurança Elétrica">
+                        <i class="bi bi-three-dots-vertical"></i>
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li><button class="dropdown-item" type="button">Editar modelo</button></li>
+                        <li><button class="dropdown-item" type="button">Duplicar</button></li>
+                        <li><button class="dropdown-item text-danger" type="button">Arquivar</button></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <footer class="model-meta d-flex flex-wrap justify-content-between gap-2">
+                    <span><i class="bi bi-check-circle" aria-hidden="true"></i> 24 Verificações</span>
+                    <span><i class="bi bi-clock" aria-hidden="true"></i> Ontem às 16:42</span>
+                  </footer>
+                </div>
+              </article>
+
+              <article class="card model-card" role="link" tabindex="0" aria-label="Editar modelo Equipamento Hidráulico" data-editor-href="./templateId/index.html?model=hidraulico" data-search="equipamento hidráulico v1.0 pressão de linha vazamentos atuadores bombas de engrenagem">
+                <div class="card-body p-3">
+                  <div class="d-flex align-items-start gap-2">
+                    <div class="flex-grow-1 min-w-0">
+                      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-1">
+                        <h2 class="h6 model-title mb-0">Equipamento Hidráulico</h2>
+                        <span class="badge model-status status-version">v1.0</span>
+                      </div>
+                      <p class="model-description mb-2">Pressão de linha, vazamentos em atuadores e bombas de engrenagem.</p>
+                    </div>
+                    <div class="dropdown model-menu">
+                      <button class="btn btn-sm btn-link text-body-secondary p-0" type="button"
+                        data-bs-toggle="dropdown" aria-expanded="false" aria-label="Ações para Equipamento Hidráulico">
+                        <i class="bi bi-three-dots-vertical"></i>
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li><button class="dropdown-item" type="button">Editar modelo</button></li>
+                        <li><button class="dropdown-item" type="button">Duplicar</button></li>
+                        <li><button class="dropdown-item text-danger" type="button">Arquivar</button></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <footer class="model-meta d-flex flex-wrap justify-content-between gap-2">
+                    <span><i class="bi bi-check-circle" aria-hidden="true"></i> 12 Verificações</span>
+                    <span><i class="bi bi-clock" aria-hidden="true"></i> 14 Jan 2025</span>
+                  </footer>
+                </div>
+              </article>
+              <p class="catalog-empty text-body-secondary text-center py-4 mb-0 d-none" id="emptyModels">
+                Nenhum modelo encontrado.
+              </p>
+            </div>
+
+            <button class="btn catalog-create w-100 mt-3" type="button">
+              <i class="bi bi-plus-circle me-1" aria-hidden="true"></i>
+              Criar a partir de Norma Regulamentadora
+            </button>
           </div>
-          <div class="col-12 col-md-6 col-xl-4">
-            <div class="card card-body">Não conformidades abertas</div>
-          </div>
-          <div class="col-12 col-md-12 col-xl-4">
-            <div class="card card-body">Equipamentos monitorados</div>
-          </div>
-        </div>
+        </section>
       </main>
     </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="./../menu-base/script.js"></script>
+  <script>
+    const modelFilter = document.getElementById("modelFilter");
+    const modelCards = [...document.querySelectorAll(".model-card")];
+    const emptyModels = document.getElementById("emptyModels");
+
+    modelFilter.addEventListener("input", () => {
+      const query = modelFilter.value.trim().toLocaleLowerCase("pt-BR");
+      let visibleCount = 0;
+
+      modelCards.forEach((card) => {
+        const matches = card.dataset.search.includes(query);
+        card.classList.toggle("d-none", !matches);
+        if (matches) visibleCount += 1;
+      });
+
+      emptyModels.classList.toggle("d-none", visibleCount > 0);
+    });
+
+    modelCards.forEach((card) => {
+      card.addEventListener("click", (event) => {
+        if (event.target.closest("button, a")) return;
+        window.location.href = card.dataset.editorHref;
+      });
+      card.addEventListener("keydown", (event) => {
+        if (event.target !== card || !["Enter", " "].includes(event.key)) return;
+        event.preventDefault();
+        window.location.href = card.dataset.editorHref;
+      });
+    });
+  </script>
 </body>
 
 </html>

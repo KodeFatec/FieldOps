@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="pt-BR" data-bs-theme="dark">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Editor de Modelo – OPS</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="../../menu-base/styles.css" />
+	<link rel="stylesheet" href="./styles.css" />
+	<link rel="stylesheet" href="../../../../styles.css" />
+</head>
+
+<body>
+	<div class="d-lg-flex min-vh-100">
+		<nav class="d-lg-flex">
+			<div class="offcanvas-lg offcanvas-start flex-grow-0" tabindex="-1" id="sidebar" aria-label="Menu principal">
+				<div class="offcanvas-header d-lg-none">
+					<h5 class="offcanvas-title">Menu</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebar" aria-label="Fechar"></button>
+				</div>
+				<div class="offcanvas-body p-0">
+					<div class="sb-card d-flex flex-column p-3 border-end border-secondary-subtle" id="sbCard">
+						<button class="sb-toggle btn btn-primary rounded-circle border-0 p-0 d-none d-lg-flex align-items-center justify-content-center" id="sbToggle" type="button" aria-label="Recolher menu" aria-expanded="true"><i class="bi bi-chevron-left small"></i></button>
+						<a href="../index.html" class="d-flex align-items-center gap-2 text-decoration-none mb-3 justify-content-center justify-content-lg-start sb-user">
+							<span class="sb-logo rounded-2 d-inline-flex align-items-center justify-content-center text-white"><i class="bi bi-clipboard-check"></i></span>
+							<span class="sb-label lh-1"><span class="d-block fw-bold text-primary">OPS</span><small class="text-secondary" style="font-size: 0.6rem">Inspeções Técnicas</small></span>
+						</a>
+						<div class="sb-unit rounded-2 border border-secondary-subtle px-2 py-2 mb-3 d-flex align-items-center gap-2 small" title="Unidade Alpha 01 · SaaS v2.4">
+							<span class="badge rounded-circle bg-success p-1"><span class="visually-hidden">Online</span></span>
+							<span class="sb-label fw-semibold text-uppercase text-white-50 text-truncate">Unidade Alpha 01</span>
+							<span class="sb-label badge text-bg-primary bg-opacity-25 ms-auto">SaaS v2.4</span>
+						</div>
+						<nav class="flex-grow-1 overflow-y-auto overflow-x-hidden" aria-label="Navegação">
+							<ul class="nav flex-column gap-1">
+								<li><a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2" href="#"><i class="bi bi-grid-1x2 fs-6"></i><span class="sb-label">Dashboard</span></a></li>
+								<li><a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2" href="#"><i class="bi bi-people fs-6"></i><span class="sb-label">Usuários</span></a></li>
+								<li><a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2" href="#"><i class="bi bi-buildings fs-6"></i><span class="sb-label">Clientes</span></a></li>
+								<li><a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2" href="#"><i class="bi bi-geo-alt fs-6"></i><span class="sb-label">Locais</span></a></li>
+								<li><a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2" href="#"><i class="bi bi-broadcast-pin fs-6"></i><span class="sb-label">Equipamentos</span></a></li>
+								<li><a class="sb-item nav-link active rounded-2 d-flex align-items-center gap-2" href="../index.html" aria-current="page"><i class="bi bi-clipboard-data fs-6"></i><span class="sb-label">Modelos de Inspeção</span></a></li>
+								<li><a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2" href="#"><i class="bi bi-image fs-6"></i><span class="sb-label">Inspeções</span><span class="sb-badge badge rounded-pill text-bg-primary ms-auto">18</span></a></li>
+								<li><a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2" href="#"><i class="bi bi-exclamation-triangle fs-6"></i><span class="sb-label">Não Conformidades</span><span class="sb-badge badge rounded-pill text-bg-danger ms-auto">4</span></a></li>
+								<li><a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2" href="#"><i class="bi bi-shield-check fs-6"></i><span class="sb-label">Auditoria</span></a></li>
+							</ul>
+						</nav>
+						<div class="pt-3 mt-3 border-top border-secondary-subtle">
+							<div class="sb-user d-flex align-items-center gap-2 mb-2 px-2"><i class="bi bi-person-circle fs-5 text-white-50"></i><div class="sb-label lh-sm"><div class="fw-semibold small text-white">Mariana Souza</div><small class="text-secondary">Supervisora Geral</small></div></div>
+							<a href="#" class="sb-item nav-link rounded-2 d-flex align-items-center gap-2"><i class="bi bi-box-arrow-left fs-6"></i><span class="sb-label">Sair</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<div class="tb-col flex-grow-1 d-flex flex-column bg-body-tertiary text-body" data-bs-theme="light">
+			<header class="navbar bg-body border-bottom sticky-top flex-nowrap gap-2 gap-md-3 px-3 py-2">
+				<button class="btn btn-outline-secondary d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Abrir menu"><i class="bi bi-list fs-5"></i></button>
+				<div class="input-group tb-search flex-grow-1" role="search"><span class="input-group-text bg-primary-subtle border-primary-subtle text-primary-emphasis"><i class="bi bi-search"></i></span><input type="search" class="form-control bg-primary-subtle border-primary-subtle" placeholder="Pesquisar" aria-label="Pesquisar"></div>
+				<div class="ms-auto d-flex align-items-center gap-2">
+					<button type="button" class="btn btn-link text-decoration-none text-body-secondary position-relative p-1" aria-label="Notificações"><i class="bi bi-bell fs-5"></i></button>
+					<span class="tb-avatar rounded-circle bg-primary text-white fw-semibold small d-inline-flex align-items-center justify-content-center">MS</span>
+					<div class="d-none d-lg-block lh-sm"><div class="fw-semibold small">Mariana Souza</div><small class="text-body-secondary">Supervisora</small></div>
+				</div>
+			</header>
+
+			<main class="editor-page flex-grow-1 p-3 p-xl-4">
+				<div class="editor-container">
+					<div class="editor-heading d-flex flex-wrap align-items-start justify-content-between gap-3 pb-3 mb-3">
+						<div>
+							<nav class="breadcrumb small mb-2" aria-label="breadcrumb">
+								<a class="breadcrumb-item text-decoration-none" href="../index.html">Modelos de Inspeção</a>
+								<span class="breadcrumb-item active" aria-current="page">Construtor visual de checklist</span>
+							</nav>
+							<h1 class="h4 fw-bold mb-1">Modelos de Inspeção &amp; Construtor de Checklist</h1>
+							<p class="text-body-secondary mb-0">Gerencie e padronize auditorias com validações condicionais e controle estrito de versões operacionais.</p>
+						</div>
+						<div class="d-flex align-items-center gap-2">
+							<span class="badge edit-version"><i class="bi bi-circle-fill me-1"></i> Em Edição: <strong>v1.3</strong> Rascunho</span>
+							<button class="btn btn-outline-secondary btn-sm d-inline-flex align-items-center gap-2" type="button" data-bs-toggle="modal" data-bs-target="#auditModal"><i class="bi bi-clock-history"></i><span>Log de Auditoria</span></button>
+						</div>
+					</div>
+
+					<section class="card model-details-card mb-3" aria-labelledby="modelDetailsTitle">
+						<div class="card-body p-3">
+							<div class="d-flex flex-wrap align-items-center justify-content-between gap-2 pb-2 mb-3 model-details-heading">
+								<h2 class="h6 fw-bold mb-0" id="modelDetailsTitle"><i class="bi bi-ui-checks text-primary me-1"></i> Novo Modelo de Inspeção</h2>
+								<div class="model-code"><span>CÓDIGO MODELO:</span><strong id="modelCode">MOD-CMP-2025</strong></div>
+							</div>
+							<div class="row g-3">
+								<div class="col-12 col-md-6">
+									<label class="form-label" for="modelName">Nome do Modelo <span class="text-danger">*</span></label>
+									<input class="form-control form-control-sm" id="modelName" value="Preventiva de Compressor" required>
+								</div>
+								<div class="col-12 col-md-6">
+									<label class="form-label" for="assetCategory">Categoria de Ativo <span class="text-danger">*</span></label>
+									<select class="form-select form-select-sm" id="assetCategory"><option selected>Mecânica &amp; Sistemas Rotativos</option><option>Elétrica &amp; Automação</option><option>Hidráulica</option></select>
+								</div>
+								<div class="col-12">
+									<label class="form-label" for="procedureDescription">Descrição do Procedimento &amp; Requisitos de EPI</label>
+									<textarea class="form-control form-control-sm" id="procedureDescription" rows="2">Inspeção periódica quinzenal de compressores de pistão e parafuso de média/alta pressão. Exige aferição de manômetro e teste de estanqueidade.</textarea>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<section class="checklist-section mb-3" data-section="identificacao">
+						<header class="section-heading d-flex align-items-center justify-content-between gap-2">
+							<div class="d-flex align-items-center gap-2"><i class="bi bi-grip-vertical text-secondary"></i><h2 class="h6 fw-bold mb-0">1. Identificação do Equipamento</h2><span class="badge section-count">2 Itens</span></div>
+							<div class="d-flex gap-1">
+								<button class="btn btn-sm btn-link text-secondary section-duplicate" type="button" title="Duplicar seção" aria-label="Duplicar seção"><i class="bi bi-files"></i></button>
+								<button class="btn btn-sm btn-link text-secondary section-delete" type="button" title="Excluir seção" aria-label="Excluir seção"><i class="bi bi-trash"></i></button>
+							</div>
+						</header>
+						<div class="section-items">
+							<article class="checklist-item">
+								<span class="drag-handle"><i class="bi bi-grip-vertical"></i></span>
+								<div class="item-copy"><div class="item-label">Código do Equipamento <span class="badge required-badge">Obrigatório</span></div><p>Tag do ativo gravado na plaqueta de identificação metálica</p></div>
+								<div class="item-options"><span class="badge option-badge"><i class="bi bi-fonts"></i> Texto Livre</span><span class="badge option-badge"><i class="bi bi-qr-code-scan"></i> Leitura QR Ativa</span></div>
+								<button class="btn btn-sm btn-link text-secondary item-settings" type="button" aria-label="Configurar Código do Equipamento" data-bs-toggle="modal" data-bs-target="#settingsModal"><i class="bi bi-gear"></i></button>
+							</article>
+							<article class="checklist-item">
+								<span class="drag-handle"><i class="bi bi-grip-vertical"></i></span>
+								<div class="item-copy"><div class="item-label">Equipamento identificado? <span class="badge preview-badge">Verificação Prévia</span></div><p>Condição de legibilidade e integridade da plaqueta patrimonial</p></div>
+								<div class="item-options"><span class="badge option-badge"><i class="bi bi-toggle-on"></i> Sim / Não</span><span class="badge warning-badge">Se “Não” → Alerta Bloqueante</span></div>
+								<button class="btn btn-sm btn-link text-secondary item-settings" type="button" aria-label="Configurar Equipamento identificado" data-bs-toggle="modal" data-bs-target="#settingsModal"><i class="bi bi-gear"></i></button>
+							</article>
+							<button class="add-item-link" type="button"><i class="bi bi-plus-lg"></i> Adicionar Item em “Identificação”</button>
+						</div>
+					</section>
+
+					<section class="checklist-section section-critical mb-3" data-section="visual">
+						<header class="section-heading d-flex align-items-center justify-content-between gap-2">
+							<div class="d-flex align-items-center gap-2"><i class="bi bi-grip-vertical text-secondary"></i><h2 class="h6 fw-bold mb-0">2. Inspeção Visual</h2><span class="badge critical-count">3 Itens Críticos</span></div>
+							<div class="d-flex gap-1">
+								<button class="btn btn-sm btn-link text-secondary section-duplicate" type="button" title="Duplicar seção" aria-label="Duplicar seção"><i class="bi bi-files"></i></button>
+								<button class="btn btn-sm btn-link text-secondary section-delete" type="button" title="Excluir seção" aria-label="Excluir seção"><i class="bi bi-trash"></i></button>
+							</div>
+						</header>
+						<div class="section-items">
+							<article class="checklist-item">
+								<span class="drag-handle"><i class="bi bi-grip-vertical"></i></span>
+								<div class="item-copy"><div class="item-label">Estado da carcaça <span class="badge required-badge">Obrigatório</span></div><p>Avaliação de fissuras, oxidação excessiva ou desalinhamento da base</p></div>
+								<div class="item-options"><span class="badge option-badge"><i class="bi bi-list-check"></i> Conforme / Não Conforme</span><span class="badge action-badge">Ação: NC Automática</span></div>
+								<button class="btn btn-sm btn-link text-secondary item-settings" type="button" aria-label="Configurar Estado da carcaça" data-bs-toggle="modal" data-bs-target="#settingsModal"><i class="bi bi-gear"></i></button>
+							</article>
+							<article class="checklist-item">
+								<span class="drag-handle"><i class="bi bi-grip-vertical"></i></span>
+								<div class="item-copy"><div class="item-label">Evidência Fotográfica <span class="badge required-badge">Obrigatório</span></div><p>Registro fotográfico do visor de nível de óleo e manômetro central</p></div>
+								<div class="item-options"><span class="badge option-badge"><i class="bi bi-camera"></i> Foto / Mídia (Min: 2 fotos)</span><span class="badge option-badge">GPS &amp; Timestamp</span></div>
+								<button class="btn btn-sm btn-link text-secondary item-settings" type="button" aria-label="Configurar Evidência Fotográfica" data-bs-toggle="modal" data-bs-target="#settingsModal"><i class="bi bi-gear"></i></button>
+							</article>
+							<article class="checklist-item">
+								<span class="drag-handle"><i class="bi bi-grip-vertical"></i></span>
+								<div class="item-copy"><div class="item-label">Criticidade da falha <span class="badge severity-badge">ALTA</span></div><p>Classificação de severidade caso seja detectada Não Conformidade estrutural</p></div>
+								<div class="item-options"><span class="badge option-badge"><i class="bi bi-exclamation-lg"></i> Matriz de Risco (1 a 5)</span><span class="badge notification-badge">Disparo de Notificação Imediata</span></div>
+								<button class="btn btn-sm btn-link text-secondary item-settings" type="button" aria-label="Configurar Criticidade da falha" data-bs-toggle="modal" data-bs-target="#settingsModal"><i class="bi bi-gear"></i></button>
+							</article>
+							<button class="add-item-link" type="button"><i class="bi bi-plus-lg"></i> Adicionar Item em “Inspeção Visual”</button>
+						</div>
+					</section>
+
+					<section class="checklist-section mb-3" data-section="lubrificacao">
+						<header class="section-heading d-flex align-items-center justify-content-between gap-2">
+							<div class="d-flex align-items-center gap-2"><i class="bi bi-grip-vertical text-secondary"></i><h2 class="h6 fw-bold mb-0">3. Lubrificação e Pressão</h2><span class="badge section-count">2 Itens</span></div>
+							<div class="d-flex gap-1"><button class="btn btn-sm btn-link text-secondary section-duplicate" type="button" title="Duplicar seção" aria-label="Duplicar seção"><i class="bi bi-files"></i></button><button class="btn btn-sm btn-link text-secondary section-delete" type="button" title="Excluir seção" aria-label="Excluir seção"><i class="bi bi-trash"></i></button></div>
+						</header>
+						<div class="section-items">
+							<article class="checklist-item">
+								<span class="drag-handle"><i class="bi bi-grip-vertical"></i></span><div class="item-copy"><div class="item-label">Pressão de operação <span class="badge required-badge">Obrigatório</span></div><p>Leitura do manômetro durante funcionamento estável</p></div><div class="item-options"><span class="badge option-badge"><i class="bi bi-123"></i> Numérico (bar)</span><span class="badge option-badge">Faixa: 6–10 bar</span></div><button class="btn btn-sm btn-link text-secondary item-settings" type="button" aria-label="Configurar Pressão de operação" data-bs-toggle="modal" data-bs-target="#settingsModal"><i class="bi bi-gear"></i></button>
+							</article>
+							<article class="checklist-item">
+								<span class="drag-handle"><i class="bi bi-grip-vertical"></i></span><div class="item-copy"><div class="item-label">Nível do óleo lubrificante <span class="badge required-badge">Obrigatório</span></div><p>Conferência visual do nível no visor do reservatório</p></div><div class="item-options"><span class="badge option-badge"><i class="bi bi-list-check"></i> Adequado / Baixo</span></div><button class="btn btn-sm btn-link text-secondary item-settings" type="button" aria-label="Configurar Nível do óleo lubrificante" data-bs-toggle="modal" data-bs-target="#settingsModal"><i class="bi bi-gear"></i></button>
+							</article>
+							<button class="add-item-link" type="button"><i class="bi bi-plus-lg"></i> Adicionar Item em “Lubrificação e Pressão”</button>
+						</div>
+					</section>
+
+					<div class="editor-add-actions d-flex flex-wrap gap-2 mb-4">
+						<button class="btn add-section-button" type="button" id="addSection"><i class="bi bi-folder-plus me-1"></i> + Adicionar Seção</button>
+						<button class="btn add-item-button" type="button" id="addItem"><i class="bi bi-list-task me-1"></i> + Adicionar Item</button>
+					</div>
+
+					<div class="row g-3 editor-bottom-space">
+						<div class="col-12 col-lg-4 col-xl-3">
+							<section class="card version-card h-100">
+								<div class="card-body p-3">
+									<div class="d-flex align-items-center justify-content-between mb-3"><h2 class="h6 fw-bold mb-0"><i class="bi bi-clock-history text-secondary me-1"></i> Histórico de Versões</h2><span class="small fw-semibold text-secondary">ISO 9001 Trail</span></div>
+									<ol class="version-timeline mb-0">
+										<li class="current"><div class="version-title">v1.3 (Atual) <span class="badge status-draft">Rascunho</span></div><p>Inclusão de tolerância de pressão e validação fotográfica obrigatória.</p><small>Carlos F. · Hoje às 11:20</small></li>
+										<li class="production"><div class="version-title">v1.2 <span class="badge status-production">Produção</span></div><p>Ajuste nas tolerâncias de temperatura do óleo lubrificante.</p><small>Mariana R. · 18 Jan 2025</small></li>
+										<li class="baseline"><div class="version-title">v1.0 Baseline</div><p>Homologação inicial para planta mecânica Sul.</p><small>Ricardo V. · 05 Dez 2024</small></li>
+									</ol>
+								</div>
+							</section>
+						</div>
+					</div>
+
+					<div class="editor-actionbar d-flex flex-wrap align-items-center justify-content-between gap-3 mt-4">
+						<div class="sync-note"><i class="bi bi-cloud-check text-success fs-5"></i><span><strong>Alterações sincronizadas</strong><small>automaticamente em memória local.</small></span></div>
+						<div class="d-flex flex-wrap gap-2 ms-auto">
+							<button class="btn btn-outline-success" type="button" id="saveDraft"><i class="bi bi-floppy me-1"></i> Salvar Rascunho</button>
+							<button class="btn btn-preview" type="button" data-bs-toggle="modal" data-bs-target="#previewModal"><i class="bi bi-eye me-1"></i> Visualizar como Técnico</button>
+							<button class="btn btn-primary" type="button" id="publishModel"><i class="bi bi-upload me-1"></i> Publicar Modelo</button>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+	</div>
+
+	<div class="modal fade" id="auditModal" tabindex="-1" aria-labelledby="auditTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h2 class="modal-title fs-5" id="auditTitle">Log de Auditoria</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button></div><div class="modal-body"><ul class="list-group list-group-flush"><li class="list-group-item px-0"><strong>Hoje, 11:20</strong> — Carlos F. atualizou a validação de pressão.</li><li class="list-group-item px-0"><strong>Ontem, 16:42</strong> — Mariana R. adicionou evidência fotográfica.</li><li class="list-group-item px-0"><strong>18 Jan 2025</strong> — v1.2 publicada em produção.</li></ul></div></div></div></div>
+	<div class="modal fade" id="settingsModal" tabindex="-1" aria-labelledby="settingsTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h2 class="modal-title fs-5" id="settingsTitle">Configuração do item</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button></div><div class="modal-body"><label class="form-label" for="itemLabel">Nome do item</label><input class="form-control mb-3" id="itemLabel" value="Item do checklist"><div class="form-check"><input class="form-check-input" type="checkbox" id="requiredCheck" checked><label class="form-check-label" for="requiredCheck">Resposta obrigatória</label></div><div class="form-check mt-2"><input class="form-check-input" type="checkbox" id="criticalCheck"><label class="form-check-label" for="criticalCheck">Marcar como item crítico</label></div></div><div class="modal-footer"><button class="btn btn-outline-secondary" data-bs-dismiss="modal" type="button">Cancelar</button><button class="btn btn-primary" data-bs-dismiss="modal" type="button">Aplicar configurações</button></div></div></div></div>
+	<div class="modal fade" id="previewModal" tabindex="-1" aria-labelledby="previewTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h2 class="modal-title fs-5" id="previewTitle">Visualização do Técnico</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button></div><div class="modal-body"><p class="text-body-secondary">Prévia do checklist no aplicativo de campo.</p><div class="border rounded p-3"><span class="badge text-bg-primary mb-2">Inspeção Visual</span><h3 class="h6">Estado da carcaça <span class="text-danger">*</span></h3><p class="small text-body-secondary">Avaliação de fissuras, oxidação excessiva ou desalinhamento da base</p><div class="d-flex gap-2"><button class="btn btn-outline-success btn-sm">Conforme</button><button class="btn btn-outline-danger btn-sm">Não Conforme</button></div></div></div></div></div></div>
+	<div class="toast-container position-fixed bottom-0 end-0 p-3"><div id="editorToast" class="toast" role="status" aria-live="polite" aria-atomic="true"><div class="toast-header"><i class="bi bi-check-circle-fill text-success me-2"></i><strong class="me-auto">OPS</strong><small>agora</small><button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Fechar"></button></div><div class="toast-body" id="toastMessage">Alterações salvas.</div></div></div>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="../../menu-base/script.js"></script>
+	<script src="./editor.js"></script>
+</body>
+</html>
