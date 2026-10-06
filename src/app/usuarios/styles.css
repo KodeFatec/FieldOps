@@ -1,0 +1,19 @@
+.alert.alert-subtitle {
+  background-color: #dbe1ff;
+  color: #003ea8;
+  font-weight: 500;
+  padding: 0.01rem 0.7rem;
+  text-align: center;
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+span .bi-circle-fill {
+  font-size: 0.5rem;
+  vertical-align: middle;
+  padding: 0 0.7rem;
+}
+
+.h3.title {
+margin-top: 0.75rem;
+}
