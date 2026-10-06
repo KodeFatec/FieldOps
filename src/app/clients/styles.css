@@ -1,0 +1,9 @@
+.own-button{
+    border-color: #b6c2d6 !important;
+}
+
+.own-button:hover{
+  color: #1d4ed8 !important;
+  background-color: #b6c2d6 !important;
+  border-color: transparent !important;
+}

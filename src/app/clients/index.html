@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../menu-base/styles.css">
+    <link rel="stylesheet" href="./../../../styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <title>CRUD clientes</title>
+</head>
+
+<body>
+    <div class="d-lg-flex min-vh-100">
+        <nav class="d-lg-flex">
+
+            <div class="offcanvas-lg offcanvas-start flex-grow-0" tabindex="-1" id="sidebar"
+                aria-label="Menu principal">
+                <div class="offcanvas-header d-lg-none">
+                    <h5 class="offcanvas-title">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebar"
+                        aria-label="Fechar"></button>
+                </div>
+
+                <div class="offcanvas-body p-0">
+                    <div class="sb-card d-flex flex-column p-3 border-end border-secondary-subtle" id="sbCard">
+                        <button
+                            class="sb-toggle btn btn-primary rounded-circle border-0 p-0 d-none d-lg-flex align-items-center justify-content-center"
+                            id="sbToggle" type="button" aria-label="Recolher menu" aria-expanded="true">
+                            <i class="bi bi-chevron-left small"></i>
+                        </button>
+
+                        <a href="#"
+                            class="d-flex align-items-center gap-2 text-decoration-none mb-3 justify-content-center justify-content-lg-start sb-user">
+                            <span
+                                class="sb-logo rounded-2 d-inline-flex align-items-center justify-content-center text-white">
+                                <i class="bi bi-clipboard-check"></i>
+                            </span>
+                            <span class="sb-label lh-1">
+                                <span class="d-block fw-bold text-primary">OPS</span>
+                                <small class="text-secondary" style="font-size: 0.6rem">Inspeções Técnicas</small>
+                            </span>
+                        </a>
+
+                        <div class="sb-unit rounded-2 border border-secondary-subtle px-2 py-2 mb-3 d-flex align-items-center gap-2 small"
+                            title="Unidade Alpha 01 · SaaS v2.4">
+                            <span class="badge rounded-circle bg-success p-1"><span
+                                    class="visually-hidden">Online</span></span>
+                            <span class="sb-label fw-semibold text-uppercase text-white-50 text-truncate">Unidade Alpha
+                                01</span>
+                            <span class="sb-label badge text-bg-primary bg-opacity-25 ms-auto">SaaS v2.4</span>
+                        </div>
+
+                        <nav class="flex-grow-1 overflow-y-auto overflow-x-hidden">
+                            <ul class="nav flex-column gap-1">
+                                <li>
+                                    <a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative"
+                                        href="#" title="Dashboard"><i
+                                            class="bi bi-grid-1x2 fs-6"></i><span class="sb-label">Dashboard</span></a>
+                                </li>
+                                <li>
+                                    <a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative"
+                                        href="#" title="Usuários"><i class="bi bi-people fs-6"></i><span
+                                            class="sb-label">Usuários</span></a>
+                                </li>
+                                <li>
+                                    <a class="sb-item nav-link active rounded-2 d-flex align-items-center gap-2 position-relative"
+                                        href="#" title="Clientes" aria-current="page"><i class="bi bi-buildings fs-6"></i><span
+                                            class="sb-label">Clientes</span></a>
+                                </li>
+                                <li>
+                                    <a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative"
+                                        href="#" title="Locais"><i class="bi bi-geo-alt fs-6"></i><span
+                                            class="sb-label">Locais</span></a>
+                                </li>
+                                <li>
+                                    <a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative"
+                                        href="#" title="Equipamentos"><i class="bi bi-broadcast-pin fs-6"></i><span
+                                            class="sb-label">Equipamentos</span></a>
+                                </li>
+                                <li>
+                                    <a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative"
+                                        href="#" title="Modelos de Inspeção"><i
+                                            class="bi bi-clipboard-data fs-6"></i><span class="sb-label">Modelos
+                                            de Inspeção</span></a>
+                                </li>
+                                <li>
+                                    <a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative"
+                                        href="#" title="Inspeções (18)">
+                                        <i class="bi bi-image fs-6"></i><span class="sb-label">Inspeções</span>
+                                        <span class="sb-badge badge rounded-pill text-bg-primary ms-auto">18</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative"
+                                        href="#" title="Não Conformidades (4)">
+                                        <i class="bi bi-exclamation-triangle fs-6"></i><span class="sb-label">Não
+                                            Conformidades</span>
+                                        <span class="sb-badge badge rounded-pill text-bg-danger ms-auto">4</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative"
+                                        href="#" title="Auditoria"><i class="bi bi-shield-check fs-6"></i><span
+                                            class="sb-label">Auditoria</span></a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                        <div class="pt-3 mt-3 border-top border-secondary-subtle">
+                            <div class="sb-user d-flex align-items-center gap-2 mb-2 px-2"
+                                title="Mariana Souza · Supervisora Geral">
+                                <i class="bi bi-person-circle fs-5 text-white-50"></i>
+                                <div class="sb-label lh-sm">
+                                    <div class="fw-semibold small text-white">
+                                        Mariana Souza
+                                    </div>
+                                    <small class="text-secondary">Supervisora Geral</small>
+                                </div>
+                            </div>
+                            <a href="#" class="sb-item nav-link rounded-2 d-flex align-items-center gap-2" title="Sair">
+                                <i class="bi bi-box-arrow-left fs-6"></i><span class="sb-label">Sair</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="tb-col flex-grow-1 d-flex flex-column bg-body-tertiary text-body" data-bs-theme="light">
+
+            <header class="navbar bg-body border-bottom sticky-top flex-nowrap gap-2 gap-md-3 px-3 py-2">
+
+                <button class="btn btn-outline-secondary d-lg-none" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Abrir menu">
+                    <i class="bi bi-list fs-5"></i>
+                </button>
+
+                <div class="input-group tb-search flex-grow-1" role="search">
+                    <span class="input-group-text bg-primary-subtle border-primary-subtle text-primary-emphasis"><i
+                            class="bi bi-search"></i></span>
+                    <input type="search" class="form-control bg-primary-subtle border-primary-subtle"
+                        placeholder="Pesquisar" aria-label="Pesquisar">
+                </div>
+
+                <div class="vr d-none d-xl-block"></div>
+                <nav class="nav d-none d-xl-flex" aria-label="Atalhos">
+                    <a class="nav-link text-body-secondary px-2" href="#">Inspeções</a>
+                    <a class="nav-link text-body-secondary px-2" href="#">Auditoria</a>
+                </nav>
+
+                <div class="ms-auto d-flex align-items-center gap-2">
+                    <button type="button"
+                        class="btn btn-outline-secondary btn-sm text-body d-none d-md-inline-flex align-items-center gap-2"
+                        title="Exportar Relatório">
+                        <i class="bi bi-download"></i><span class="d-none d-xl-inline">Exportar Relatório</span>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm d-inline-flex align-items-center gap-2"
+                        title="Nova Inspeção">
+                        <i class="bi bi-plus-lg"></i><span class="d-none d-sm-inline">Nova Inspeção</span>
+                    </button>
+
+                    <button type="button"
+                        class="btn btn-link text-decoration-none text-body-secondary position-relative p-1 ms-1"
+                        aria-label="Notificações">
+                        <i class="bi bi-bell fs-5"></i>
+                        <span
+                            class="position-absolute top-0 end-0 mt-1 me-1 p-1 bg-danger border border-light rounded-circle"><span
+                                class="visually-hidden">Novas notificações</span></span>
+                    </button>
+                    <button type="button"
+                        class="btn btn-link text-decoration-none text-body-secondary p-1 d-none d-sm-inline-flex"
+                        aria-label="Ajuda">
+                        <i class="bi bi-question-circle fs-5"></i>
+                    </button>
+
+                    <div class="d-flex align-items-center gap-2 ms-1">
+                        <span
+                            class="tb-avatar rounded-circle bg-primary text-white fw-semibold small d-inline-flex align-items-center justify-content-center">MS</span>
+                        <div class="d-none d-lg-block lh-sm">
+                            <div class="fw-semibold small">Mariana Souza</div>
+                            <small class="text-body-secondary">Supervisora</small>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main class="flex-grow-1 p-3 p-lg-4" style="background: var(--bg);">
+                <p class="fs-1 fw-bold">Gestão de Clientes & Contratos</p>
+                <p class="fs-6 fw-medium">Controle de empresas contratantes, plantas fabris e ativos sob gestão técnica
+                </p>
+
+                <div class="row mt-3">
+                    <div class="col-md-3">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                                <div class="d-flex">
+                                    <h5 class="card-title me-1">Card title</h5>
+                                    <p class="align-self-end">Card subtitle</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                                <h5 class="card-title">Card title</h5>
+                                <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                                <h5 class="card-title">Card title</h5>
+                                <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                                <h5 class="card-title">Card title</h5>
+                                <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-12 col-sm-12 col-md-4">
+                        <div class="card w-75 mb-3">
+                            <div class="card-body">
+                                <div class="row border-bottom">
+                                    <div class="col-md-2 d-flex justify-content-end align-self-center">
+                                        <span
+                                            class="tb-avatar rounded-2 bg-primary text-white fw-semibold small d-inline-flex align-items-center justify-content-center">MS</span>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <h5 class="card-title">Indústria Alpha Ltda.</h5>
+                                        <h6 class="card-subtitle mb-2 text-body-secondary">CNPJ: 12.345.678/0001-90</h6>
+                                    </div>
+
+                                    <div class="col-md-4">
+
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 d-flex">
+                                        <p class="fw-bold me-1"><i class="bi bi-geo-alt"></i>6
+                                        <p>Locais</p>
+                                        </p>
+                                    </div>
+
+                                    <div class="col-md-6 d-flex">
+                                        <p class="fw-bold me-1"><i class="bi bi-geo-alt"></i>6
+                                        <p>Locais</p>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                                <h5 class="card-title">Card title</h5>
+                                <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                            </div>
+                        </div>
+
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                                <h5 class="card-title">Card title</h5>
+                                <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                            </div>
+                        </div>
+
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                                <h5 class="card-title">Card title</h5>
+                                <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-12 col-md-8" style="background-color: #FFF;">
+                        <div class="row mt-3 border-bottom">
+                            <div class="col-12 col-sm-12 col-md-6">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="alert alert-success p-0 d-flex justify-content-center" role="alert">
+                                            Cliente Homologado
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <p>id: CLI-0039</p>
+                                    </div>
+                                </div>
+
+                                <p class="fs-1 fw-bold">Indústria Alpha Ltda.</p>
+                                <p>Manufatura de Componentes Automotivos e Estamparia Pesada</p>
+                            </div>
+
+                            <div class="col-12 col-sm-12 col-md-6">
+                                <div class="col">
+                                    <a href="#" class="btn btn-white mb-1 own-button">Button</a>
+                                </div>
+                                <div class="col">
+                                    <a href="#" class="btn btn-primary">Button</a>
+                                </div>
+                                <div class="col">
+                                    <a href="#" class="btn btn-primary">Button</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-1 mt-3" style="background: var(--bg)">
+                            <p class="fs-4 fw-bold">Informações Cadastrais</p>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6">
+                                    <p class="fs-6 fw-medium mb-0">RAZÃO SOCIAL</p>
+                                    <p class="fs-6 fw-medium mt-0">Indústria Alpha de Componentes Ltda.</p>
+                                </div>
+
+                                <div class="col-sm-12 col-md-6">
+                                    <p class="fs-6 fw-medium mb-0">CNPJ</p>
+                                    <p class="fs-6 fw-medium mt-0">12.345.678/0001-90</p>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6">
+                                    <p class="fs-6 fw-medium mb-0">E-MAIL DE CONTATO</p>
+                                    <p class="fs-6 fw-medium mt-0">gestao@alpha.ind.br<i
+                                            class="bi bi-envelope ms-1"></i></p>
+                                </div>
+
+                                <div class="col-sm-12 col-md-6">
+                                    <p class="fs-6 fw-medium mb-0">TELEFONE COMERCIAL</p>
+                                    <p class="fs-6 fw-medium mt-0">(11) 3456-7890</p>
+                                </div>
+                            </div>
+
+                            <p class="fs-6 fw-medium mb-0">ENDEREÇO DA SEDE</p>
+                            <p class="fs-6 fw-medium mt-0">Rodovia dos Bandeirantes, Km 72 - Distrito Industrial,
+                                Campinas -
+                                SP,
+                                13060-000<i class="bi bi-geo-alt ms-1"></i></p>
+                        </div>
+
+
+                        <p class="fs-4 fw-bold">Contrato & Gestão Técnica</p>
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-4">
+                                <div class="card" style="width: 18rem;">
+                                    <div class="card-body">
+                                        <h6 class="card-subtitle mb-2 text-body-secondary">GESTOR TÉCNICO RESPONSÁVEL
+                                        </h6>
+                                        <div class="row">
+                                            <div class="col-12 col-md-3 d-flex justify-content-end align-self-center">
+                                                <span
+                                                    class="tb-avatar rounded-circle bg-primary text-white fw-semibold small d-inline-flex align-items-center justify-content-center">MS</span>
+                                            </div>
+
+                                            <div class="col-12 col-md-9">
+                                                <h5 class="card-title">Mariana Souza</h5>
+                                                <h6 class="card-subtitle mb-2 text-body-secondary">Supervisora Senior
+                                                </h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-sm-12 col-md-4">
+                                <div class="card" style="width: 18rem;">
+                                    <div class="card-body">
+                                        <h6 class="card-subtitle mb-2 text-body-secondary">VIGÊNCIA DO CONTRATO</h6>
+                                        <div class="row">
+                                            <div class="col-12 col-md-3 d-flex justify-content-end align-self-center">
+                                                <i class="bi bi-calendar"></i>
+                                            </div>
+
+                                            <div class="col-12 col-md-9">
+                                                <h5 class="card-title">Até Dez/2026</h5>
+                                                <h6 class="card-subtitle mb-2 text-body-secondary">Ativo (Renovação
+                                                    Auto)</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-sm-12 col-md-4">
+                                <div class="card" style="width: 18rem;">
+                                    <div class="card-body">
+                                        <h6 class="card-subtitle mb-2 text-body-secondary">SALA DE ATENDIMENTO</h6>
+                                        <div class="row">
+                                            <div class="col-12 col-md-3 d-flex justify-content-end align-self-center">
+                                                <i class="bi bi-lightning-charge"></i>
+                                            </div>
+
+                                            <div class="col-12 col-md-9">
+                                                <h5 class="card-title">24h Máximo</h5>
+                                                <h6 class="card-subtitle mb-2 text-body-secondary">Chamados Críticos
+                                                </h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="fs-4 fw-bold">Locais Pertencentes ao Cliente</p>
+                        <div class="card w-75 mb-3">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-2">
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h5 class="card-title">Galpão 03</h5>
+                                        <p class="card-text">With supporting text below as a natural lead-in to
+                                            additional
+                                            content.
+                                        </p>
+                                    </div>
+
+                                    <div class="col-md-3">
+
+                                    </div>
+
+                                    <div class="col-md-3 align-self-center">
+                                        <a href="#" class="btn btn-primary">Button</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card w-75 mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.
+                                </p>
+                                <a href="#" class="btn btn-primary">Button</a>
+                            </div>
+                        </div>
+
+                        <div class="card w-75 mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.
+                                </p>
+                                <a href="#" class="btn btn-primary">Button</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="../menu-base/script.js"></script>
+</body>
+
+</html>
