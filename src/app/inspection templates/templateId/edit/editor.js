@@ -126,6 +126,10 @@ function saveDraft() {
 }
 
 document.getElementById("saveDraft").addEventListener("click", saveDraft);
+document.getElementById("goBack").addEventListener("click", () => {
+  if (window.history.length > 1) window.history.back();
+  else window.location.href = "../../index.html";
+});
 document.getElementById("publishModel").addEventListener("click", () => {
   if (!modelNameField.value.trim()) {
     modelNameField.focus();
@@ -137,6 +141,51 @@ document.getElementById("publishModel").addEventListener("click", () => {
   }
 });
 
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, (character) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;",
+  })[character]);
+}
+
+function loadStandardDraft(draft) {
+  if (!draft || !Array.isArray(draft.sections)) return false;
+
+  modelNameField.value = draft.name || modelNameField.value;
+  document.getElementById("assetCategory").value = draft.category || document.getElementById("assetCategory").value;
+  document.getElementById("procedureDescription").value = draft.description || "";
+  document.getElementById("modelCode").textContent = `MOD-${String(draft.code || "NR").replace(/[^a-z0-9]/gi, "").toUpperCase()}-2026`;
+
+  const actions = document.querySelector(".editor-add-actions");
+  document.querySelectorAll(".checklist-section").forEach((section) => section.remove());
+  draft.sections.forEach((data, index) => {
+    const title = escapeHtml(data.title || `Seção ${index + 1}`);
+    const section = document.createElement("section");
+    section.className = "checklist-section mb-3";
+    section.dataset.section = `norma-${index + 1}`;
+    section.innerHTML = `<header class="section-heading d-flex align-items-center justify-content-between gap-2"><div class="d-flex align-items-center gap-2"><i class="bi bi-grip-vertical text-secondary"></i><h2 class="h6 fw-bold mb-0">${index + 1}. ${title}</h2><span class="badge section-count">${data.items.length} Itens</span></div><div class="d-flex gap-1"><button class="btn btn-sm btn-link text-secondary section-duplicate" type="button" title="Duplicar seção" aria-label="Duplicar seção"><i class="bi bi-files"></i></button><button class="btn btn-sm btn-link text-secondary section-delete" type="button" title="Excluir seção" aria-label="Excluir seção"><i class="bi bi-trash"></i></button></div></header><div class="section-items">${data.items.map((item) => `<article class="checklist-item"><span class="drag-handle"><i class="bi bi-grip-vertical"></i></span><div class="item-copy"><div class="item-label">${escapeHtml(item.title)} <span class="badge required-badge">Obrigatório</span></div><p>${escapeHtml(item.description || "Verifique e registre a condição observada.")}</p></div><div class="item-options"><span class="badge option-badge"><i class="bi bi-list-check"></i> ${escapeHtml(item.answer || "Conforme / Não conforme")}</span><span class="badge preview-badge">Base ${escapeHtml(draft.code || "NR")}</span></div><button class="btn btn-sm btn-link text-secondary item-settings" type="button" aria-label="Configurar ${escapeHtml(item.title)}" data-bs-toggle="modal" data-bs-target="#settingsModal"><i class="bi bi-gear"></i></button></article>`).join("")}<button class="add-item-link" type="button"><i class="bi bi-plus-lg"></i> Adicionar item nesta seção</button></div>`;
+    actions.before(section);
+  });
+  newSectionNumber = draft.sections.length + 1;
+  document.querySelectorAll(".checklist-section").forEach(updateSectionCount);
+  return true;
+}
+
+let importedStandardDraft = null;
+try {
+  importedStandardDraft = JSON.parse(localStorage.getItem("opsInspectionTemplateFromStandard") || "null");
+} catch (error) {
+  // Ignore invalid or unavailable local storage data.
+}
+const hasImportedStandardDraft = loadStandardDraft(importedStandardDraft);
+if (hasImportedStandardDraft) {
+  localStorage.removeItem("opsInspectionTemplateFromStandard");
+  notify(`Estrutura inicial ${importedStandardDraft.code} carregada para personalização.`);
+}
+
 const modelNames = {
   compressor: "Preventiva de Compressor",
   eletrica: "Segurança Elétrica",
@@ -147,7 +196,7 @@ if (modelNames[modelKey]) modelNameField.value = modelNames[modelKey];
 
 try {
   const savedDraft = JSON.parse(localStorage.getItem("opsInspectionTemplateDraft") || "null");
-  if (savedDraft) {
+  if (savedDraft && !hasImportedStandardDraft) {
     modelNameField.value = savedDraft.name || modelNameField.value;
     document.getElementById("assetCategory").value = savedDraft.category || document.getElementById("assetCategory").value;
     document.getElementById("procedureDescription").value = savedDraft.description || "";
