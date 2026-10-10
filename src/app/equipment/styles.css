@@ -1,0 +1,130 @@
+main {
+    color: #172b4d;
+    background-color: #f5f7ff !important;
+    min-height: calc(100vh - 70px);
+}
+
+
+main h2 {
+    color: #172b4d;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+}
+
+main p {
+    font-size: 0.9rem;
+}
+
+
+main .card {
+    border: 1px solid #e5eaf5 !important;
+    border-radius: 8px;
+    background-color: #ffffff;
+    transition: box-shadow 0.2s ease;
+}
+
+main .card:hover {
+    box-shadow: 0 4px 14px rgba(24, 54, 100, 0.08) !important;
+}
+
+main .card-body {
+    padding: 1rem;
+}
+
+
+main .card small {
+    font-size: 0.7rem;
+    letter-spacing: 0.2px;
+}
+
+
+main .table {
+    margin-bottom: 0.75rem;
+    font-size: 0.8rem;
+}
+
+main .table thead th {
+    padding: 0.75rem 0.5rem;
+    background-color: #f8faff;
+    color: #65728a;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    white-space: nowrap;
+    border-bottom: 1px solid #e5eaf5;
+}
+
+main .table tbody td {
+    padding: 0.9rem 0.5rem;
+    border-color: #edf0f7;
+}
+
+main .table tbody tr {
+    cursor: pointer;
+}
+
+main .table tbody tr:hover > * {
+    background-color: #f0f5ff;
+}
+
+
+main .btn-primary {
+    background-color: #2463eb;
+    border-color: #2463eb;
+}
+
+main .btn-primary:hover {
+    background-color: #174fc5;
+    border-color: #174fc5;
+}
+
+main .btn-sm {
+    font-size: 0.78rem;
+}
+
+
+main .form-control,
+main .form-select {
+    border-color: #dce4f2;
+    font-size: 0.8rem;
+}
+
+main .form-control:focus,
+main .form-select:focus {
+    border-color: #2463eb;
+    box-shadow: 0 0 0 0.2rem rgba(36, 99, 235, 0.12);
+}
+
+
+main .badge {
+    font-weight: 500;
+    padding: 0.4rem 0.55rem;
+}
+
+
+main .bg-body-tertiary {
+    background-color: #f5f7fc !important;
+}
+
+main hr {
+    border-color: #dfe6f1;
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 1rem !important;
+    }
+
+    main .card-body {
+        padding: 0.85rem;
+    }
+
+    main h2 {
+        font-size: 1.25rem;
+    }
+
+    main .table {
+        min-width: 440px;
+    }
+}
