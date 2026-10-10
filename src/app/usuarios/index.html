@@ -300,10 +300,10 @@
           class="flex-grow-1 p-3 p-lg-4"
           style="background: var(--bg); height: auto"
         >
-          <div
-            class="d-flex flex-row card border-0 rounded-3 shadow-sm p-3 p-lg-4"
+          <section
+            class="d-flex flex-column flex-md-row card border-0 rounded-3 shadow-sm p-3 p-lg-4"
           >
-            <div class="col-7">
+            <div class="col-12 col-md-7">
               <div class="d-flex align-items-center">
                 <div class="alert alert-subtitle" role="alert">
                   Módulo de Controle Corporativo
@@ -322,11 +322,11 @@
               </p>
             </div>
             <div
-              class="col-5 d-flex justify-content-center align-items-center gap-2"
+              class="col-12 col-md-5 d-flex justify-content-start justify-content-md-center align-items-center gap-2 mt-3 mt-md-0"
             >
               <button
                 type="button"
-                class="btn btn-outline-secondary btn text-body d-none d-md-inline-flex align-items-center gap-2"
+                class="btn btn-outline-secondary btn text-body d-inline-flex align-items-center gap-2 flex-shrink-0"
                 title="Exportar Relatório"
               >
                 <i class="bi bi-download"></i
@@ -334,7 +334,7 @@
               </button>
               <button
                 type="button"
-                class="btn btn-primary btn d-inline-flex align-items-center gap-2"
+                class="btn btn-primary btn d-inline-flex align-items-center gap-2 flex-shrink-0"
                 style="padding: 0rem 0.5rem"
                 title="Novo Usuário"
               >
@@ -342,9 +342,9 @@
                 ><span class="d-none d-sm-inline">+ Novo Usuário</span>
               </button>
             </div>
-          </div>
+          </section>
 
-          <div class="row g-3 mb-4 mt-2">
+          <section class="row g-3 mb-4 mt-2">
             <div class="col-12 col-sm-6 col-xl-3">
               <div class="card shadow-sm border-0 rounded-3 h-100">
                 <div
@@ -424,9 +424,9 @@
                 </div>
               </div>
             </div>
-          </div>
+          </section>
 
-          <div class="card shadow-sm rounded-3 border-0 overflow-hidden">
+          <section class="card shadow-sm rounded-3 border-0 overflow-hidden">
             <div
               class="card-header bg-white d-flex flex-wrap align-items-center justify-content-between gap-3 px-4 py-3"
             >
@@ -674,7 +674,387 @@
                 <button class="btn btn-sm bg-white border">Próximo</button>
               </nav>
             </div>
-          </div>
+          </section>
+
+          <section class="card shadow-sm rounded-3 border-0 overflow-hidden au-panel mt-4">
+            <div
+              class="d-flex flex-wrap align-items-start justify-content-between gap-3 px-4 pt-4 pb-3"
+            >
+              <div class="d-flex gap-3">
+                <span
+                  class="au-icon rounded-2 d-inline-flex align-items-center justify-content-center fs-5 flex-shrink-0"
+                  ><i class="bi bi-shield-fill-check"></i
+                ></span>
+                <div class="lh-sm">
+                  <div class="d-flex flex-wrap align-items-center gap-2 mb-1">
+                    <h2 class="fs-6 fw-semibold mb-0">
+                      Painel de Auditoria e Linha do Tempo
+                    </h2>
+                    <span class="au-tag au-green">Trilha Audit-Grade</span>
+                  </div>
+                  <small class="text-body-secondary"
+                    >Rastreabilidade integral de eventos, aprovações e ciclo de
+                    vida das inspeções técnicas.</small
+                  >
+                </div>
+              </div>
+              <div class="d-flex align-items-center gap-3">
+                <small class="text-body-secondary fw-medium"
+                  >Ledger: SHA-256 Validated</small
+                >
+                <button type="button" class="btn btn-sm au-btn">
+                  <i class="bi bi-arrow-clockwise me-1"></i>Atualizar Trilha
+                </button>
+              </div>
+            </div>
+
+            <div class="px-4 pb-4">
+              <div class="row g-3">
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <label class="au-label d-block mb-1" for="fUsuario"
+                    >Filtrar por usuário</label
+                  >
+                  <div class="input-group input-group-sm">
+                    <span
+                      class="input-group-text bg-body-tertiary text-body-secondary border-end-0"
+                      ><i class="bi bi-person"></i
+                    ></span>
+                    <select
+                      id="fUsuario"
+                      class="form-select bg-body-tertiary border-start-0 ps-0"
+                    >
+                      <option>Todos os Usuários</option>
+                      <option>Mariana Souza</option>
+                      <option>Carlos Mendes</option>
+                      <option>Rafael Oliveira</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <label class="au-label d-block mb-1" for="fAcao"
+                    >Tipo de ação</label
+                  >
+                  <div class="input-group input-group-sm">
+                    <span
+                      class="input-group-text bg-body-tertiary text-body-secondary border-end-0"
+                      ><i class="bi bi-lightning"></i
+                    ></span>
+                    <select
+                      id="fAcao"
+                      class="form-select bg-body-tertiary border-start-0 ps-0"
+                    >
+                      <option>Todas as Ações</option>
+                      <option>Aprovação Técnica</option>
+                      <option>Envio de Laudo</option>
+                      <option>Início em Campo</option>
+                      <option>Atribuição de Ordem</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <label class="au-label d-block mb-1" for="fPeriodo"
+                    >Período / Data</label
+                  >
+                  <div class="input-group input-group-sm">
+                    <span
+                      class="input-group-text bg-body-tertiary text-body-secondary border-end-0"
+                      ><i class="bi bi-calendar3"></i
+                    ></span>
+                    <select
+                      id="fPeriodo"
+                      class="form-select bg-body-tertiary border-start-0 ps-0"
+                    >
+                      <option>Hoje (Últimas 24h)</option>
+                      <option>Ontem</option>
+                      <option>Últimos 7 dias</option>
+                      <option>Últimos 30 dias</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <label class="au-label d-block mb-1" for="fEntidade"
+                    >Entidade / Registro</label
+                  >
+                  <div class="input-group input-group-sm">
+                    <span
+                      class="input-group-text bg-body-tertiary text-body-secondary border-end-0"
+                      ><i class="bi bi-diagram-3"></i
+                    ></span>
+                    <input
+                      id="fEntidade"
+                      type="text"
+                      class="form-control bg-body-tertiary border-start-0 ps-0"
+                      value="INS-00125"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="border-top  p-4">
+              <div class="au-tl d-flex flex-column gap-3">
+                <div class="d-flex gap-3">
+                  <span
+                    class="au-dot au-dot-green rounded-circle text-white d-inline-flex align-items-center justify-content-center mt-2"
+                    ><i class="bi bi-check-lg"></i
+                  ></span>
+                  <article class="card shadow-sm flex-grow-1">
+                    <div class="card-body p-3">
+                      <div
+                        class="d-flex flex-wrap align-items-center justify-content-between gap-2"
+                      >
+                        <div class="d-flex flex-wrap align-items-center gap-2">
+                          <span class="au-tag au-green">Aprovação Técnica</span>
+                          <span class="fw-semibold"
+                            >Mariana aprovou a inspeção INS-00125</span
+                          >
+                        </div>
+                        <small class="text-body-secondary text-nowrap"
+                          ><i class="bi bi-clock me-1"></i>Hoje - 14:32</small
+                        >
+                      </div>
+                      <p class="text-body-secondary mt-2 mb-3">
+                        Parecer de conformidade concluído sem apontamentos
+                        impeditivos. Checklist verificado de acordo com a norma
+                        regulamentadora NR-12. Liberação de operação concedida.
+                      </p>
+                      <div
+                        class="border-top pt-2 d-flex flex-wrap align-items-center justify-content-between gap-2 small"
+                      >
+                        <div
+                          class="d-flex flex-wrap align-items-center column-gap-2"
+                        >
+                          <span
+                            ><span class="text-body-secondary">Operador:</span>
+                            <b>Mariana Souza (Supervisora)</b></span
+                          >
+                          <span class="text-body-secondary">•</span>
+                          <span
+                            ><span class="text-body-secondary">Entidade:</span>
+                            <a href="#" class="fw-bold">INS-00125</a></span
+                          >
+                        </div>
+                        <span class="text-body-secondary"
+                          ><i class="bi bi-fingerprint me-1"></i>Hash:
+                          9f8a...4b12c</span
+                        >
+                      </div>
+                    </div>
+                  </article>
+                </div>
+                <div class="d-flex gap-3">
+                  <span
+                    class="au-dot au-dot-blue rounded-circle text-white d-inline-flex align-items-center justify-content-center mt-2"
+                    ><i class="bi bi-send"></i
+                  ></span>
+                  <article class="card shadow-sm flex-grow-1">
+                    <div class="card-body p-3">
+                      <div
+                        class="d-flex flex-wrap align-items-center justify-content-between gap-2"
+                      >
+                        <div class="d-flex flex-wrap align-items-center gap-2">
+                          <span class="au-tag au-blue">Envio de Laudo</span>
+                          <span class="fw-semibold"
+                            >Carlos enviou a inspeção INS-00125</span
+                          >
+                        </div>
+                        <small class="text-body-secondary text-nowrap"
+                          ><i class="bi bi-clock me-1"></i>Hoje - 14:20</small
+                        >
+                      </div>
+                      <p class="text-body-secondary mt-2 mb-3">
+                        Relatório de campo transmitido com 48 pontos
+                        inspecionados, 3 registros fotográficos com
+                        geolocalização e medição de pressão pneumática
+                        sincronizada.
+                      </p>
+                      <div
+                        class="border-top pt-2 d-flex flex-wrap align-items-center justify-content-between gap-2 small"
+                      >
+                        <div
+                          class="d-flex flex-wrap align-items-center column-gap-2"
+                        >
+                          <span
+                            ><span class="text-body-secondary">Operador:</span>
+                            <b>Carlos Mendes (Técnico)</b></span
+                          >
+                          <span class="text-body-secondary">•</span>
+                          <span
+                            ><span class="text-body-secondary"
+                              >Dispositivo:</span
+                            >
+                            <b>Samsung Galaxy Active 4G</b></span
+                          >
+                        </div>
+                        <span class="text-body-secondary"
+                          ><i class="bi bi-geo-alt me-1"></i>-23.5505,
+                          -46.6333</span
+                        >
+                      </div>
+                    </div>
+                  </article>
+                </div>
+                <div class="d-flex gap-3">
+                  <span
+                    class="au-dot au-dot-dark rounded-circle text-white d-inline-flex align-items-center justify-content-center mt-2"
+                    ><i class="bi bi-play-fill"></i
+                  ></span>
+                  <article class="card shadow-sm flex-grow-1">
+                    <div class="card-body p-3">
+                      <div
+                        class="d-flex flex-wrap align-items-center justify-content-between gap-2"
+                      >
+                        <div class="d-flex flex-wrap align-items-center gap-2">
+                          <span class="au-tag au-blue">Início em Campo</span>
+                          <span class="fw-semibold"
+                            >Carlos iniciou a inspeção INS-00125</span
+                          >
+                        </div>
+                        <small class="text-body-secondary text-nowrap"
+                          ><i class="bi bi-clock me-1"></i>Hoje - 10:15</small
+                        >
+                      </div>
+                      <p class="text-body-secondary mt-2 mb-3">
+                        Check-in presencial validado via leitura de tag RFID do
+                        Gerador Principal G-02 na Unidade Operacional Norte.
+                      </p>
+                      <div
+                        class="border-top pt-2 d-flex flex-wrap align-items-center justify-content-between gap-2 small"
+                      >
+                        <div
+                          class="d-flex flex-wrap align-items-center column-gap-2"
+                        >
+                          <span
+                            ><span class="text-body-secondary">Operador:</span>
+                            <b>Carlos Mendes (Técnico)</b></span
+                          >
+                          <span class="text-body-secondary">•</span>
+                          <span
+                            ><span class="text-body-secondary"
+                              >Equipamento:</span
+                            >
+                            <b>EQP-GER-02</b></span
+                          >
+                        </div>
+                        <span class="text-body-secondary"
+                          ><i class="bi bi-upc-scan me-1"></i>Tag ID:
+                          4A-88-2F</span
+                        >
+                      </div>
+                    </div>
+                  </article>
+                </div>
+                <div class="d-flex gap-3">
+                  <span
+                    class="au-dot au-dot-purple rounded-circle text-white d-inline-flex align-items-center justify-content-center mt-2"
+                    ><i class="bi bi-briefcase"></i
+                  ></span>
+                  <article class="card shadow-sm flex-grow-1">
+                    <div class="card-body p-3">
+                      <div
+                        class="d-flex flex-wrap align-items-center justify-content-between gap-2"
+                      >
+                        <div class="d-flex flex-wrap align-items-center gap-2">
+                          <span class="au-tag au-purple"
+                            >Atribuição de Ordem</span
+                          >
+                          <span class="fw-semibold"
+                            >Mariana atribuiu a inspeção ao técnico Carlos</span
+                          >
+                        </div>
+                        <small class="text-body-secondary text-nowrap"
+                          ><i class="bi bi-clock me-1"></i>Ontem - 16:40</small
+                        >
+                      </div>
+                      <p class="text-body-secondary mt-2 mb-3">
+                        Ordem de serviço gerada com prioridade ALTA. SLA
+                        estipulado de 24 horas para conclusão e relatório
+                        fotográfico de segurança.
+                      </p>
+                      <div
+                        class="border-top pt-2 d-flex flex-wrap align-items-center justify-content-between gap-2 small"
+                      >
+                        <div
+                          class="d-flex flex-wrap align-items-center column-gap-2"
+                        >
+                          <span
+                            ><span class="text-body-secondary"
+                              >Atribuído por:</span
+                            >
+                            <b>Mariana Souza (Supervisora)</b></span
+                          >
+                          <span class="text-body-secondary">•</span>
+                          <span
+                            ><span class="text-body-secondary"
+                              >Responsável Designado:</span
+                            >
+                            <b>Carlos Mendes</b></span
+                          >
+                        </div>
+                        <span class="text-body-secondary"
+                          ><i class="bi bi-lock me-1"></i>Contrato:
+                          CTR-2024-SP</span
+                        >
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+
+            <div class="border-top bg-body-tertiary p-4">
+              <div class="card shadow-sm">
+                <div class="card-body p-3">
+                  <div
+                    class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3"
+                  >
+                    <h3 class="fs-6 fw-semibold mb-0">
+                      <i class="bi bi-shield-check text-primary me-2"></i
+                      >Certificado de Autenticidade da Trilha
+                    </h3>
+                    <span class="au-tag au-green">Criptografado</span>
+                  </div>
+                  <div class="row g-2 mb-3">
+                    <div class="col-12 col-md-4">
+                      <div class="au-box rounded-2 px-3 py-2 h-100">
+                        <div class="au-label">Timestamp do servidor</div>
+                        <div class="fw-semibold">2025-05-18T14:35:12Z</div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                      <div class="au-box rounded-2 px-3 py-2 h-100">
+                        <div class="au-label">Validação de assinatura</div>
+                        <div class="fw-semibold text-success">
+                          RSA-4096 Válido
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                      <div class="au-box rounded-2 px-3 py-2 h-100">
+                        <div class="au-label">Auditor chefe</div>
+                        <div class="fw-semibold">Rafael Oliveira</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="border-top pt-3 d-flex flex-wrap align-items-center justify-content-between gap-3"
+                  >
+                    <small class="text-body-secondary col-12 col-md"
+                      >Esta trilha é imutável e atende aos requisitos de
+                      auditoria operacional do setor industrial e conformidade
+                      legal.</small
+                    >
+                    <button
+                      type="button"
+                      class="btn btn-sm au-btn flex-shrink-0"
+                    >
+                      Emitir Certificado PDF
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
         </main>
       </div>
     </div>
