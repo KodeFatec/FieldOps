@@ -1,0 +1,1614 @@
+<!doctype html>
+<html lang="pt-BR" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OPS – Inspeções Técnicas</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./../menu-base/styles.css" />
+    <link rel="stylesheet" href="./../../../styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body class="">
+    <div class="d-lg-flex min-vh-100">
+      <nav class="d-lg-flex">
+        <div
+          class="offcanvas-lg offcanvas-start flex-grow-0"
+          tabindex="-1"
+          id="sidebar"
+          aria-label="Menu principal"
+        >
+          <div class="offcanvas-header d-lg-none">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              data-bs-target="#sidebar"
+              aria-label="Fechar"
+            ></button>
+          </div>
+
+          <div class="offcanvas-body p-0">
+            <div
+              class="sb-card d-flex flex-column p-3 border-end border-secondary-subtle"
+              id="sbCard"
+            >
+              <button
+                class="sb-toggle btn btn-primary rounded-circle border-0 p-0 d-none d-lg-flex align-items-center justify-content-center"
+                id="sbToggle"
+                type="button"
+                aria-label="Recolher menu"
+                aria-expanded="true"
+              >
+                <i class="bi bi-chevron-left small"></i>
+              </button>
+
+              <a
+                href="#"
+                class="d-flex align-items-center gap-2 text-decoration-none mb-3 justify-content-center justify-content-lg-start sb-user"
+              >
+                <span
+                  class="sb-logo rounded-2 d-inline-flex align-items-center justify-content-center text-white"
+                >
+                  <i class="bi bi-clipboard-check"></i>
+                </span>
+                <span class="sb-label lh-1">
+                  <span class="d-block fw-bold text-primary">OPS</span>
+                  <small class="text-secondary" style="font-size: 0.6rem"
+                    >Inspeções Técnicas</small
+                  >
+                </span>
+              </a>
+
+              <div
+                class="sb-unit rounded-2 border border-secondary-subtle px-2 py-2 mb-3 d-flex align-items-center gap-2 small"
+                title="Unidade Alpha 01 · SaaS v2.4"
+              >
+                <span class="badge rounded-circle bg-success p-1"
+                  ><span class="visually-hidden">Online</span></span
+                >
+                <span
+                  class="sb-label fw-semibold text-uppercase text-white-50 text-truncate"
+                  >Unidade Alpha 01</span
+                >
+                <span
+                  class="sb-label badge text-bg-primary bg-opacity-25 ms-auto"
+                  >SaaS v2.4</span
+                >
+              </div>
+
+              <nav class="flex-grow-1 overflow-y-auto overflow-x-hidden">
+                <ul class="nav flex-column gap-1">
+                  <li>
+                    <a
+                      class="sb-item nav-link active rounded-2 d-flex align-items-center gap-2 position-relative"
+                      href="#"
+                      title="Dashboard"
+                      aria-current="page"
+                      ><i class="bi bi-grid-1x2 fs-6"></i
+                      ><span class="sb-label">Dashboard</span></a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative"
+                      href="#"
+                      title="Usuários"
+                      ><i class="bi bi-people fs-6"></i
+                      ><span class="sb-label">Usuários</span></a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative"
+                      href="#"
+                      title="Clientes"
+                      ><i class="bi bi-buildings fs-6"></i
+                      ><span class="sb-label">Clientes</span></a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative"
+                      href="#"
+                      title="Locais"
+                      ><i class="bi bi-geo-alt fs-6"></i
+                      ><span class="sb-label">Locais</span></a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative"
+                      href="#"
+                      title="Equipamentos"
+                      ><i class="bi bi-broadcast-pin fs-6"></i
+                      ><span class="sb-label">Equipamentos</span></a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative"
+                      href="#"
+                      title="Modelos de Inspeção"
+                      ><i class="bi bi-clipboard-data fs-6"></i
+                      ><span class="sb-label">Modelos de Inspeção</span></a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative"
+                      href="#"
+                      title="Inspeções (18)"
+                    >
+                      <i class="bi bi-image fs-6"></i
+                      ><span class="sb-label">Inspeções</span>
+                      <span
+                        class="sb-badge badge rounded-pill text-bg-primary ms-auto"
+                        >18</span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative"
+                      href="#"
+                      title="Não Conformidades (4)"
+                    >
+                      <i class="bi bi-exclamation-triangle fs-6"></i
+                      ><span class="sb-label">Não Conformidades</span>
+                      <span
+                        class="sb-badge badge rounded-pill text-bg-danger ms-auto"
+                        >4</span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative"
+                      href="#"
+                      title="Auditoria"
+                      ><i class="bi bi-shield-check fs-6"></i
+                      ><span class="sb-label">Auditoria</span></a
+                    >
+                  </li>
+                </ul>
+              </nav>
+
+              <div class="pt-3 mt-3 border-top border-secondary-subtle">
+                <div
+                  class="sb-user d-flex align-items-center gap-2 mb-2 px-2"
+                  title="Mariana Souza · Supervisora Geral"
+                >
+                  <i class="bi bi-person-circle fs-5 text-white-50"></i>
+                  <div class="sb-label lh-sm">
+                    <div class="fw-semibold small text-white">
+                      Mariana Souza
+                    </div>
+                    <small class="text-secondary">Supervisora Geral</small>
+                  </div>
+                </div>
+                <a
+                  href="#"
+                  class="sb-item nav-link rounded-2 d-flex align-items-center gap-2"
+                  title="Sair"
+                >
+                  <i class="bi bi-box-arrow-left fs-6"></i
+                  ><span class="sb-label">Sair</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div
+        class="tb-col flex-grow-1 d-flex flex-column bg-body-tertiary text-body"
+        data-bs-theme="light"
+      >
+        <header
+          class="navbar bg-body border-bottom sticky-top flex-nowrap gap-2 gap-md-3 px-3 py-2"
+        >
+          <button
+            class="btn btn-outline-secondary d-lg-none"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#sidebar"
+            aria-controls="sidebar"
+            aria-label="Abrir menu"
+          >
+            <i class="bi bi-list fs-5"></i>
+          </button>
+
+          <div class="input-group tb-search flex-grow-1" role="search">
+            <span
+              class="input-group-text bg-primary-subtle border-primary-subtle text-primary-emphasis"
+              ><i class="bi bi-search"></i
+            ></span>
+            <input
+              type="search"
+              class="form-control bg-primary-subtle border-primary-subtle"
+              placeholder="Pesquisar"
+              aria-label="Pesquisar"
+            />
+          </div>
+
+          <div class="vr d-none d-xl-block"></div>
+          <nav class="nav d-none d-xl-flex" aria-label="Atalhos">
+            <a class="nav-link text-body-secondary px-2" href="#">Inspeções</a>
+            <a class="nav-link text-body-secondary px-2" href="#">Auditoria</a>
+          </nav>
+
+          <div class="ms-auto d-flex align-items-center gap-2">
+            <button
+              type="button"
+              class="btn btn-outline-secondary btn-sm text-body d-none d-md-inline-flex align-items-center gap-2"
+              title="Exportar Relatório"
+            >
+              <i class="bi bi-download"></i
+              ><span class="d-none d-xl-inline">Exportar Relatório</span>
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary btn-sm d-inline-flex align-items-center gap-2"
+              title="Nova Inspeção"
+            >
+              <i class="bi bi-plus-lg"></i
+              ><span class="d-none d-sm-inline">Nova Inspeção</span>
+            </button>
+
+            <button
+              type="button"
+              class="btn btn-link text-decoration-none text-body-secondary position-relative p-1 ms-1"
+              aria-label="Notificações"
+            >
+              <i class="bi bi-bell fs-5"></i>
+              <span
+                class="position-absolute top-0 end-0 mt-1 me-1 p-1 bg-danger border border-light rounded-circle"
+                ><span class="visually-hidden">Novas notificações</span></span
+              >
+            </button>
+            <button
+              type="button"
+              class="btn btn-link text-decoration-none text-body-secondary p-1 d-none d-sm-inline-flex"
+              aria-label="Ajuda"
+            >
+              <i class="bi bi-question-circle fs-5"></i>
+            </button>
+
+            <div class="d-flex align-items-center gap-2 ms-1">
+              <span
+                class="tb-avatar rounded-circle bg-primary text-white fw-semibold small d-inline-flex align-items-center justify-content-center"
+                >MS</span
+              >
+              <div class="d-none d-lg-block lh-sm">
+                <div class="fw-semibold small">Mariana Souza</div>
+                <small class="text-body-secondary">Supervisora</small>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <main
+          class="flex-grow-1 p-3 p-lg-4"
+          style="background: var(--bg); height: auto"
+        >
+          <section
+            class="d-flex flex-column flex-md-row card border-0 rounded-3 shadow-sm p-3 p-lg-4"
+          >
+            <div class="col-12 col-md-7">
+              <div class="d-flex align-items-center">
+                <div class="alert alert-subtitle" role="alert">
+                  Módulo de Controle Corporativo
+                </div>
+                <span
+                  class="small text-body-secondary d-flex justify-self-center align-items-center"
+                  ><i class="bi bi-circle-fill"></i> Conformidade ISO
+                  19011</span
+                >
+              </div>
+
+              <h1 class="h3 title">Gestão de Usuários & Trilha de Auditoria</h1>
+              <p class="text-body-secondary">
+                Gerenciamento de credenciais operacionais e rastreabilidade
+                imutável de ações em campo.
+              </p>
+            </div>
+            <div
+              class="col-12 col-md-5 d-flex justify-content-start justify-content-md-center align-items-center gap-2 mt-3 mt-md-0"
+            >
+              <button
+                type="button"
+                class="btn btn-outline-secondary btn text-body d-inline-flex align-items-center gap-2 flex-shrink-0"
+                title="Exportar Relatório"
+              >
+                <i class="bi bi-download"></i
+                ><span class="d-none d-xl-inline">Exportar Log</span>
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary btn d-inline-flex align-items-center gap-2 flex-shrink-0"
+                style="padding: 0rem 0.5rem"
+                title="Novo Usuário"
+                data-bs-toggle="modal"
+                data-bs-target="#modalNovoUsuario"
+              >
+                <i class="bi bi-person-fill-add" style="font-size: 1.5rem"></i
+                ><span class="d-none d-sm-inline">+ Novo Usuário</span>
+              </button>
+            </div>
+          </section>
+
+          <section class="row g-3 mb-4 mt-2">
+            <div class="col-12 col-sm-6 col-xl-3">
+              <div class="card shadow-sm border-0 rounded-3 h-100">
+                <div
+                  class="card-body d-flex align-items-center justify-content-between gap-3"
+                >
+                  <div>
+                    <div class="kpi-label mb-1">Usuários ativos</div>
+                    <div class="d-flex align-items-baseline gap-2">
+                      <span class="fs-5 fw-bold" id="kpiAtivos">24</span>
+                      <small class="text-success fw-semibold"
+                        >+2 esse mês</small
+                      >
+                    </div>
+                  </div>
+                  <span
+                    class="kpi-icon kpi-blue rounded-3 d-inline-flex align-items-center justify-content-center fs-5 flex-shrink-0"
+                    ><i class="bi bi-person-vcard"></i
+                  ></span>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-3">
+              <div class="card shadow-sm border-0 rounded-3 h-100">
+                <div
+                  class="card-body d-flex align-items-center justify-content-between gap-3"
+                >
+                  <div>
+                    <div class="kpi-label mb-1">Inspeções hoje</div>
+                    <div class="d-flex align-items-baseline gap-2">
+                      <span class="fs-5 fw-bold">18</span>
+                      <small class="text-body-secondary">/ 22 planejadas</small>
+                    </div>
+                  </div>
+                  <span
+                    class="kpi-icon kpi-blue rounded-3 d-inline-flex align-items-center justify-content-center fs-5 flex-shrink-0"
+                    ><i class="bi bi-card-checklist"></i
+                  ></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-xl-3">
+              <div class="card shadow-sm border-0 rounded-3 h-100">
+                <div
+                  class="card-body d-flex align-items-center justify-content-between gap-3"
+                >
+                  <div>
+                    <div class="kpi-label mb-1">Eventos auditados</div>
+                    <div class="d-flex align-items-baseline gap-2">
+                      <span class="fs-5 fw-bold">1.482</span>
+                      <small class="text-body-secondary">24h</small>
+                    </div>
+                  </div>
+                  <span
+                    class="kpi-icon kpi-indigo rounded-3 d-inline-flex align-items-center justify-content-center fs-5 flex-shrink-0"
+                    ><i class="bi bi-clock-history"></i
+                  ></span>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-3">
+              <div class="card shadow-sm border-0 rounded-3 h-100">
+                <div
+                  class="card-body d-flex align-items-center justify-content-between gap-3"
+                >
+                  <div>
+                    <div class="kpi-label mb-1">Integridade da trilha</div>
+                    <div class="d-flex align-items-baseline gap-2">
+                      <span class="fs-5 fw-bold text-success">100%</span>
+                      <small class="text-success fw-semibold">Validado</small>
+                    </div>
+                  </div>
+                  <span
+                    class="kpi-icon kpi-green rounded-3 d-inline-flex align-items-center justify-content-center fs-5 flex-shrink-0"
+                    ><i class="bi bi-patch-check"></i
+                  ></span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="card shadow-sm rounded-3 border-0 overflow-hidden">
+            <div
+              class="card-header bg-white d-flex flex-wrap align-items-center justify-content-between gap-3 px-4 py-3"
+            >
+              <div class="d-flex align-items-center gap-3">
+                <span
+                  class="tu-icon rounded-2 d-inline-flex align-items-center justify-content-center fs-5 flex-shrink-0"
+                  ><i class="bi bi-person-gear"></i
+                ></span>
+                <div class="lh-sm">
+                  <h2 class="h6 fw-semibold mb-1">
+                    Diretório de Usuários Operacionais
+                  </h2>
+                  <small class="text-body-secondary"
+                    >Controle de acessos, perfis técnicos e auditoria de
+                    autenticação.</small
+                  >
+                </div>
+              </div>
+              <div class="d-flex gap-2">
+                <div class="dropdown">
+                  <button
+                    class="btn btn-sm bg-white border text-body dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i class="bi bi-funnel me-2"></i>Todos os Perfis
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <a class="dropdown-item active" href="#"
+                        >Todos os Perfis</a
+                      >
+                    </li>
+                    <li><a class="dropdown-item" href="#">Técnico</a></li>
+                    <li><a class="dropdown-item" href="#">Supervisor</a></li>
+                    <li><a class="dropdown-item" href="#">Administrador</a></li>
+                  </ul>
+                </div>
+                <div class="dropdown">
+                  <button
+                    class="btn btn-sm bg-white border text-body dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Status: Todos
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item active" href="#">Todos</a></li>
+                    <li><a class="dropdown-item" href="#">Ativo</a></li>
+                    <li><a class="dropdown-item" href="#">Inativo</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="tu-table table table-hover align-middle mb-0">
+                <thead>
+                  <tr>
+                    <th class="ps-4">Usuário</th>
+                    <th class="d-none d-xl-table-cell">E-mail</th>
+                    <th>Perfil</th>
+                    <th>Status</th>
+                    <th class="d-none d-lg-table-cell">Último acesso</th>
+                    <th class="text-end pe-4">Ações</th>
+                  </tr>
+                </thead>
+                <tbody id="tabelaUsuarios">
+                  <tr data-phone="(11) 98877-1209">
+                    <td class="ps-4">
+                      <div class="d-flex align-items-center gap-3">
+                        <span
+                          class="tu-avatar tu-av-gray rounded-2 d-inline-flex align-items-center justify-content-center flex-shrink-0"
+                          >CM</span
+                        >
+                        <div class="lh-sm">
+                          <div class="fw-semibold fs-6">Carlos Mendes</div>
+                          <small class="d-xl-none d-block text-body-secondary"
+                            >carlos.mendes@fieldops.com</small
+                          >
+                          <small class="tu-mat">Mat: FO-9082</small>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="d-none d-xl-table-cell">
+                      carlos.mendes@fieldops.com
+                    </td>
+                    <td>
+                      <span class="tu-badge tu-tecnico"
+                        ><i class="bi bi-person-gear"></i>Técnico</span
+                      >
+                    </td>
+                    <td><span class="tu-badge tu-ativo">Ativo</span></td>
+                    <td class="d-none d-lg-table-cell lh-sm">
+                      <div class="fw-medium">Hoje às 14:20</div>
+                      <small class="tu-sub">Terminal Tablet #04</small>
+                    </td>
+                    <td class="text-end pe-4 text-nowrap">
+                      <button
+                        class="btn btn-sm btn-link text-secondary p-1 me-1"
+                        aria-label="Visualizar"
+                      >
+                        <i class="bi bi-eye"></i>
+                      </button>
+                      <button
+                        class="btn btn-sm btn-link text-secondary p-1 me-1"
+                        aria-label="Editar"
+                      >
+                        <i class="bi bi-pencil"></i>
+                      </button>
+                      <button
+                        class="btn btn-sm btn-link text-secondary p-1"
+                        aria-label="Bloquear acesso"
+                      >
+                        <i class="bi bi-person-slash"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr data-phone="(11) 97766-4410">
+                    <td class="ps-4">
+                      <div class="d-flex align-items-center gap-3">
+                        <span
+                          class="tu-avatar tu-av-purple rounded-2 d-inline-flex align-items-center justify-content-center flex-shrink-0"
+                          >MS</span
+                        >
+                        <div class="lh-sm">
+                          <div class="fw-semibold fs-6">Mariana Souza</div>
+                          <small class="d-xl-none d-block text-body-secondary"
+                            >mariana.souza@fieldops.com</small
+                          >
+                          <small class="tu-mat">Mat: FO-4410</small>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="d-none d-xl-table-cell">
+                      mariana.souza@fieldops.com
+                    </td>
+                    <td>
+                      <span class="tu-badge tu-supervisor"
+                        ><i class="bi bi-people"></i>Supervisor</span
+                      >
+                    </td>
+                    <td><span class="tu-badge tu-ativo">Ativo</span></td>
+                    <td class="d-none d-lg-table-cell lh-sm">
+                      <div class="fw-medium">Hoje às 14:32</div>
+                      <small class="tu-sub">Console Web Desk</small>
+                    </td>
+                    <td class="text-end pe-4 text-nowrap">
+                      <button
+                        class="btn btn-sm btn-link text-secondary p-1 me-1"
+                        aria-label="Visualizar"
+                      >
+                        <i class="bi bi-eye"></i>
+                      </button>
+                      <button
+                        class="btn btn-sm btn-link text-secondary p-1 me-1"
+                        aria-label="Editar"
+                      >
+                        <i class="bi bi-pencil"></i>
+                      </button>
+                      <button
+                        class="btn btn-sm btn-link text-secondary p-1"
+                        aria-label="Bloquear acesso"
+                      >
+                        <i class="bi bi-person-slash"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr data-phone="(11) 96655-1001">
+                    <td class="ps-4">
+                      <div class="d-flex align-items-center gap-3">
+                        <span
+                          class="tu-avatar tu-av-blue rounded-2 d-inline-flex align-items-center justify-content-center flex-shrink-0"
+                          >RO</span
+                        >
+                        <div class="lh-sm">
+                          <div class="fw-semibold fs-6">Rafael Oliveira</div>
+                          <small class="d-xl-none d-block text-body-secondary"
+                            >rafael.oliveira@fieldops.com</small
+                          >
+                          <small class="tu-mat">Mat: FO-1001</small>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="d-none d-xl-table-cell">
+                      rafael.oliveira@fieldops.com
+                    </td>
+                    <td>
+                      <span class="tu-badge tu-admin"
+                        ><i class="bi bi-shield-lock"></i>Administrador</span
+                      >
+                    </td>
+                    <td><span class="tu-badge tu-ativo">Ativo</span></td>
+                    <td class="d-none d-lg-table-cell lh-sm">
+                      <div class="fw-medium">Agora (Conectado)</div>
+                      <small class="tu-sub text-success"
+                        >IP: 192.168.1.104</small
+                      >
+                    </td>
+                    <td class="text-end pe-4 text-nowrap">
+                      <button
+                        class="btn btn-sm btn-link text-secondary p-1 me-1"
+                        aria-label="Visualizar"
+                      >
+                        <i class="bi bi-eye"></i>
+                      </button>
+                      <button
+                        class="btn btn-sm btn-link text-secondary p-1 me-1"
+                        aria-label="Editar"
+                      >
+                        <i class="bi bi-pencil"></i>
+                      </button>
+                      <button
+                        class="btn btn-sm btn-link text-secondary p-1"
+                        aria-label="Bloquear acesso"
+                        disabled
+                      >
+                        <i class="bi bi-slash-circle"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div
+              class="card-footer bg-white d-flex flex-wrap align-items-center justify-content-between gap-2 px-4 py-3"
+            >
+              <small class="text-body-secondary" id="contagemUsuarios"
+                >Exibindo 3 de 24 operadores registrados</small
+              >
+              <nav class="d-flex gap-1" aria-label="Paginação">
+                <button class="btn btn-sm btn-light border" disabled>
+                  Anterior
+                </button>
+                <button
+                  class="btn btn-sm btn-primary tu-page-active"
+                  aria-current="page"
+                >
+                  1
+                </button>
+                <button class="btn btn-sm bg-white border">2</button>
+                <button class="btn btn-sm bg-white border">Próximo</button>
+              </nav>
+            </div>
+          </section>
+
+          <section
+            class="card shadow-sm rounded-3 border-0 overflow-hidden au-panel mt-4"
+          >
+            <div
+              class="d-flex flex-wrap align-items-start justify-content-between gap-3 px-4 pt-4 pb-3"
+            >
+              <div class="d-flex gap-3">
+                <span
+                  class="au-icon rounded-2 d-inline-flex align-items-center justify-content-center fs-5 flex-shrink-0"
+                  ><i class="bi bi-shield-fill-check"></i
+                ></span>
+                <div class="lh-sm">
+                  <div class="d-flex flex-wrap align-items-center gap-2 mb-1">
+                    <h2 class="fs-6 fw-semibold mb-0">
+                      Painel de Auditoria e Linha do Tempo
+                    </h2>
+                    <span class="au-tag au-green">Trilha Audit-Grade</span>
+                  </div>
+                  <small class="text-body-secondary"
+                    >Rastreabilidade integral de eventos, aprovações e ciclo de
+                    vida das inspeções técnicas.</small
+                  >
+                </div>
+              </div>
+              <div class="d-flex align-items-center gap-3">
+                <small class="text-body-secondary fw-medium"
+                  >Ledger: SHA-256 Validated</small
+                >
+                <button type="button" class="btn btn-sm au-btn">
+                  <i class="bi bi-arrow-clockwise me-1"></i>Atualizar Trilha
+                </button>
+              </div>
+            </div>
+
+            <div class="px-4 pb-4">
+              <div class="row g-3">
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <label class="au-label d-block mb-1" for="fUsuario"
+                    >Filtrar por usuário</label
+                  >
+                  <div class="input-group input-group-sm">
+                    <span
+                      class="input-group-text bg-body-tertiary text-body-secondary border-end-0"
+                      ><i class="bi bi-person"></i
+                    ></span>
+                    <select
+                      id="fUsuario"
+                      class="form-select bg-body-tertiary border-start-0 ps-0"
+                    >
+                      <option>Todos os Usuários</option>
+                      <option>Mariana Souza</option>
+                      <option>Carlos Mendes</option>
+                      <option>Rafael Oliveira</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <label class="au-label d-block mb-1" for="fAcao"
+                    >Tipo de ação</label
+                  >
+                  <div class="input-group input-group-sm">
+                    <span
+                      class="input-group-text bg-body-tertiary text-body-secondary border-end-0"
+                      ><i class="bi bi-lightning"></i
+                    ></span>
+                    <select
+                      id="fAcao"
+                      class="form-select bg-body-tertiary border-start-0 ps-0"
+                    >
+                      <option>Todas as Ações</option>
+                      <option>Aprovação Técnica</option>
+                      <option>Envio de Laudo</option>
+                      <option>Início em Campo</option>
+                      <option>Atribuição de Ordem</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <label class="au-label d-block mb-1" for="fPeriodo"
+                    >Período / Data</label
+                  >
+                  <div class="input-group input-group-sm">
+                    <span
+                      class="input-group-text bg-body-tertiary text-body-secondary border-end-0"
+                      ><i class="bi bi-calendar3"></i
+                    ></span>
+                    <select
+                      id="fPeriodo"
+                      class="form-select bg-body-tertiary border-start-0 ps-0"
+                    >
+                      <option>Hoje (Últimas 24h)</option>
+                      <option>Ontem</option>
+                      <option>Últimos 7 dias</option>
+                      <option>Últimos 30 dias</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <label class="au-label d-block mb-1" for="fEntidade"
+                    >Entidade / Registro</label
+                  >
+                  <div class="input-group input-group-sm">
+                    <span
+                      class="input-group-text bg-body-tertiary text-body-secondary border-end-0"
+                      ><i class="bi bi-diagram-3"></i
+                    ></span>
+                    <input
+                      id="fEntidade"
+                      type="text"
+                      class="form-control bg-body-tertiary border-start-0 ps-0"
+                      value="INS-00125"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="border-top p-4">
+              <div class="au-tl d-flex flex-column gap-3">
+                <div class="d-flex gap-3">
+                  <span
+                    class="au-dot au-dot-green rounded-circle text-white d-inline-flex align-items-center justify-content-center mt-2"
+                    ><i class="bi bi-check-lg"></i
+                  ></span>
+                  <article class="card shadow-sm flex-grow-1">
+                    <div class="card-body p-3">
+                      <div
+                        class="d-flex flex-wrap align-items-center justify-content-between gap-2"
+                      >
+                        <div class="d-flex flex-wrap align-items-center gap-2">
+                          <span class="au-tag au-green">Aprovação Técnica</span>
+                          <span class="fw-semibold"
+                            >Mariana aprovou a inspeção INS-00125</span
+                          >
+                        </div>
+                        <small class="text-body-secondary text-nowrap"
+                          ><i class="bi bi-clock me-1"></i>Hoje - 14:32</small
+                        >
+                      </div>
+                      <p class="text-body-secondary mt-2 mb-3">
+                        Parecer de conformidade concluído sem apontamentos
+                        impeditivos. Checklist verificado de acordo com a norma
+                        regulamentadora NR-12. Liberação de operação concedida.
+                      </p>
+                      <div
+                        class="border-top pt-2 d-flex flex-wrap align-items-center justify-content-between gap-2 small"
+                      >
+                        <div
+                          class="d-flex flex-wrap align-items-center column-gap-2"
+                        >
+                          <span
+                            ><span class="text-body-secondary">Operador:</span>
+                            <b>Mariana Souza (Supervisora)</b></span
+                          >
+                          <span class="text-body-secondary">•</span>
+                          <span
+                            ><span class="text-body-secondary">Entidade:</span>
+                            <a href="#" class="fw-bold">INS-00125</a></span
+                          >
+                        </div>
+                        <span class="text-body-secondary"
+                          ><i class="bi bi-fingerprint me-1"></i>Hash:
+                          9f8a...4b12c</span
+                        >
+                      </div>
+                    </div>
+                  </article>
+                </div>
+                <div class="d-flex gap-3">
+                  <span
+                    class="au-dot au-dot-blue rounded-circle text-white d-inline-flex align-items-center justify-content-center mt-2"
+                    ><i class="bi bi-send"></i
+                  ></span>
+                  <article class="card shadow-sm flex-grow-1">
+                    <div class="card-body p-3">
+                      <div
+                        class="d-flex flex-wrap align-items-center justify-content-between gap-2"
+                      >
+                        <div class="d-flex flex-wrap align-items-center gap-2">
+                          <span class="au-tag au-blue">Envio de Laudo</span>
+                          <span class="fw-semibold"
+                            >Carlos enviou a inspeção INS-00125</span
+                          >
+                        </div>
+                        <small class="text-body-secondary text-nowrap"
+                          ><i class="bi bi-clock me-1"></i>Hoje - 14:20</small
+                        >
+                      </div>
+                      <p class="text-body-secondary mt-2 mb-3">
+                        Relatório de campo transmitido com 48 pontos
+                        inspecionados, 3 registros fotográficos com
+                        geolocalização e medição de pressão pneumática
+                        sincronizada.
+                      </p>
+                      <div
+                        class="border-top pt-2 d-flex flex-wrap align-items-center justify-content-between gap-2 small"
+                      >
+                        <div
+                          class="d-flex flex-wrap align-items-center column-gap-2"
+                        >
+                          <span
+                            ><span class="text-body-secondary">Operador:</span>
+                            <b>Carlos Mendes (Técnico)</b></span
+                          >
+                          <span class="text-body-secondary">•</span>
+                          <span
+                            ><span class="text-body-secondary"
+                              >Dispositivo:</span
+                            >
+                            <b>Samsung Galaxy Active 4G</b></span
+                          >
+                        </div>
+                        <span class="text-body-secondary"
+                          ><i class="bi bi-geo-alt me-1"></i>-23.5505,
+                          -46.6333</span
+                        >
+                      </div>
+                    </div>
+                  </article>
+                </div>
+                <div class="d-flex gap-3">
+                  <span
+                    class="au-dot au-dot-dark rounded-circle text-white d-inline-flex align-items-center justify-content-center mt-2"
+                    ><i class="bi bi-play-fill"></i
+                  ></span>
+                  <article class="card shadow-sm flex-grow-1">
+                    <div class="card-body p-3">
+                      <div
+                        class="d-flex flex-wrap align-items-center justify-content-between gap-2"
+                      >
+                        <div class="d-flex flex-wrap align-items-center gap-2">
+                          <span class="au-tag au-blue">Início em Campo</span>
+                          <span class="fw-semibold"
+                            >Carlos iniciou a inspeção INS-00125</span
+                          >
+                        </div>
+                        <small class="text-body-secondary text-nowrap"
+                          ><i class="bi bi-clock me-1"></i>Hoje - 10:15</small
+                        >
+                      </div>
+                      <p class="text-body-secondary mt-2 mb-3">
+                        Check-in presencial validado via leitura de tag RFID do
+                        Gerador Principal G-02 na Unidade Operacional Norte.
+                      </p>
+                      <div
+                        class="border-top pt-2 d-flex flex-wrap align-items-center justify-content-between gap-2 small"
+                      >
+                        <div
+                          class="d-flex flex-wrap align-items-center column-gap-2"
+                        >
+                          <span
+                            ><span class="text-body-secondary">Operador:</span>
+                            <b>Carlos Mendes (Técnico)</b></span
+                          >
+                          <span class="text-body-secondary">•</span>
+                          <span
+                            ><span class="text-body-secondary"
+                              >Equipamento:</span
+                            >
+                            <b>EQP-GER-02</b></span
+                          >
+                        </div>
+                        <span class="text-body-secondary"
+                          ><i class="bi bi-upc-scan me-1"></i>Tag ID:
+                          4A-88-2F</span
+                        >
+                      </div>
+                    </div>
+                  </article>
+                </div>
+                <div class="d-flex gap-3">
+                  <span
+                    class="au-dot au-dot-purple rounded-circle text-white d-inline-flex align-items-center justify-content-center mt-2"
+                    ><i class="bi bi-briefcase"></i
+                  ></span>
+                  <article class="card shadow-sm flex-grow-1">
+                    <div class="card-body p-3">
+                      <div
+                        class="d-flex flex-wrap align-items-center justify-content-between gap-2"
+                      >
+                        <div class="d-flex flex-wrap align-items-center gap-2">
+                          <span class="au-tag au-purple"
+                            >Atribuição de Ordem</span
+                          >
+                          <span class="fw-semibold"
+                            >Mariana atribuiu a inspeção ao técnico Carlos</span
+                          >
+                        </div>
+                        <small class="text-body-secondary text-nowrap"
+                          ><i class="bi bi-clock me-1"></i>Ontem - 16:40</small
+                        >
+                      </div>
+                      <p class="text-body-secondary mt-2 mb-3">
+                        Ordem de serviço gerada com prioridade ALTA. SLA
+                        estipulado de 24 horas para conclusão e relatório
+                        fotográfico de segurança.
+                      </p>
+                      <div
+                        class="border-top pt-2 d-flex flex-wrap align-items-center justify-content-between gap-2 small"
+                      >
+                        <div
+                          class="d-flex flex-wrap align-items-center column-gap-2"
+                        >
+                          <span
+                            ><span class="text-body-secondary"
+                              >Atribuído por:</span
+                            >
+                            <b>Mariana Souza (Supervisora)</b></span
+                          >
+                          <span class="text-body-secondary">•</span>
+                          <span
+                            ><span class="text-body-secondary"
+                              >Responsável Designado:</span
+                            >
+                            <b>Carlos Mendes</b></span
+                          >
+                        </div>
+                        <span class="text-body-secondary"
+                          ><i class="bi bi-lock me-1"></i>Contrato:
+                          CTR-2024-SP</span
+                        >
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+
+            <div class="border-top bg-body-tertiary p-4">
+              <div class="card shadow-sm">
+                <div class="card-body p-3">
+                  <div
+                    class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3"
+                  >
+                    <h3 class="fs-6 fw-semibold mb-0">
+                      <i class="bi bi-shield-check text-primary me-2"></i
+                      >Certificado de Autenticidade da Trilha
+                    </h3>
+                    <span class="au-tag au-green">Criptografado</span>
+                  </div>
+                  <div class="row g-2 mb-3">
+                    <div class="col-12 col-md-4">
+                      <div class="au-box rounded-2 px-3 py-2 h-100">
+                        <div class="au-label">Timestamp do servidor</div>
+                        <div class="fw-semibold">2025-05-18T14:35:12Z</div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                      <div class="au-box rounded-2 px-3 py-2 h-100">
+                        <div class="au-label">Validação de assinatura</div>
+                        <div class="fw-semibold text-success">
+                          RSA-4096 Válido
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                      <div class="au-box rounded-2 px-3 py-2 h-100">
+                        <div class="au-label">Auditor chefe</div>
+                        <div class="fw-semibold">Rafael Oliveira</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="border-top pt-3 d-flex flex-wrap align-items-center justify-content-between gap-3"
+                  >
+                    <small class="text-body-secondary col-12 col-md"
+                      >Esta trilha é imutável e atende aos requisitos de
+                      auditoria operacional do setor industrial e conformidade
+                      legal.</small
+                    >
+                    <button
+                      type="button"
+                      class="btn btn-sm au-btn flex-shrink-0"
+                    >
+                      Emitir Certificado PDF
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="modalNovoUsuario"
+      tabindex="-1"
+      aria-labelledby="modalNovoUsuarioLabel"
+      aria-hidden="true"
+      data-bs-theme="light"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg modal-fullscreen-sm-down"
+      >
+        <form
+          class="modal-content needs-validation"
+          id="formNovoUsuario"
+          novalidate
+        >
+          <div class="modal-header">
+            <div class="d-flex align-items-center gap-3">
+              <span
+                class="tu-icon rounded-2 d-inline-flex align-items-center justify-content-center fs-5 flex-shrink-0"
+                ><i class="bi bi-person-fill-add"></i
+              ></span>
+              <div class="lh-sm">
+                <h2 class="modal-title h5 mb-1" id="modalNovoUsuarioLabel">
+                  Novo Usuário
+                </h2>
+                <small class="text-body-secondary"
+                  >Cadastre um operador com acesso à plataforma FieldOps.</small
+                >
+              </div>
+            </div>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Fechar"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-12">
+                <label for="uNome" class="form-label"
+                  >Nome completo <span class="text-danger">*</span></label
+                >
+                <div class="input-group has-validation">
+                  <span class="input-group-text"
+                    ><i class="bi bi-person"></i
+                  ></span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="uNome"
+                    name="name"
+                    placeholder="Ex.: Ana Paula Ribeiro"
+                    minlength="3"
+                    autocomplete="off"
+                    required
+                  />
+                  <div class="invalid-feedback">Informe o nome completo.</div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="uEmail" class="form-label"
+                  >E-mail corporativo <span class="text-danger">*</span></label
+                >
+                <div class="input-group has-validation">
+                  <span class="input-group-text"
+                    ><i class="bi bi-envelope"></i
+                  ></span>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="uEmail"
+                    name="email"
+                    placeholder="nome.sobrenome@fieldops.com"
+                    autocomplete="off"
+                    required
+                  />
+                  <div class="invalid-feedback" id="feedbackEmail">
+                    Informe um e-mail corporativo válido.
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="uTelefone" class="form-label"
+                  >Telefone de contato
+                  <span class="text-body-secondary">(opcional)</span></label
+                >
+                <div class="input-group has-validation">
+                  <span class="input-group-text"
+                    ><i class="bi bi-telephone"></i
+                  ></span>
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="uTelefone"
+                    name="phone"
+                    placeholder="(11) 91234-5678"
+                    inputmode="tel"
+                    pattern="\(?\d{{2}}\)?\s?9?\d{{4}}-?\d{{4}}"
+                    title="Ex.: (11) 91234-5678"
+                  />
+                  <div class="invalid-feedback">
+                    Informe um telefone válido, com DDD.
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="uSenha" class="form-label"
+                  >Senha inicial <span class="text-danger">*</span></label
+                >
+                <div class="input-group has-validation">
+                  <span class="input-group-text"
+                    ><i class="bi bi-key"></i
+                  ></span>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="uSenha"
+                    name="password"
+                    placeholder="Mínimo de 6 caracteres"
+                    minlength="6"
+                    autocomplete="new-password"
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    A senha deve ter no mínimo 6 caracteres.
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="uConfirma" class="form-label"
+                  >Confirmar senha <span class="text-danger">*</span></label
+                >
+                <div class="input-group has-validation">
+                  <span class="input-group-text"
+                    ><i class="bi bi-key-fill"></i
+                  ></span>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="uConfirma"
+                    placeholder="Repita a senha"
+                    minlength="6"
+                    autocomplete="new-password"
+                    required
+                  />
+                  <div class="invalid-feedback" id="feedbackConfirma">
+                    Confirme a senha.
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div
+                  class="alert alert-warning d-flex align-items-start gap-2 small mb-0"
+                  role="alert"
+                >
+                  <i class="bi bi-exclamation-triangle-fill"></i>
+                  <div>
+                    Protótipo sem back-end: use apenas senhas de teste.
+                    <strong>Não utilize senhas reais.</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="uPerfil" class="form-label"
+                  >Perfil de acesso <span class="text-danger">*</span></label
+                >
+                <div class="input-group has-validation">
+                  <span class="input-group-text"
+                    ><i class="bi bi-person-badge"></i
+                  ></span>
+                  <select class="form-select" id="uPerfil" name="role" required>
+                    <option value="" selected disabled>
+                      Selecione o perfil
+                    </option>
+                    <option value="ADMIN">Administrador do Sistema</option>
+                    <option value="SUPERVISOR">Supervisor de Inspeções</option>
+                    <option value="TECHNICIAN">Técnico de Campo</option>
+                    <option value="CLIENT_VIEWER">
+                      Cliente (Somente Leitura)
+                    </option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Selecione o perfil de acesso.
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="uStatus" class="form-label"
+                  >Situação <span class="text-danger">*</span></label
+                >
+                <div class="input-group has-validation">
+                  <span class="input-group-text"
+                    ><i class="bi bi-toggle-on"></i
+                  ></span>
+                  <select
+                    class="form-select"
+                    id="uStatus"
+                    name="status"
+                    required
+                  >
+                    <option value="ACTIVE" selected>Ativo</option>
+                    <option value="INACTIVE">Inativo</option>
+                    <option value="BLOCKED">Bloqueado</option>
+                  </select>
+                  <div class="invalid-feedback">Selecione a situação.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer bg-body-tertiary">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button type="submit" class="btn btn-primary">
+              <i class="bi bi-check-lg me-1"></i>Salvar Usuário
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="modalVisualizarUsuario"
+      tabindex="-1"
+      aria-labelledby="modalVisualizarLabel"
+      aria-hidden="true"
+      data-bs-theme="light"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title h5" id="modalVisualizarLabel">
+              Detalhes do Usuário
+            </h2>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Fechar"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div
+              class="d-flex align-items-center gap-3 mb-3 pb-3 border-bottom"
+            >
+              <span
+                id="vAvatar"
+                class="tu-avatar rounded-2 d-inline-flex align-items-center justify-content-center flex-shrink-0"
+              ></span>
+              <div class="lh-sm">
+                <div class="fw-semibold fs-6" id="vNome"></div>
+                <small class="tu-mat" id="vMatricula"></small>
+              </div>
+            </div>
+            <dl class="row mb-0">
+              <dt class="col-sm-4 text-body-secondary fw-medium">E-mail</dt>
+              <dd class="col-sm-8 info-edit" id="vEmail"></dd>
+              <dt class="col-sm-4 text-body-secondary fw-medium">Telefone</dt>
+              <dd class="col-sm-8 info-edit" id="vTelefone"></dd>
+              <dt class="col-sm-4 text-body-secondary fw-medium">Perfil</dt>
+              <dd class="col-sm-8 info-edit" id="vPerfil"></dd>
+              <dt class="col-sm-4 text-body-secondary fw-medium">Situação</dt>
+              <dd class="col-sm-8 info-edit" id="vStatus"></dd>
+              <dt class="col-sm-4 text-body-secondary fw-medium">
+                Último acesso
+              </dt>
+              <dd class="col-sm-8 info-edit" id="vAcesso"></dd>
+            </dl>
+          </div>
+          <div class="modal-footer bg-body-tertiary">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Fechar
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="btnEditarDoVisualizar"
+            >
+              <i class="bi bi-pencil me-1"></i>Editar usuário
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="modalEditarUsuario"
+      tabindex="-1"
+      aria-labelledby="modalEditarLabel"
+      aria-hidden="true"
+      data-bs-theme="light"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg modal-fullscreen-sm-down"
+      >
+        <form
+          class="modal-content needs-validation"
+          id="formEditarUsuario"
+          novalidate
+        >
+          <div class="modal-header">
+            <div class="d-flex align-items-center gap-3">
+              <span
+                class="tu-icon rounded-2 d-inline-flex align-items-center justify-content-center fs-5 flex-shrink-0"
+                ><i class="bi bi-pencil-square"></i
+              ></span>
+              <div class="lh-sm">
+                <h2 class="modal-title h5 mb-1" id="modalEditarLabel">
+                  Editar Usuário
+                </h2>
+                <small class="text-body-secondary"
+                  >Atualize os dados de acesso do operador.</small
+                >
+              </div>
+            </div>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Fechar"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-12 col-md-8">
+                <label class="form-label" for="eNome"
+                  >Nome completo <span class="text-danger">*</span></label
+                >
+                <div class="input-group has-validation">
+                  <span class="input-group-text"
+                    ><i class="bi bi-person"></i
+                  ></span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="eNome"
+                    name="name"
+                    minlength="3"
+                    autocomplete="off"
+                    required
+                  />
+                  <div class="invalid-feedback">Informe o nome completo.</div>
+                </div>
+              </div>
+              <div class="col-12 col-md-4">
+                <label class="form-label" for="eMatricula">Matrícula</label>
+                <div class="input-group has-validation">
+                  <span class="input-group-text"
+                    ><i class="bi bi-hash"></i
+                  ></span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="eMatricula"
+                    disabled
+                  />
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label class="form-label" for="eEmail"
+                  >E-mail corporativo <span class="text-danger">*</span></label
+                >
+                <div class="input-group has-validation">
+                  <span class="input-group-text"
+                    ><i class="bi bi-envelope"></i
+                  ></span>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="eEmail"
+                    name="email"
+                    autocomplete="off"
+                    required
+                  />
+                  <div class="invalid-feedback" id="feedbackEmailEdicao">
+                    Informe um e-mail corporativo válido.
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label class="form-label" for="eTelefone"
+                  >Telefone de contato
+                  <span class="text-body-secondary">(opcional)</span></label
+                >
+                <div class="input-group has-validation">
+                  <span class="input-group-text"
+                    ><i class="bi bi-telephone"></i
+                  ></span>
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="eTelefone"
+                    name="phone"
+                    placeholder="(11) 91234-5678"
+                    inputmode="tel"
+                    pattern="\(?\d{{2}}\)?\s?9?\d{{4}}-?\d{{4}}"
+                    title="Ex.: (11) 91234-5678"
+                  />
+                  <div class="invalid-feedback">
+                    Informe um telefone válido, com DDD.
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="ePerfil" class="form-label"
+                  >Perfil de acesso <span class="text-danger">*</span></label
+                >
+                <div class="input-group has-validation">
+                  <span class="input-group-text"
+                    ><i class="bi bi-person-badge"></i
+                  ></span>
+                  <select class="form-select" id="ePerfil" name="role" required>
+                    <option value="ADMIN">Administrador do Sistema</option>
+                    <option value="SUPERVISOR">Supervisor de Inspeções</option>
+                    <option value="TECHNICIAN">Técnico de Campo</option>
+                    <option value="CLIENT_VIEWER">
+                      Cliente (Somente Leitura)
+                    </option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Selecione o perfil de acesso.
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="eStatus" class="form-label"
+                  >Situação <span class="text-danger">*</span></label
+                >
+                <div class="input-group has-validation">
+                  <span class="input-group-text"
+                    ><i class="bi bi-toggle-on"></i
+                  ></span>
+                  <select
+                    class="form-select"
+                    id="eStatus"
+                    name="status"
+                    required
+                  >
+                    <option value="ACTIVE">Ativo</option>
+                    <option value="INACTIVE">Inativo</option>
+                    <option value="BLOCKED">Bloqueado</option>
+                  </select>
+                  <div class="invalid-feedback">Selecione a situação.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer bg-body-tertiary">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button type="submit" class="btn btn-primary">
+              <i class="bi bi-check-lg me-1"></i>Salvar alterações
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="modalConfirmarInativacao"
+      tabindex="-1"
+      aria-labelledby="modalConfirmarLabel"
+      aria-hidden="true"
+      data-bs-theme="light"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body text-center p-4">
+            <span
+              class="d-inline-flex rounded-circle bg-warning-subtle text-warning-emphasis p-3 mb-3 lh-1"
+              ><i class="bi bi-person-slash fs-3"></i
+            ></span>
+            <h2 class="h5" id="modalConfirmarLabel">Inativar usuário?</h2>
+            <p class="text-body-secondary mb-0">
+              <strong class="text-body" id="cNome"></strong> (<span
+                id="cEmail"
+              ></span
+              >) deixará de ter acesso ao FieldOps até ser reativado. Você pode
+              reativá-lo a qualquer momento.
+            </p>
+          </div>
+          <div class="modal-footer justify-content-center border-0 pt-0 pb-4">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              id="btnConfirmarInativar"
+            >
+              <i class="bi bi-person-slash me-1"></i>Sim, inativar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+      <div
+        id="toastSucesso"
+        class="toast text-bg-success border-0"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        <div class="d-flex">
+          <div class="toast-body">
+            <i class="bi bi-check-circle me-2" id="toastIcone"></i
+            ><span id="toastMensagem">Usuário cadastrado com sucesso!</span>
+          </div>
+          <button
+            type="button"
+            class="btn-close btn-close-white me-2 m-auto"
+            data-bs-dismiss="toast"
+            aria-label="Fechar"
+          ></button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./../menu-base/script.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

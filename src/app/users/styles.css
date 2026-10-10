@@ -1,0 +1,278 @@
+.alert.alert-subtitle {
+  background-color: #dbe1ff;
+  color: #003ea8;
+  font-weight: 500;
+  padding: 0.01rem 0.7rem;
+  text-align: center;
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+span .bi-circle-fill {
+  font-size: 0.5rem;
+  vertical-align: middle;
+  padding: 0 0.7rem;
+}
+
+.h3.title {
+  margin-top: 0.75rem;
+}
+
+.alert-subtitle i {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.tu-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: #e8f0fe;
+  color: #1d4ed8;
+}
+
+.tu-table {
+  font-size: 0.8125rem;
+}
+.tu-table thead {
+  --bs-table-bg: #f4f7fb;
+  --bs-table-color: #6b7686;
+}
+.tu-table thead th {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding-block: 0.75rem;
+}
+.tu-table tbody td {
+  padding-block: 1.1rem;
+}
+
+.tu-avatar,
+.tu-badge {
+  border: 1px solid;
+}
+.tu-avatar {
+  width: 2.25rem;
+  height: 2.25rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+.tu-av-gray {
+  background: #e2e8f0;
+  color: #334155;
+  border-color: #cbd5e1;
+}
+.tu-av-purple {
+  background: #f3e8ff;
+  color: #7e22ce;
+  border-color: #e4cdfb;
+}
+.tu-av-blue {
+  background: #dbeafe;
+  color: #1d4ed8;
+  border-color: #bfdbfe;
+}
+
+.tu-mat,
+.tu-sub {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #6b7686;
+}
+.tu-mat {
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.tu-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  border-radius: 0.25rem;
+}
+.tu-tecnico {
+  background: #dff3fd;
+  color: #0f4c75;
+  border-color: #bde4f7;
+}
+.tu-supervisor {
+  background: #f3e8ff;
+  color: #6b21a8;
+  border-color: #e4cdfb;
+}
+.tu-admin {
+  background: #e0e7f5;
+  color: #1e293b;
+  border-color: #c7d2ea;
+}
+.tu-ativo {
+  background: #dcfce7;
+  color: #15803d;
+  border-color: #bbf7d0;
+  font-weight: 700;
+}
+
+.tu-page-active {
+  --bs-btn-bg: #0b4fc4;
+  --bs-btn-border-color: #0b4fc4;
+  --bs-btn-hover-bg: #0a45ab;
+  --bs-btn-hover-border-color: #0a45ab;
+  --bs-btn-active-bg: #0a45ab;
+  --bs-btn-active-border-color: #0a45ab;
+}
+
+.kpi-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #6b7686;
+}
+.kpi-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+}
+.kpi-blue {
+  background: #e8f0fe;
+  color: #1d4ed8;
+}
+.kpi-indigo {
+  background: #dfe3f7;
+  color: #1e2a4a;
+}
+.kpi-green {
+  background: #dcfce7;
+  color: #15803d;
+}
+.au-panel {
+  font-size: 0.8125rem;
+}
+.au-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  background: #e8f0fe;
+  color: #1d4ed8;
+}
+.au-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #6b7686;
+}
+.au-box {
+  background: #eef3fb;
+}
+
+.au-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  white-space: nowrap;
+  border: 1px solid;
+  border-radius: 0.25rem;
+}
+.au-green {
+  background: #dcfce7;
+  color: #15803d;
+  border-color: #bbf7d0;
+}
+.au-blue {
+  background: #dbeafe;
+  color: #1d4ed8;
+  border-color: #bfdbfe;
+}
+.au-purple {
+  background: #f3e8ff;
+  color: #7e22ce;
+  border-color: #e4cdfb;
+}
+
+.au-tl {
+  position: relative;
+}
+.au-tl::before {
+  content: "";
+  position: absolute;
+  left: 0.6875rem;
+  top: 1.25rem;
+  bottom: 0;
+  width: 2px;
+  background: #cbd5e1;
+}
+.au-dot {
+  position: relative;
+  z-index: 1;
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 0.75rem;
+}
+.au-dot-green {
+  background: #16a34a;
+}
+.au-dot-blue {
+  background: #2563eb;
+}
+.au-dot-dark {
+  background: #475569;
+}
+.au-dot-purple {
+  background: #9333ea;
+}
+
+.au-btn {
+  --bs-btn-color: #1d4ed8;
+  --bs-btn-bg: #e8f0fe;
+  --bs-btn-border-color: #cfdcf7;
+  --bs-btn-hover-color: #1d4ed8;
+  --bs-btn-hover-bg: #d6e4fc;
+  --bs-btn-hover-border-color: #bcd0f5;
+  --bs-btn-active-color: #1d4ed8;
+  --bs-btn-active-bg: #c9dbfa;
+  --bs-btn-active-border-color: #bcd0f5;
+  font-weight: 600;
+}
+
+.tu-cliente {
+  background: #f1f5f9;
+  color: #475569;
+  border-color: #e2e8f0;
+}
+.tu-inativo {
+  background: #f1f5f9;
+  color: #64748b;
+  border-color: #e2e8f0;
+  font-weight: 700;
+}
+.tu-bloqueado {
+  background: #fee2e2;
+  color: #b91c1c;
+  border-color: #fecaca;
+  font-weight: 700;
+}
+
+.form-label,  .info-edit{
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #6b7686;
+}
+
+#modalNovoUsuarioLabel, #modalEditarLabel, #modalConfirmarLabel, #modalVisualizarLabel {
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #1e293b;
+}
+
+.fw-semibold{
+    color: #1e293b;
+}
