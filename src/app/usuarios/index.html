@@ -337,6 +337,8 @@
                 class="btn btn-primary btn d-inline-flex align-items-center gap-2 flex-shrink-0"
                 style="padding: 0rem 0.5rem"
                 title="Novo Usuário"
+                data-bs-toggle="modal"
+                data-bs-target="#modalNovoUsuario"
               >
                 <i class="bi bi-person-fill-add" style="font-size: 1.5rem"></i
                 ><span class="d-none d-sm-inline">+ Novo Usuário</span>
@@ -353,7 +355,7 @@
                   <div>
                     <div class="kpi-label mb-1">Usuários ativos</div>
                     <div class="d-flex align-items-baseline gap-2">
-                      <span class="fs-5 fw-bold">24</span>
+                      <span class="fs-5 fw-bold" id="kpiAtivos">24</span>
                       <small class="text-success fw-semibold"
                         >+2 esse mês</small
                       >
@@ -496,8 +498,8 @@
                     <th class="text-end pe-4">Ações</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
+                <tbody id="tabelaUsuarios">
+                  <tr data-phone="(11) 98877-1209">
                     <td class="ps-4">
                       <div class="d-flex align-items-center gap-3">
                         <span
@@ -547,7 +549,7 @@
                       </button>
                     </td>
                   </tr>
-                  <tr>
+                  <tr data-phone="(11) 97766-4410">
                     <td class="ps-4">
                       <div class="d-flex align-items-center gap-3">
                         <span
@@ -597,7 +599,7 @@
                       </button>
                     </td>
                   </tr>
-                  <tr>
+                  <tr data-phone="(11) 96655-1001">
                     <td class="ps-4">
                       <div class="d-flex align-items-center gap-3">
                         <span
@@ -657,7 +659,7 @@
             <div
               class="card-footer bg-white d-flex flex-wrap align-items-center justify-content-between gap-2 px-4 py-3"
             >
-              <small class="text-body-secondary"
+              <small class="text-body-secondary" id="contagemUsuarios"
                 >Exibindo 3 de 24 operadores registrados</small
               >
               <nav class="d-flex gap-1" aria-label="Paginação">
@@ -676,7 +678,9 @@
             </div>
           </section>
 
-          <section class="card shadow-sm rounded-3 border-0 overflow-hidden au-panel mt-4">
+          <section
+            class="card shadow-sm rounded-3 border-0 overflow-hidden au-panel mt-4"
+          >
             <div
               class="d-flex flex-wrap align-items-start justify-content-between gap-3 px-4 pt-4 pb-3"
             >
@@ -791,7 +795,7 @@
               </div>
             </div>
 
-            <div class="border-top  p-4">
+            <div class="border-top p-4">
               <div class="au-tl d-flex flex-column gap-3">
                 <div class="d-flex gap-3">
                   <span
@@ -1059,7 +1063,552 @@
       </div>
     </div>
 
+    <div
+      class="modal fade"
+      id="modalNovoUsuario"
+      tabindex="-1"
+      aria-labelledby="modalNovoUsuarioLabel"
+      aria-hidden="true"
+      data-bs-theme="light"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg modal-fullscreen-sm-down"
+      >
+        <form
+          class="modal-content needs-validation"
+          id="formNovoUsuario"
+          novalidate
+        >
+          <div class="modal-header">
+            <div class="d-flex align-items-center gap-3">
+              <span
+                class="tu-icon rounded-2 d-inline-flex align-items-center justify-content-center fs-5 flex-shrink-0"
+                ><i class="bi bi-person-fill-add"></i
+              ></span>
+              <div class="lh-sm">
+                <h2 class="modal-title h5 mb-1" id="modalNovoUsuarioLabel">
+                  Novo Usuário
+                </h2>
+                <small class="text-body-secondary"
+                  >Cadastre um operador com acesso à plataforma FieldOps.</small
+                >
+              </div>
+            </div>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Fechar"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-12">
+                <label for="uNome" class="form-label"
+                  >Nome completo <span class="text-danger">*</span></label
+                >
+                <div class="input-group has-validation">
+                  <span class="input-group-text"
+                    ><i class="bi bi-person"></i
+                  ></span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="uNome"
+                    name="name"
+                    placeholder="Ex.: Ana Paula Ribeiro"
+                    minlength="3"
+                    autocomplete="off"
+                    required
+                  />
+                  <div class="invalid-feedback">Informe o nome completo.</div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="uEmail" class="form-label"
+                  >E-mail corporativo <span class="text-danger">*</span></label
+                >
+                <div class="input-group has-validation">
+                  <span class="input-group-text"
+                    ><i class="bi bi-envelope"></i
+                  ></span>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="uEmail"
+                    name="email"
+                    placeholder="nome.sobrenome@fieldops.com"
+                    autocomplete="off"
+                    required
+                  />
+                  <div class="invalid-feedback" id="feedbackEmail">
+                    Informe um e-mail corporativo válido.
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="uTelefone" class="form-label"
+                  >Telefone de contato
+                  <span class="text-body-secondary">(opcional)</span></label
+                >
+                <div class="input-group has-validation">
+                  <span class="input-group-text"
+                    ><i class="bi bi-telephone"></i
+                  ></span>
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="uTelefone"
+                    name="phone"
+                    placeholder="(11) 91234-5678"
+                    inputmode="tel"
+                    pattern="\(?\d{{2}}\)?\s?9?\d{{4}}-?\d{{4}}"
+                    title="Ex.: (11) 91234-5678"
+                  />
+                  <div class="invalid-feedback">
+                    Informe um telefone válido, com DDD.
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="uSenha" class="form-label"
+                  >Senha inicial <span class="text-danger">*</span></label
+                >
+                <div class="input-group has-validation">
+                  <span class="input-group-text"
+                    ><i class="bi bi-key"></i
+                  ></span>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="uSenha"
+                    name="password"
+                    placeholder="Mínimo de 6 caracteres"
+                    minlength="6"
+                    autocomplete="new-password"
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    A senha deve ter no mínimo 6 caracteres.
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="uConfirma" class="form-label"
+                  >Confirmar senha <span class="text-danger">*</span></label
+                >
+                <div class="input-group has-validation">
+                  <span class="input-group-text"
+                    ><i class="bi bi-key-fill"></i
+                  ></span>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="uConfirma"
+                    placeholder="Repita a senha"
+                    minlength="6"
+                    autocomplete="new-password"
+                    required
+                  />
+                  <div class="invalid-feedback" id="feedbackConfirma">
+                    Confirme a senha.
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div
+                  class="alert alert-warning d-flex align-items-start gap-2 small mb-0"
+                  role="alert"
+                >
+                  <i class="bi bi-exclamation-triangle-fill"></i>
+                  <div>
+                    Protótipo sem back-end: use apenas senhas de teste.
+                    <strong>Não utilize senhas reais.</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="uPerfil" class="form-label"
+                  >Perfil de acesso <span class="text-danger">*</span></label
+                >
+                <div class="input-group has-validation">
+                  <span class="input-group-text"
+                    ><i class="bi bi-person-badge"></i
+                  ></span>
+                  <select class="form-select" id="uPerfil" name="role" required>
+                    <option value="" selected disabled>
+                      Selecione o perfil
+                    </option>
+                    <option value="ADMIN">Administrador do Sistema</option>
+                    <option value="SUPERVISOR">Supervisor de Inspeções</option>
+                    <option value="TECHNICIAN">Técnico de Campo</option>
+                    <option value="CLIENT_VIEWER">
+                      Cliente (Somente Leitura)
+                    </option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Selecione o perfil de acesso.
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="uStatus" class="form-label"
+                  >Situação <span class="text-danger">*</span></label
+                >
+                <div class="input-group has-validation">
+                  <span class="input-group-text"
+                    ><i class="bi bi-toggle-on"></i
+                  ></span>
+                  <select
+                    class="form-select"
+                    id="uStatus"
+                    name="status"
+                    required
+                  >
+                    <option value="ACTIVE" selected>Ativo</option>
+                    <option value="INACTIVE">Inativo</option>
+                    <option value="BLOCKED">Bloqueado</option>
+                  </select>
+                  <div class="invalid-feedback">Selecione a situação.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer bg-body-tertiary">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button type="submit" class="btn btn-primary">
+              <i class="bi bi-check-lg me-1"></i>Salvar Usuário
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="modalVisualizarUsuario"
+      tabindex="-1"
+      aria-labelledby="modalVisualizarLabel"
+      aria-hidden="true"
+      data-bs-theme="light"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title h5" id="modalVisualizarLabel">
+              Detalhes do Usuário
+            </h2>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Fechar"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div
+              class="d-flex align-items-center gap-3 mb-3 pb-3 border-bottom"
+            >
+              <span
+                id="vAvatar"
+                class="tu-avatar rounded-2 d-inline-flex align-items-center justify-content-center flex-shrink-0"
+              ></span>
+              <div class="lh-sm">
+                <div class="fw-semibold fs-6" id="vNome"></div>
+                <small class="tu-mat" id="vMatricula"></small>
+              </div>
+            </div>
+            <dl class="row mb-0">
+              <dt class="col-sm-4 text-body-secondary fw-medium">E-mail</dt>
+              <dd class="col-sm-8 info-edit" id="vEmail"></dd>
+              <dt class="col-sm-4 text-body-secondary fw-medium">Telefone</dt>
+              <dd class="col-sm-8 info-edit" id="vTelefone"></dd>
+              <dt class="col-sm-4 text-body-secondary fw-medium">Perfil</dt>
+              <dd class="col-sm-8 info-edit" id="vPerfil"></dd>
+              <dt class="col-sm-4 text-body-secondary fw-medium">Situação</dt>
+              <dd class="col-sm-8 info-edit" id="vStatus"></dd>
+              <dt class="col-sm-4 text-body-secondary fw-medium">
+                Último acesso
+              </dt>
+              <dd class="col-sm-8 info-edit" id="vAcesso"></dd>
+            </dl>
+          </div>
+          <div class="modal-footer bg-body-tertiary">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Fechar
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="btnEditarDoVisualizar"
+            >
+              <i class="bi bi-pencil me-1"></i>Editar usuário
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="modalEditarUsuario"
+      tabindex="-1"
+      aria-labelledby="modalEditarLabel"
+      aria-hidden="true"
+      data-bs-theme="light"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg modal-fullscreen-sm-down"
+      >
+        <form
+          class="modal-content needs-validation"
+          id="formEditarUsuario"
+          novalidate
+        >
+          <div class="modal-header">
+            <div class="d-flex align-items-center gap-3">
+              <span
+                class="tu-icon rounded-2 d-inline-flex align-items-center justify-content-center fs-5 flex-shrink-0"
+                ><i class="bi bi-pencil-square"></i
+              ></span>
+              <div class="lh-sm">
+                <h2 class="modal-title h5 mb-1" id="modalEditarLabel">
+                  Editar Usuário
+                </h2>
+                <small class="text-body-secondary"
+                  >Atualize os dados de acesso do operador.</small
+                >
+              </div>
+            </div>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Fechar"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-12 col-md-8">
+                <label class="form-label" for="eNome"
+                  >Nome completo <span class="text-danger">*</span></label
+                >
+                <div class="input-group has-validation">
+                  <span class="input-group-text"
+                    ><i class="bi bi-person"></i
+                  ></span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="eNome"
+                    name="name"
+                    minlength="3"
+                    autocomplete="off"
+                    required
+                  />
+                  <div class="invalid-feedback">Informe o nome completo.</div>
+                </div>
+              </div>
+              <div class="col-12 col-md-4">
+                <label class="form-label" for="eMatricula">Matrícula</label>
+                <div class="input-group has-validation">
+                  <span class="input-group-text"
+                    ><i class="bi bi-hash"></i
+                  ></span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="eMatricula"
+                    disabled
+                  />
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label class="form-label" for="eEmail"
+                  >E-mail corporativo <span class="text-danger">*</span></label
+                >
+                <div class="input-group has-validation">
+                  <span class="input-group-text"
+                    ><i class="bi bi-envelope"></i
+                  ></span>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="eEmail"
+                    name="email"
+                    autocomplete="off"
+                    required
+                  />
+                  <div class="invalid-feedback" id="feedbackEmailEdicao">
+                    Informe um e-mail corporativo válido.
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label class="form-label" for="eTelefone"
+                  >Telefone de contato
+                  <span class="text-body-secondary">(opcional)</span></label
+                >
+                <div class="input-group has-validation">
+                  <span class="input-group-text"
+                    ><i class="bi bi-telephone"></i
+                  ></span>
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="eTelefone"
+                    name="phone"
+                    placeholder="(11) 91234-5678"
+                    inputmode="tel"
+                    pattern="\(?\d{{2}}\)?\s?9?\d{{4}}-?\d{{4}}"
+                    title="Ex.: (11) 91234-5678"
+                  />
+                  <div class="invalid-feedback">
+                    Informe um telefone válido, com DDD.
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="ePerfil" class="form-label"
+                  >Perfil de acesso <span class="text-danger">*</span></label
+                >
+                <div class="input-group has-validation">
+                  <span class="input-group-text"
+                    ><i class="bi bi-person-badge"></i
+                  ></span>
+                  <select class="form-select" id="ePerfil" name="role" required>
+                    <option value="ADMIN">Administrador do Sistema</option>
+                    <option value="SUPERVISOR">Supervisor de Inspeções</option>
+                    <option value="TECHNICIAN">Técnico de Campo</option>
+                    <option value="CLIENT_VIEWER">
+                      Cliente (Somente Leitura)
+                    </option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Selecione o perfil de acesso.
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="eStatus" class="form-label"
+                  >Situação <span class="text-danger">*</span></label
+                >
+                <div class="input-group has-validation">
+                  <span class="input-group-text"
+                    ><i class="bi bi-toggle-on"></i
+                  ></span>
+                  <select
+                    class="form-select"
+                    id="eStatus"
+                    name="status"
+                    required
+                  >
+                    <option value="ACTIVE">Ativo</option>
+                    <option value="INACTIVE">Inativo</option>
+                    <option value="BLOCKED">Bloqueado</option>
+                  </select>
+                  <div class="invalid-feedback">Selecione a situação.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer bg-body-tertiary">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button type="submit" class="btn btn-primary">
+              <i class="bi bi-check-lg me-1"></i>Salvar alterações
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="modalConfirmarInativacao"
+      tabindex="-1"
+      aria-labelledby="modalConfirmarLabel"
+      aria-hidden="true"
+      data-bs-theme="light"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body text-center p-4">
+            <span
+              class="d-inline-flex rounded-circle bg-warning-subtle text-warning-emphasis p-3 mb-3 lh-1"
+              ><i class="bi bi-person-slash fs-3"></i
+            ></span>
+            <h2 class="h5" id="modalConfirmarLabel">Inativar usuário?</h2>
+            <p class="text-body-secondary mb-0">
+              <strong class="text-body" id="cNome"></strong> (<span
+                id="cEmail"
+              ></span
+              >) deixará de ter acesso ao FieldOps até ser reativado. Você pode
+              reativá-lo a qualquer momento.
+            </p>
+          </div>
+          <div class="modal-footer justify-content-center border-0 pt-0 pb-4">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              id="btnConfirmarInativar"
+            >
+              <i class="bi bi-person-slash me-1"></i>Sim, inativar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+      <div
+        id="toastSucesso"
+        class="toast text-bg-success border-0"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        <div class="d-flex">
+          <div class="toast-body">
+            <i class="bi bi-check-circle me-2" id="toastIcone"></i
+            ><span id="toastMensagem">Usuário cadastrado com sucesso!</span>
+          </div>
+          <button
+            type="button"
+            class="btn-close btn-close-white me-2 m-auto"
+            data-bs-dismiss="toast"
+            aria-label="Fechar"
+          ></button>
+        </div>
+      </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./../menu-base/script.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>

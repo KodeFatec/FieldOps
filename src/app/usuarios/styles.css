@@ -239,3 +239,40 @@ span .bi-circle-fill {
   --bs-btn-active-border-color: #bcd0f5;
   font-weight: 600;
 }
+
+.tu-cliente {
+  background: #f1f5f9;
+  color: #475569;
+  border-color: #e2e8f0;
+}
+.tu-inativo {
+  background: #f1f5f9;
+  color: #64748b;
+  border-color: #e2e8f0;
+  font-weight: 700;
+}
+.tu-bloqueado {
+  background: #fee2e2;
+  color: #b91c1c;
+  border-color: #fecaca;
+  font-weight: 700;
+}
+
+.form-label,  .info-edit{
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #6b7686;
+}
+
+#modalNovoUsuarioLabel, #modalEditarLabel, #modalConfirmarLabel, #modalVisualizarLabel {
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #1e293b;
+}
+
+.fw-semibold{
+    color: #1e293b;
+}
