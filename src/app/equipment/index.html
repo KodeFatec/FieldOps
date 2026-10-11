@@ -268,6 +268,7 @@
                   <table class="table table-hover align-middle">
                     <thead>
                       <tr>
+                        <th>Foto</th>
                         <th>Equipamento / Ativo</th>
                         <th>Localização</th>
                         <th>Status</th>
@@ -276,6 +277,9 @@
 
                     <tbody id="listaEquipamentos">
                       <tr data-status="Operacional">
+                        <td><img class="equipment-thumbnail"
+                            src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=120&q=80"
+                            alt="Compressor industrial" loading="lazy"></td>
                         <td>
                           <button class="btn btn-link text-start text-decoration-none p-0"
                             onclick="selecionarEquipamento('Compressor de Ar 01', 'EQ-COMP-01', 'Operacional', 'Galpão 03 — Setor de Pressurização')">
@@ -288,6 +292,9 @@
                       </tr>
 
                       <tr data-status="Em Manutenção">
+                        <td><img class="equipment-thumbnail"
+                            src="https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=120&q=80"
+                            alt="Máquina industrial CNC" loading="lazy"></td>
                         <td>
                           <button class="btn btn-link text-start text-decoration-none p-0"
                             onclick="selecionarEquipamento('Torno CNC Horizon 500', 'EQ-CNC-04', 'Em Manutenção', 'Sala Técnica')">
@@ -300,6 +307,9 @@
                       </tr>
 
                       <tr data-status="Pendente de Inspeção">
+                        <td><img class="equipment-thumbnail"
+                            src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=120&q=80"
+                            alt="Componente de equipamento técnico" loading="lazy"></td>
                         <td>
                           <button class="btn btn-link text-start text-decoration-none p-0"
                             onclick="selecionarEquipamento('Bomba de Recalque 02', 'EQ-BOMB-12', 'Pendente de Inspeção', 'Subsolo Técnico')">
@@ -312,6 +322,9 @@
                       </tr>
 
                       <tr data-status="Operacional">
+                        <td><img class="equipment-thumbnail"
+                            src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=120&q=80"
+                            alt="Painel elétrico industrial" loading="lazy"></td>
                         <td>
                           <button class="btn btn-link text-start text-decoration-none p-0"
                             onclick="selecionarEquipamento('Quadro Geral QGBT-01', 'EQ-EL-99', 'Operacional', 'Subestação A')">
@@ -366,14 +379,65 @@
                   <strong>Indústria Alpha Ltda.</strong>
                 </div>
 
-                <h6 class="fw-bold">Histórico de manutenções</h6>
-
-                <div class="border rounded-3 p-3 mb-2">
-                  <strong class="small">Troca de filtro de óleo</strong>
+                <div class="d-flex align-items-center justify-content-between mt-3 mb-2">
+                  <h6 class="fw-bold mb-0">Histórico de manutenções</h6>
+                  <span class="badge text-bg-light border">2 registros</span>
                 </div>
 
-                <div class="border rounded-3 p-3">
-                  <strong class="small">Revisão periódica</strong>
+                <div id="historicoManutencoes" class="maintenance-history mb-3">
+                  <article class="maintenance-record border rounded-3 p-3 mb-2">
+                    <div class="d-flex justify-content-between align-items-start gap-2">
+                      <strong class="small">Troca de filtro de óleo</strong>
+                      <span class="badge text-bg-success">Concluída</span>
+                    </div>
+                    <p class="small text-secondary my-2">Substituição do filtro e verificação do nível de óleo do
+                      compressor.</p>
+                    <div class="maintenance-meta">
+                      <span><i class="bi bi-calendar3 me-1"></i>24/07/2026</span>
+                      <span><i class="bi bi-person me-1"></i>Marcos Oliveira</span>
+                    </div>
+                    <small class="text-secondary d-block mt-2">Observação: equipamento liberado após teste
+                      operacional.</small>
+                  </article>
+                  <article class="maintenance-record border rounded-3 p-3 mb-2">
+                    <div class="d-flex justify-content-between align-items-start gap-2">
+                      <strong class="small">Revisão periódica</strong>
+                      <span class="badge text-bg-primary">Realizada</span>
+                    </div>
+                    <p class="small text-secondary my-2">Inspeção visual, conferência de conexões e avaliação de ruídos
+                      e vibração.</p>
+                    <div class="maintenance-meta">
+                      <span><i class="bi bi-calendar3 me-1"></i>12/05/2026</span>
+                      <span><i class="bi bi-person me-1"></i>Paula Mendes</span>
+                    </div>
+                    <small class="text-secondary d-block mt-2">Observação: sem anomalias identificadas durante a
+                      revisão.</small>
+                  </article>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <h6 class="fw-bold mb-0">Não conformidades ativas</h6>
+                  <span class="badge text-bg-warning">1 pendente</span>
+                </div>
+
+                <div id="naoConformidadesAtivas"
+                  class="nonconformity-record border border-warning-subtle rounded-3 p-3 mb-3">
+                  <div class="d-flex justify-content-between align-items-start gap-2">
+                    <strong class="small"><i class="bi bi-exclamation-triangle-fill text-warning me-1"></i>NC-2026-014 —
+                      Vibração acima do limite</strong>
+                    <span class="badge text-bg-warning">Média</span>
+                  </div>
+                  <p class="small text-secondary my-2">Vibração acima do parâmetro recomendado identificada durante a
+                    inspeção preventiva.</p>
+                  <div class="maintenance-meta">
+                    <span><i class="bi bi-calendar-event me-1"></i>Aberta em 08/10/2026</span>
+                    <span><i class="bi bi-clock me-1"></i>Prazo: 15/10/2026</span>
+                  </div>
+                  <div class="mt-2">
+                    <small class="text-secondary d-block">Responsável: Equipe de Manutenção</small>
+                    <small class="text-secondary d-block">Ação corretiva: verificar fixação e realizar nova medição de
+                      vibração.</small>
+                  </div>
                 </div>
 
                 <div class="d-flex flex-wrap gap-2 mt-4">

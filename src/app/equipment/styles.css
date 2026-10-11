@@ -128,3 +128,45 @@ main hr {
         min-width: 440px;
     }
 }
+
+/* FIELDOPS — imagens e painéis complementares */
+.equipment-thumbnail {
+    width: 54px;
+    height: 44px;
+    object-fit: cover;
+    border: 1px solid #e5eaf5;
+    border-radius: 6px;
+    background: #f8faff;
+    display: block;
+}
+main .table thead th:first-child,
+main .table tbody td:first-child {
+    width: 68px;
+}
+.maintenance-record {
+    background: #fff;
+    border-color: #e5eaf5 !important;
+}
+.maintenance-record p,
+.nonconformity-record p {
+    line-height: 1.45;
+}
+.maintenance-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem 1rem;
+    color: #65728a;
+    font-size: 0.72rem;
+}
+.nonconformity-record {
+    background: #fffdf7;
+}
+@media (max-width: 768px) {
+    .equipment-thumbnail {
+        width: 44px;
+        height: 40px;
+    }
+    main .table {
+        min-width: 560px;
+    }
+}
