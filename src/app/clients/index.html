@@ -157,8 +157,8 @@
                         title="Exportar Relatório">
                         <i class="bi bi-download"></i><span class="d-none d-xl-inline">Exportar Relatório</span>
                     </button>
-                    <button type="button" class="btn btn-primary btn-sm d-inline-flex align-items-center gap-2"
-                        title="Nova Inspeção">
+                    <button type="button" class="btn btn-primary btn-sm d-inline-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#modalNovoCliente"
+                        title="Nova Inspeção" >
                         <i class="bi bi-plus-lg"></i><span class="d-none d-sm-inline">Novo cliente</span>
                     </button>
 
@@ -490,13 +490,13 @@
                             <div class="col-12 col-sm-12 col-md-6">
                                 <div class="col">
                                     <a href="#" class="btn btn-white mb-1 own-button" data-bs-toggle="modal"
-                                        data-bs-target="#modal"><i class="bi bi-pencil me-1"></i>Editar Cadastro</a>
+                                        data-bs-target="#modalEditarCliente"><i class="bi bi-pencil me-1"></i>Editar Cadastro</a>
                                 </div>
                                 <div class="col">
-                                    <a href="#" class="btn btn-white mb-1 own-button"><i class="bi bi-geo-alt me-1"></i>Adicionar Local</a>
+                                    <a href="#" class="btn btn-white mb-1 own-button" data-bs-toggle="modal" data-bs-target="#modalAdicionarLocal"><i class="bi bi-geo-alt me-1"></i>Adicionar Local</a>
                                 </div>
                                 <div class="col">
-                                    <a href="#" class="btn btn-white mb-1 own-button"><i class="bi bi-repeat me-1"></i>Histórico de Laudos</a>
+                                    <a href="#" class="btn btn-white mb-1 own-button" data-bs-toggle="modal" data-bs-target="#modalHistoricoCliente"><i class="bi bi-repeat me-1"></i>Histórico de Laudos</a>
                                 </div>
                             </div>
                         </div>
@@ -687,6 +687,407 @@
             </main>
         </div>
     </div>
+
+<div class="modal fade" id="modalNovoCliente" tabindex="-1" aria-labelledby="modalNovoClienteLabel" aria-hidden="true" data-bs-theme="light">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg modal-fullscreen-sm-down">
+    <form class="modal-content needs-validation" id="formNovoCliente" novalidate>
+      <div class="modal-header">
+        <div class="d-flex align-items-center gap-3">
+          <span class="tu-icon rounded-2 d-inline-flex align-items-center justify-content-center fs-5 flex-shrink-0"><i class="bi bi-building-add"></i></span>
+          <div class="lh-sm">
+            <h2 class="modal-title h5 mb-1" id="modalNovoClienteLabel">Novo Cliente</h2>
+            <small class="text-body-secondary">Cadastre uma empresa contratante na plataforma FieldOps.</small>
+          </div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="row g-3">
+          <div class="col-12">
+            <label for="nNome" class="form-label">Nome fantasia <span class="text-danger">*</span></label>
+            <div class="input-group has-validation">
+              <span class="input-group-text"><i class="bi bi-building"></i></span>
+              <input type="text" class="form-control" id="nNome" name="name" placeholder="Ex.: Indústria Alpha Ltda." minlength="3" autocomplete="off" required />
+              <div class="invalid-feedback">Informe o nome do cliente.</div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-8">
+            <label for="nRazao" class="form-label">Razão social <span class="text-danger">*</span></label>
+            <div class="input-group has-validation">
+              <span class="input-group-text"><i class="bi bi-card-text"></i></span>
+              <input type="text" class="form-control" id="nRazao" name="legalName" placeholder="Ex.: Indústria Alpha de Componentes Ltda." minlength="3" autocomplete="off" required />
+              <div class="invalid-feedback">Informe a razão social.</div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <label for="nCnpj" class="form-label">CNPJ <span class="text-danger">*</span></label>
+            <div class="input-group has-validation">
+              <span class="input-group-text"><i class="bi bi-hash"></i></span>
+              <input type="text" class="form-control" id="nCnpj" name="cnpj" placeholder="00.000.000/0000-00" inputmode="numeric" maxlength="18" pattern="\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2}" title="Ex.: 12.345.678/0001-90" autocomplete="off" required />
+              <div class="invalid-feedback" id="feedbackCnpj">Informe um CNPJ válido (00.000.000/0000-00).</div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label for="nEmail" class="form-label">E-mail de contato <span class="text-danger">*</span></label>
+            <div class="input-group has-validation">
+              <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+              <input type="email" class="form-control" id="nEmail" name="email" placeholder="contato@empresa.com.br" autocomplete="off" required />
+              <div class="invalid-feedback">Informe um e-mail válido.</div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label for="nTelefone" class="form-label">Telefone comercial <span class="text-body-secondary">(opcional)</span></label>
+            <div class="input-group has-validation">
+              <span class="input-group-text"><i class="bi bi-telephone"></i></span>
+              <input type="tel" class="form-control" id="nTelefone" name="phone" placeholder="(11) 3456-7890" inputmode="tel" pattern="\(?\d{2}\)?\s?9?\d{4}-?\d{4}" title="Ex.: (11) 3456-7890" />
+              <div class="invalid-feedback">Informe um telefone válido, com DDD.</div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label for="nSegmento" class="form-label">Segmento <span class="text-danger">*</span></label>
+            <div class="input-group has-validation">
+              <span class="input-group-text"><i class="bi bi-diagram-3"></i></span>
+              <select class="form-select" id="nSegmento" name="segment" required>
+                <option value="" selected disabled>Selecione o segmento</option>
+                <option value="MANUFATURA">Manufatura</option>
+                <option value="METALURGIA">Metalurgia</option>
+                <option value="ENERGIA">Energia</option>
+                <option value="PETROQUIMICA">Petroquímica</option>
+              </select>
+              <div class="invalid-feedback">Selecione o segmento.</div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label for="nStatus" class="form-label">Situação <span class="text-danger">*</span></label>
+            <div class="input-group has-validation">
+              <span class="input-group-text"><i class="bi bi-toggle-on"></i></span>
+              <select class="form-select" id="nStatus" name="status" required>
+                <option value="ACTIVE" selected>Ativo</option>
+                <option value="REVIEW">Em Revisão</option>
+                <option value="INACTIVE">Inativo</option>
+              </select>
+              <div class="invalid-feedback">Selecione a situação.</div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label for="nGestor" class="form-label">Gestor técnico responsável <span class="text-danger">*</span></label>
+            <div class="input-group has-validation">
+              <span class="input-group-text"><i class="bi bi-person-badge"></i></span>
+              <select class="form-select" id="nGestor" name="manager" required>
+                <option value="" selected disabled>Selecione o gestor</option>
+                <option>Mariana Souza</option>
+                <option>Carlos Mendes</option>
+                <option>Paula Ribeiro</option>
+              </select>
+              <div class="invalid-feedback">Selecione o gestor técnico.</div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label for="nVigencia" class="form-label">Vigência do contrato até <span class="text-danger">*</span></label>
+            <div class="input-group has-validation">
+              <span class="input-group-text"><i class="bi bi-calendar"></i></span>
+              <input type="month" class="form-control" id="nVigencia" name="contractEnd" required />
+              <div class="invalid-feedback">Informe a vigência do contrato.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer bg-body-tertiary">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-primary"><i class="bi bi-check-lg me-1"></i>Salvar Cliente</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal fade" id="modalHistoricoCliente" tabindex="-1" aria-labelledby="modalHistoricoLabel" aria-hidden="true" data-bs-theme="light">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title h5 text-warning" id="modalHistoricoLabel">Essa versão do projeto não possui um histórico</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-footer bg-body-tertiary">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalEditarCliente" tabindex="-1" aria-labelledby="modalEditarLabel" aria-hidden="true" data-bs-theme="light">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg modal-fullscreen-sm-down">
+    <form class="modal-content needs-validation" id="formEditarCliente" novalidate>
+      <div class="modal-header">
+        <div class="d-flex align-items-center gap-3">
+          <span class="tu-icon rounded-2 d-inline-flex align-items-center justify-content-center fs-5 flex-shrink-0"><i class="bi bi-pencil-square"></i></span>
+          <div class="lh-sm">
+            <h2 class="modal-title h5 mb-1" id="modalEditarLabel">Editar Cliente</h2>
+            <small class="text-body-secondary">Atualize os dados cadastrais e contratuais do cliente.</small>
+          </div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="row g-3">
+          <div class="col-12 col-md-8">
+            <label class="form-label" for="eNome">Nome fantasia <span class="text-danger">*</span></label>
+            <div class="input-group has-validation">
+              <span class="input-group-text"><i class="bi bi-building"></i></span>
+              <input type="text" class="form-control" id="eNome" name="name" minlength="3" autocomplete="off" required />
+              <div class="invalid-feedback">Informe o nome do cliente.</div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <label class="form-label" for="eCodigo">Código</label>
+            <div class="input-group has-validation">
+              <span class="input-group-text"><i class="bi bi-hash"></i></span>
+              <input type="text" class="form-control" id="eCodigo" disabled />
+            </div>
+          </div>
+
+          <div class="col-12 col-md-8">
+            <label class="form-label" for="eRazao">Razão social <span class="text-danger">*</span></label>
+            <div class="input-group has-validation">
+              <span class="input-group-text"><i class="bi bi-card-text"></i></span>
+              <input type="text" class="form-control" id="eRazao" name="legalName" minlength="3" autocomplete="off" required />
+              <div class="invalid-feedback">Informe a razão social.</div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <label class="form-label" for="eCnpj">CNPJ <span class="text-danger">*</span></label>
+            <div class="input-group has-validation">
+              <span class="input-group-text"><i class="bi bi-hash"></i></span>
+              <input type="text" class="form-control" id="eCnpj" name="cnpj" placeholder="00.000.000/0000-00" inputmode="numeric" maxlength="18" pattern="\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2}" title="Ex.: 12.345.678/0001-90" autocomplete="off" required />
+              <div class="invalid-feedback" id="feedbackCnpjEdicao">Informe um CNPJ válido (00.000.000/0000-00).</div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label class="form-label" for="eEmail">E-mail de contato <span class="text-danger">*</span></label>
+            <div class="input-group has-validation">
+              <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+              <input type="email" class="form-control" id="eEmail" name="email" autocomplete="off" required />
+              <div class="invalid-feedback">Informe um e-mail válido.</div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label class="form-label" for="eTelefone">Telefone comercial <span class="text-body-secondary">(opcional)</span></label>
+            <div class="input-group has-validation">
+              <span class="input-group-text"><i class="bi bi-telephone"></i></span>
+              <input type="tel" class="form-control" id="eTelefone" name="phone" placeholder="(11) 3456-7890" inputmode="tel" pattern="\(?\d{2}\)?\s?9?\d{4}-?\d{4}" title="Ex.: (11) 3456-7890" />
+              <div class="invalid-feedback">Informe um telefone válido, com DDD.</div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label for="eSegmento" class="form-label">Segmento <span class="text-danger">*</span></label>
+            <div class="input-group has-validation">
+              <span class="input-group-text"><i class="bi bi-diagram-3"></i></span>
+              <select class="form-select" id="eSegmento" name="segment" required>
+                <option value="MANUFATURA">Manufatura</option>
+                <option value="METALURGIA">Metalurgia</option>
+                <option value="ENERGIA">Energia</option>
+                <option value="PETROQUIMICA">Petroquímica</option>
+              </select>
+              <div class="invalid-feedback">Selecione o segmento.</div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label for="eStatus" class="form-label">Situação <span class="text-danger">*</span></label>
+            <div class="input-group has-validation">
+              <span class="input-group-text"><i class="bi bi-toggle-on"></i></span>
+              <select class="form-select" id="eStatus" name="status" required>
+                <option value="ACTIVE">Ativo</option>
+                <option value="REVIEW">Em Revisão</option>
+                <option value="INACTIVE">Inativo</option>
+              </select>
+              <div class="invalid-feedback">Selecione a situação.</div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label for="eGestor" class="form-label">Gestor técnico responsável <span class="text-danger">*</span></label>
+            <div class="input-group has-validation">
+              <span class="input-group-text"><i class="bi bi-person-badge"></i></span>
+              <select class="form-select" id="eGestor" name="manager" required>
+                <option>Mariana Souza</option>
+                <option>Carlos Mendes</option>
+                <option>Paula Ribeiro</option>
+              </select>
+              <div class="invalid-feedback">Selecione o gestor técnico.</div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label for="eVigencia" class="form-label">Vigência do contrato até <span class="text-danger">*</span></label>
+            <div class="input-group has-validation">
+              <span class="input-group-text"><i class="bi bi-calendar"></i></span>
+              <input type="month" class="form-control" id="eVigencia" name="contractEnd" required />
+              <div class="invalid-feedback">Informe a vigência do contrato.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer bg-body-tertiary">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-primary"><i class="bi bi-check-lg me-1"></i>Salvar alterações</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal fade" id="modalAdicionarLocal" tabindex="-1" aria-labelledby="modalAdicionarLocalLabel" aria-hidden="true" data-bs-theme="light">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg modal-fullscreen-sm-down">
+    <form class="modal-content needs-validation" id="formAdicionarLocal" novalidate>
+      <div class="modal-header">
+        <div class="d-flex align-items-center gap-3">
+          <span class="tu-icon rounded-2 d-inline-flex align-items-center justify-content-center fs-5 flex-shrink-0"><i class="bi bi-geo-alt"></i></span>
+          <div class="lh-sm">
+            <h2 class="modal-title h5 mb-1" id="modalAdicionarLocalLabel">Adicionar Local</h2>
+            <small class="text-body-secondary">Vincule uma planta ou instalação ao cliente.</small>
+          </div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="row g-3">
+          <div class="col-12">
+            <label for="lCliente" class="form-label">Cliente</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-building"></i></span>
+              <input type="text" class="form-control" id="lCliente" value="Indústria Alpha Ltda." readonly disabled />
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label for="lNome" class="form-label">Nome do local <span class="text-danger">*</span></label>
+            <div class="input-group has-validation">
+              <span class="input-group-text"><i class="bi bi-pin-map"></i></span>
+              <input type="text" class="form-control" id="lNome" name="name" placeholder="Ex.: Galpão 04" minlength="3" autocomplete="off" required />
+              <div class="invalid-feedback">Informe o nome do local.</div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label for="lTipo" class="form-label">Tipo de instalação <span class="text-danger">*</span></label>
+            <div class="input-group has-validation">
+              <span class="input-group-text"><i class="bi bi-buildings"></i></span>
+              <select class="form-select" id="lTipo" name="type" required>
+                <option value="" selected disabled>Selecione o tipo</option>
+                <option value="GALPAO">Galpão</option>
+                <option value="UNIDADE">Unidade de produção</option>
+                <option value="PATIO">Pátio</option>
+                <option value="SUBESTACAO">Subestação</option>
+                <option value="OUTRO">Outro</option>
+              </select>
+              <div class="invalid-feedback">Selecione o tipo de instalação.</div>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <label for="lDescricao" class="form-label">Setor / descrição <span class="text-body-secondary">(opcional)</span></label>
+            <div class="input-group has-validation">
+              <span class="input-group-text"><i class="bi bi-card-text"></i></span>
+              <input type="text" class="form-control" id="lDescricao" name="description" placeholder="Ex.: Setor Pressurização &amp; Válvulas Industriais" autocomplete="off" />
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <label for="lCep" class="form-label">CEP <span class="text-body-secondary">(opcional)</span></label>
+            <div class="input-group has-validation">
+              <span class="input-group-text"><i class="bi bi-hash"></i></span>
+              <input type="text" class="form-control" id="lCep" name="zip" placeholder="00000-000" inputmode="numeric" maxlength="9" pattern="\d{5}-\d{3}" title="Ex.: 13060-000" autocomplete="off" />
+              <div class="invalid-feedback">Informe um CEP válido (00000-000).</div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-8">
+            <label for="lEndereco" class="form-label">Endereço <span class="text-body-secondary">(opcional)</span></label>
+            <div class="input-group has-validation">
+              <span class="input-group-text"><i class="bi bi-geo-alt"></i></span>
+              <input type="text" class="form-control" id="lEndereco" name="address" placeholder="Rua, número, bairro, cidade - UF" autocomplete="off" />
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <label for="lNorma" class="form-label">Norma aplicável</label>
+            <div class="input-group has-validation">
+              <span class="input-group-text"><i class="bi bi-journal-check"></i></span>
+              <select class="form-select" id="lNorma" name="standard">
+                <option value="" selected>Nenhuma</option>
+                <option>NR-10</option>
+                <option>NR-12</option>
+                <option>NR-13</option>
+                <option>NR-20</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <label for="lAtivos" class="form-label">Quantidade de ativos <span class="text-danger">*</span></label>
+            <div class="input-group has-validation">
+              <span class="input-group-text"><i class="bi bi-gear-wide-connected"></i></span>
+              <input type="number" class="form-control" id="lAtivos" name="assets" min="0" step="1" value="0" required />
+              <div class="invalid-feedback">Informe um número maior ou igual a zero.</div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <label for="lResponsavel" class="form-label">Responsável pelo local <span class="text-danger">*</span></label>
+            <div class="input-group has-validation">
+              <span class="input-group-text"><i class="bi bi-person-badge"></i></span>
+              <select class="form-select" id="lResponsavel" name="manager" required>
+                <option value="" selected disabled>Selecione</option>
+                <option>Mariana Souza</option>
+                <option>Carlos Mendes</option>
+                <option>Paula Ribeiro</option>
+              </select>
+              <div class="invalid-feedback">Selecione o responsável.</div>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <label for="lObs" class="form-label">Observações <span class="text-body-secondary">(opcional)</span></label>
+            <textarea class="form-control" id="lObs" name="notes" rows="3" placeholder="Informações adicionais sobre o local"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer bg-body-tertiary">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-primary"><i class="bi bi-check-lg me-1"></i>Adicionar Local</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="toast-container position-fixed top-0 end-0 p-3">
+  <div id="toastSucesso" class="toast text-bg-success border-0" role="status" aria-live="polite" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        <i class="bi bi-check-circle me-2" id="toastIcone"></i><span id="toastMensagem">Cliente cadastrado com sucesso!</span>
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Fechar"></button>
+    </div>
+  </div>
+</div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
