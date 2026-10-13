@@ -90,7 +90,7 @@
                 <ul class="nav flex-column gap-1">
                   <li>
                     <a
-                      class="sb-item nav-link active rounded-2 d-flex align-items-center gap-2 position-relative"
+                      class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative"
                       href="#"
                       title="Dashboard"
                       aria-current="page"
@@ -100,7 +100,7 @@
                   </li>
                   <li>
                     <a
-                      class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative"
+                      class="sb-item nav-link active rounded-2 d-flex align-items-center gap-2 position-relative"
                       href="#"
                       title="Usuários"
                       ><i class="bi bi-people fs-6"></i
@@ -241,29 +241,16 @@
           </div>
 
           <div class="vr d-none d-xl-block"></div>
-          <nav class="nav d-none d-xl-flex" aria-label="Atalhos">
-            <a class="nav-link text-body-secondary px-2" href="#">Inspeções</a>
+          <nav
+            class="nav d-none d-xl-flex flex-nowrap ms-auto"
+            aria-label="Atalhos"
+          >
+            <a class="nav-link text-body-secondary px-2" href="#">Usuários</a>
             <a class="nav-link text-body-secondary px-2" href="#">Auditoria</a>
           </nav>
 
-          <div class="ms-auto d-flex align-items-center gap-2">
-            <button
-              type="button"
-              class="btn btn-outline-secondary btn-sm text-body d-none d-md-inline-flex align-items-center gap-2"
-              title="Exportar Relatório"
-            >
-              <i class="bi bi-download"></i
-              ><span class="d-none d-xl-inline">Exportar Relatório</span>
-            </button>
-            <button
-              type="button"
-              class="btn btn-primary btn-sm d-inline-flex align-items-center gap-2"
-              title="Nova Inspeção"
-            >
-              <i class="bi bi-plus-lg"></i
-              ><span class="d-none d-sm-inline">Nova Inspeção</span>
-            </button>
-
+          <div class="d-flex align-items-center gap-2">
+            
             <button
               type="button"
               class="btn btn-link text-decoration-none text-body-secondary position-relative p-1 ms-1"
