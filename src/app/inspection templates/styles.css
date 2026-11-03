@@ -1,0 +1,170 @@
+.catalog-page {
+	background: var(--bg);
+}
+
+.catalog-panel {
+	border: 1px solid #e6eaf2;
+	border-radius: 0.35rem;
+	background: #fff;
+}
+
+.catalog-panel .card-body {
+	padding: 1rem;
+}
+
+.catalog-panel h1 {
+	color: #172b45;
+	font-weight: 650;
+}
+
+.catalog-count {
+	background: #e4edff;
+	color: #52627d;
+	font-size: 0.7rem;
+	font-weight: 600;
+}
+
+.catalog-filter .input-group-text,
+.catalog-filter .form-control {
+	min-height: 2.25rem;
+	border-color: #e3e8f2;
+	background: #f8f9fd;
+	color: #20334e;
+	font-size: 0.875rem;
+}
+
+.catalog-filter .input-group-text {
+	padding-right: 0.5rem;
+	color: #52627d;
+}
+
+.catalog-filter .form-control {
+	padding-left: 0.25rem;
+}
+
+.catalog-filter .form-control::placeholder {
+	color: #66738c;
+	opacity: 1;
+}
+
+.catalog-filter .form-control:focus {
+	background: #fff;
+	box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.12);
+}
+
+.model-card {
+	border-color: #e6eaf2;
+	border-radius: 0.3rem;
+	color: #172b45;
+	cursor: pointer;
+	transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.model-card:focus-visible {
+	outline: 3px solid rgba(49, 104, 255, 0.25);
+	outline-offset: 2px;
+}
+
+.model-card:hover {
+	border-color: #9db9ff;
+}
+
+.model-card.is-selected {
+	border: 2px solid #3168ff;
+	background: #f8faff;
+}
+
+.model-title {
+	color: #172b45;
+	font-size: 1rem;
+	font-weight: 600;
+}
+
+.model-description {
+	color: #66738c;
+	font-size: 0.875rem;
+	line-height: 1.45;
+}
+
+.model-status {
+	min-width: 2.5rem;
+	padding: 0.2rem 0.45rem;
+	border: 1px solid transparent;
+	border-radius: 0.15rem;
+	font-size: 0.7rem;
+	font-weight: 600;
+	letter-spacing: 0.01em;
+}
+
+.status-published,
+.status-version {
+	color: #087653;
+	background: #d8fbe9;
+	border-color: #75e8b2;
+}
+
+.status-draft {
+	color: #9b4a00;
+	background: #fff3c4;
+	border-color: #ffc83d;
+}
+
+.model-menu {
+	flex: 0 0 auto;
+	margin-left: 0.1rem;
+}
+
+.model-menu .btn {
+	width: 1rem;
+	line-height: 1;
+}
+
+.model-meta {
+	padding-top: 0.55rem;
+	border-top: 1px solid #edf0f5;
+	color: #53617b;
+	font-size: 0.75rem;
+	font-weight: 500;
+}
+
+.model-meta i {
+	margin-right: 0.15rem;
+}
+
+.catalog-create {
+	min-height: 2.25rem;
+	border: 1px dashed #5281f4;
+	border-radius: 0.25rem;
+	background: #a9c4fb;
+	color: #122b50;
+	font-size: 0.875rem;
+	font-weight: 600;
+}
+
+.catalog-create:hover,
+.catalog-create:focus-visible {
+	border-color: #2459df;
+	background: #94b5f8;
+	color: #102546;
+}
+
+@media (min-width: 768px) {
+	.catalog-panel .card-body {
+		padding: 1rem;
+	}
+
+	.model-card .card-body {
+		padding: 0.8rem !important;
+	}
+}
+
+@media (max-width: 575.98px) {
+	.model-meta {
+		flex-direction: column;
+		gap: 0.35rem !important;
+	}
+
+	.model-status {
+		margin-right: 0.25rem;
+	}
+}

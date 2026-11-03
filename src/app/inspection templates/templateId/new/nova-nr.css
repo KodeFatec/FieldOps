@@ -1,0 +1,38 @@
+.nr-create-page {
+  --nr-ink: #182a43;
+  --nr-muted: #69778e;
+  background: var(--bg);
+  color: var(--nr-ink);
+}
+
+.nr-create-container { width: min(100%, 980px); margin: 0 auto; padding-bottom: 2rem; }
+.nr-create-page .breadcrumb { --bs-breadcrumb-divider: '›'; color: #78859a; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.045em; text-transform: uppercase; }
+.nr-create-page .breadcrumb-item + .breadcrumb-item::before { color: #8c98aa; }
+.nr-create-page .breadcrumb-item.active { color: #2360cf; }
+.nr-create-page h1, .nr-create-page h2 { color: var(--nr-ink); letter-spacing: -0.02em; }
+.nr-create-page h1 { font-size: clamp(1.45rem, 2.4vw, 1.9rem); }
+.nr-create-page .text-body-secondary { color: var(--nr-muted) !important; }
+.nr-create-page .eyebrow { color: #3168cf; font-size: 0.67rem; font-weight: 800; letter-spacing: 0.09em; }
+.nr-create-page .alert-info { border-color: #c9def8; background: #eef6ff; color: #345477; }
+.nr-form-card { border: 1px solid #e0e6ef; border-radius: 0.55rem; background: #fff; box-shadow: 0 8px 24px rgba(27, 48, 79, 0.05); }
+.form-section + .form-section { padding-top: 1.5rem; border-top: 1px solid #e8edf4; }
+.form-section-heading { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1.25rem; }
+.form-section-heading h2 { margin: 0 0 0.2rem; font-size: 1rem; font-weight: 750; }
+.form-section-heading p { margin: 0; color: #738198; font-size: 0.78rem; }
+.section-icon { display: inline-flex; width: 2.3rem; height: 2.3rem; flex: 0 0 2.3rem; align-items: center; justify-content: center; border-radius: 0.5rem; background: #eaf0ff; color: #3168cf; }
+.nr-form-card .form-label { color: #2b405e; font-size: 0.8rem; font-weight: 650; }
+.nr-form-card .form-control, .nr-form-card .input-group-text { border-color: #dfe5ef; color: #263c5b; font-size: 0.85rem; }
+.nr-form-card .form-control::placeholder { color: #9aa5b5; }
+.nr-form-card .form-control:focus { border-color: #8eace8; box-shadow: 0 0 0 0.2rem rgba(49, 104, 207, 0.12); }
+.nr-form-card .form-text { color: #8290a4; font-size: 0.7rem; }
+.sections-list { display: grid; gap: 0.8rem; }
+.section-editor { min-width: 0; padding: 1rem; border: 1px solid #e3e9f2; border-radius: 0.45rem; background: #fbfcfe; }
+.section-index { color: #496184; font-size: 0.75rem; font-weight: 750; }
+.section-editor .form-label { display: block; margin-bottom: 0; }
+.remove-section { font-size: 0.75rem; text-decoration: none; }
+.nr-create-page .btn-primary { background: #3168cf; border-color: #3168cf; }
+
+@media (max-width: 575.98px) {
+  .section-editor { padding: 0.8rem; }
+  .form-section-heading p { max-width: 15rem; }
+}
