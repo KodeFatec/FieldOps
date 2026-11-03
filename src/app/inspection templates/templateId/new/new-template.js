@@ -61,12 +61,53 @@ const standards = {
   }
 };
 
+const CUSTOM_STANDARDS_KEY = "opsCustomStandards";
+let customStandards = [];
+try {
+  const savedStandards = JSON.parse(localStorage.getItem(CUSTOM_STANDARDS_KEY) || "[]");
+  if (Array.isArray(savedStandards)) customStandards = savedStandards;
+} catch {
+  customStandards = [];
+}
+
+const standardList = document.getElementById("standardList");
+customStandards.forEach((standard) => {
+  if (!standard?.code || !standard.title || !Array.isArray(standard.sections) || standards[standard.code]) return;
+  standards[standard.code] = standard;
+
+  const card = document.createElement("button");
+  card.className = "standard-card";
+  card.type = "button";
+  card.setAttribute("role", "option");
+  card.setAttribute("aria-selected", "false");
+  card.dataset.standard = standard.code;
+  const icon = document.createElement("span");
+  icon.className = "standard-icon";
+  const iconGlyph = document.createElement("i");
+  iconGlyph.className = "bi bi-shield-check";
+  icon.append(iconGlyph);
+  const copy = document.createElement("span");
+  copy.className = "standard-copy";
+  const code = document.createElement("strong");
+  code.textContent = standard.code;
+  const title = document.createElement("span");
+  title.textContent = standard.title;
+  const category = document.createElement("small");
+  category.textContent = standard.category || "Norma personalizada";
+  copy.append(code, title, category);
+  const mark = document.createElement("i");
+  mark.className = "bi bi-check-circle-fill selected-mark";
+  card.append(icon, copy, mark);
+  standardList.append(card);
+});
+
 const standardCards = [...document.querySelectorAll(".standard-card")];
 const previewTitle = document.getElementById("previewTitle");
 const previewDescription = document.getElementById("previewDescription");
 const previewSections = document.getElementById("previewSections");
 const standardSearch = document.getElementById("standardSearch");
-let selectedCode = "NR-10";
+let selectedCode = new URLSearchParams(window.location.search).get("selected") || "NR-10";
+if (!standards[selectedCode]) selectedCode = "NR-10";
 
 document.getElementById("goBack").addEventListener("click", () => {
   if (window.history.length > 1) window.history.back();
@@ -145,4 +186,6 @@ document.getElementById("createFromStandard").addEventListener("click", () => {
   window.location.href = `../edit/index.html?source=nr&norma=${encodeURIComponent(selectedCode)}`;
 });
 
-renderPreview(selectedCode);
+const initialCard = standardCards.find((card) => card.dataset.standard === selectedCode) || standardCards[0];
+if (initialCard) selectStandard(initialCard);
+document.getElementById("resultsCount").textContent = `${standardCards.length} ${standardCards.length === 1 ? "norma" : "normas"}`;

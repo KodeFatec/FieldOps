@@ -4,6 +4,29 @@ const modelNameField = document.getElementById("modelName");
 const sectionsContainer = document.querySelector(".editor-container");
 let selectedItem = null;
 let newSectionNumber = document.querySelectorAll(".checklist-section").length + 1;
+const answerTypes = {
+  text: { label: "Texto livre", icon: "bi-fonts" },
+  checklist: { label: "Checklist (Conforme / Não conforme)", icon: "bi-list-check" },
+  boolean: { label: "Booleano (Sim / Não)", icon: "bi-toggle-on" },
+  number: { label: "Numérico", icon: "bi-123" },
+  date: { label: "Data", icon: "bi-calendar3" },
+  media: { label: "Foto / mídia", icon: "bi-camera" },
+  select: { label: "Lista de opções", icon: "bi-menu-button-wide" },
+};
+
+function inferAnswerType(item) {
+  if (answerTypes[item.dataset.answerType]) return item.dataset.answerType;
+  const badge = item.querySelector(".item-options .option-badge");
+  const description = badge?.textContent.toLowerCase() || "";
+  const icon = badge?.querySelector("i")?.className || "";
+  if (/bi-toggle-on|sim\s*\/\s*não|boolean/.test(`${icon} ${description}`)) return "boolean";
+  if (/bi-list-check|conforme|adequado|checklist/.test(`${icon} ${description}`)) return "checklist";
+  if (/bi-123|numérico|numerico/.test(`${icon} ${description}`)) return "number";
+  if (/bi-camera|foto|mídia|midia/.test(`${icon} ${description}`)) return "media";
+  if (/bi-calendar|data/.test(`${icon} ${description}`)) return "date";
+  if (/lista de opções|seleção única/.test(description)) return "select";
+  return "text";
+}
 
 function notify(message) {
   toastMessage.textContent = message;
@@ -95,6 +118,9 @@ sectionsContainer.addEventListener("click", (event) => {
     selectedItem = settingsButton.closest(".checklist-item");
     const label = selectedItem.querySelector(".item-label")?.childNodes[0]?.textContent.trim();
     document.getElementById("itemLabel").value = label || "Novo item do checklist";
+    document.getElementById("itemType").value = inferAnswerType(selectedItem);
+    document.getElementById("requiredCheck").checked = !selectedItem.querySelector(".required-badge")?.classList.contains("d-none");
+    document.getElementById("criticalCheck").checked = selectedItem.classList.contains("item-critical");
   }
 });
 
@@ -105,6 +131,17 @@ document.querySelector("#settingsModal .btn-primary").addEventListener("click", 
   labelElement.childNodes[0].textContent = `${label} `;
   const requiredBadge = labelElement.querySelector(".required-badge");
   if (requiredBadge) requiredBadge.classList.toggle("d-none", !document.getElementById("requiredCheck").checked);
+  const answerType = document.getElementById("itemType").value;
+  const type = answerTypes[answerType] || answerTypes.text;
+  let answerBadge = selectedItem.querySelector(".item-options .option-badge");
+  if (!answerBadge) {
+    const options = selectedItem.querySelector(".item-options");
+    answerBadge = document.createElement("span");
+    answerBadge.className = "badge option-badge";
+    options.prepend(answerBadge);
+  }
+  answerBadge.innerHTML = `<i class="bi ${type.icon}"></i> ${type.label}`;
+  selectedItem.dataset.answerType = answerType;
   if (document.getElementById("criticalCheck").checked) selectedItem.classList.add("item-critical");
   else selectedItem.classList.remove("item-critical");
   notify("Configurações do item aplicadas.");
