@@ -1,0 +1,877 @@
+<!doctype html>
+<html lang="pt-BR" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OPS – Inspeções Técnicas</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./../menu-base/styles.css" />
+    <link rel="stylesheet" href="./../../../styles.css" />
+    <style>
+      @media (min-width: 992px) {
+        .review-action-bar {
+          left: 260px;
+          transition: left 0.25s ease;
+        }
+
+        body:has(.sb-card.is-collapsed) .review-action-bar {
+          left: 76px;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="">
+    <div class="d-lg-flex min-vh-100">
+      <nav class="d-lg-flex">
+        <div
+          class="offcanvas-lg offcanvas-start flex-grow-0"
+          tabindex="-1"
+          id="sidebar"
+          aria-label="Menu principal"
+        >
+          <div class="offcanvas-header d-lg-none">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              data-bs-target="#sidebar"
+              aria-label="Fechar"
+            ></button>
+          </div>
+
+          <div class="offcanvas-body p-0">
+            <div
+              class="sb-card d-flex flex-column p-3 border-end border-secondary-subtle"
+              id="sbCard"
+            >
+              <button
+                class="sb-toggle btn btn-primary rounded-circle border-0 p-0 d-none d-lg-flex align-items-center justify-content-center"
+                id="sbToggle"
+                type="button"
+                aria-label="Recolher menu"
+                aria-expanded="true"
+              >
+                <i class="bi bi-chevron-left small"></i>
+              </button>
+
+              <a
+                href="#"
+                class="d-flex align-items-center gap-2 text-decoration-none mb-3 justify-content-center justify-content-lg-start sb-user"
+              >
+                <span
+                  class="sb-logo rounded-2 d-inline-flex align-items-center justify-content-center text-white"
+                >
+                  <i class="bi bi-clipboard-check"></i>
+                </span>
+                <span class="sb-label lh-1">
+                  <span class="d-block fw-bold text-primary">OPS</span>
+                  <small class="text-secondary" style="font-size: 0.6rem"
+                    >Inspeções Técnicas</small
+                  >
+                </span>
+              </a>
+
+              <div
+                class="sb-unit rounded-2 border border-secondary-subtle px-2 py-2 mb-3 d-flex align-items-center gap-2 small"
+                title="Unidade Alpha 01 · SaaS v2.4"
+              >
+                <span class="badge rounded-circle bg-success p-1"
+                  ><span class="visually-hidden">Online</span></span
+                >
+                <span
+                  class="sb-label fw-semibold text-uppercase text-white-50 text-truncate"
+                  >Unidade Alpha 01</span
+                >
+                <span
+                  class="sb-label badge text-bg-primary bg-opacity-25 ms-auto"
+                  >SaaS v2.4</span
+                >
+              </div>
+
+              <nav class="flex-grow-1 overflow-y-auto overflow-x-hidden">
+                <ul class="nav flex-column gap-1">
+                  <li>
+                    <a
+                      class="sb-item nav-link active rounded-2 d-flex align-items-center gap-2 position-relative"
+                      href="#"
+                      title="Dashboard"
+                      aria-current="page"
+                      ><i class="bi bi-grid-1x2 fs-6"></i
+                      ><span class="sb-label">Dashboard</span></a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative"
+                      href="#"
+                      title="Usuários"
+                      ><i class="bi bi-people fs-6"></i
+                      ><span class="sb-label">Usuários</span></a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative"
+                      href="#"
+                      title="Clientes"
+                      ><i class="bi bi-buildings fs-6"></i
+                      ><span class="sb-label">Clientes</span></a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative"
+                      href="#"
+                      title="Locais"
+                      ><i class="bi bi-geo-alt fs-6"></i
+                      ><span class="sb-label">Locais</span></a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative"
+                      href="#"
+                      title="Equipamentos"
+                      ><i class="bi bi-broadcast-pin fs-6"></i
+                      ><span class="sb-label">Equipamentos</span></a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative"
+                      href="#"
+                      title="Modelos de Inspeção"
+                      ><i class="bi bi-clipboard-data fs-6"></i
+                      ><span class="sb-label">Modelos de Inspeção</span></a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative"
+                      href="#"
+                      title="Inspeções (18)"
+                    >
+                      <i class="bi bi-image fs-6"></i
+                      ><span class="sb-label">Inspeções</span>
+                      <span
+                        class="sb-badge badge rounded-pill text-bg-primary ms-auto"
+                        >18</span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative"
+                      href="#"
+                      title="Não Conformidades (4)"
+                    >
+                      <i class="bi bi-exclamation-triangle fs-6"></i
+                      ><span class="sb-label">Não Conformidades</span>
+                      <span
+                        class="sb-badge badge rounded-pill text-bg-danger ms-auto"
+                        >4</span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative"
+                      href="#"
+                      title="Auditoria"
+                      ><i class="bi bi-shield-check fs-6"></i
+                      ><span class="sb-label">Auditoria</span></a
+                    >
+                  </li>
+                </ul>
+              </nav>
+
+              <div class="pt-3 mt-3 border-top border-secondary-subtle">
+                <div
+                  class="sb-user d-flex align-items-center gap-2 mb-2 px-2"
+                  title="Mariana Souza · Supervisora Geral"
+                >
+                  <i class="bi bi-person-circle fs-5 text-white-50"></i>
+                  <div class="sb-label lh-sm">
+                    <div class="fw-semibold small text-white">
+                      Mariana Souza
+                    </div>
+                    <small class="text-secondary">Supervisora Geral</small>
+                  </div>
+                </div>
+                <a
+                  href="#"
+                  class="sb-item nav-link rounded-2 d-flex align-items-center gap-2"
+                  title="Sair"
+                >
+                  <i class="bi bi-box-arrow-left fs-6"></i
+                  ><span class="sb-label">Sair</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div
+        class="tb-col flex-grow-1 d-flex flex-column bg-body-tertiary text-body"
+        data-bs-theme="light"
+      >
+        <header
+          class="navbar bg-body border-bottom sticky-top flex-nowrap gap-2 gap-md-3 px-3 py-2"
+        >
+          <button
+            class="btn btn-outline-secondary d-lg-none"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#sidebar"
+            aria-controls="sidebar"
+            aria-label="Abrir menu"
+          >
+            <i class="bi bi-list fs-5"></i>
+          </button>
+
+          <div class="input-group tb-search flex-grow-1" role="search">
+            <span
+              class="input-group-text bg-primary-subtle border-primary-subtle text-primary-emphasis"
+              ><i class="bi bi-search"></i
+            ></span>
+            <input
+              type="search"
+              class="form-control bg-primary-subtle border-primary-subtle"
+              placeholder="Pesquisar"
+              aria-label="Pesquisar"
+            />
+          </div>
+
+          <div class="vr d-none d-xl-block"></div>
+          <nav class="nav d-none d-xl-flex" aria-label="Atalhos">
+            <a class="nav-link text-body-secondary px-2" href="#">Inspeções</a>
+            <a class="nav-link text-body-secondary px-2" href="#">Auditoria</a>
+          </nav>
+
+          <div class="ms-auto d-flex align-items-center gap-2">
+            <button
+              type="button"
+              class="btn btn-outline-secondary btn-sm text-body d-none d-md-inline-flex align-items-center gap-2"
+              title="Exportar Relatório"
+            >
+              <i class="bi bi-download"></i
+              ><span class="d-none d-xl-inline">Exportar Relatório</span>
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary btn-sm d-inline-flex align-items-center gap-2"
+              title="Nova Inspeção"
+            >
+              <i class="bi bi-plus-lg"></i
+              ><span class="d-none d-sm-inline">Nova Inspeção</span>
+            </button>
+
+            <button
+              type="button"
+              class="btn btn-link text-decoration-none text-body-secondary position-relative p-1 ms-1"
+              aria-label="Notificações"
+            >
+              <i class="bi bi-bell fs-5"></i>
+              <span
+                class="position-absolute top-0 end-0 mt-1 me-1 p-1 bg-danger border border-light rounded-circle"
+                ><span class="visually-hidden">Novas notificações</span></span
+              >
+            </button>
+            <button
+              type="button"
+              class="btn btn-link text-decoration-none text-body-secondary p-1 d-none d-sm-inline-flex"
+              aria-label="Ajuda"
+            >
+              <i class="bi bi-question-circle fs-5"></i>
+            </button>
+
+            <div class="d-flex align-items-center gap-2 ms-1">
+              <span
+                class="tb-avatar rounded-circle bg-primary text-white fw-semibold small d-inline-flex align-items-center justify-content-center"
+                >MS</span
+              >
+              <div class="d-none d-lg-block lh-sm">
+                <div class="fw-semibold small">Mariana Souza</div>
+                <small class="text-body-secondary">Supervisora</small>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <main class="bg-light pb-5 mb-5">
+          <div class="container-fluid p-4">
+            <div class="bg-white p-3 rounded shadow-sm mb-4 border">
+              <div class="row align-items-center">
+                <div class="col-md-4">
+                  <span
+                    class="text-muted text-uppercase small"
+                    style="font-size: 0.7rem"
+                    >Unidade Operacional</span
+                  >
+                  <h5 class="fw-bold mb-0">Compressor Estação Alpha 04</h5>
+                </div>
+                <div class="col-md-4 border-start">
+                  <span
+                    class="text-muted text-uppercase small"
+                    style="font-size: 0.7rem"
+                    >Técnico de Campo</span
+                  >
+                  <h6 class="fw-bold mb-0">
+                    <i class="bi bi-person"></i> Carlos Mendes (Reg. 8834)
+                  </h6>
+                </div>
+                <div class="col-md-4 border-start">
+                  <span
+                    class="text-muted text-uppercase small"
+                    style="font-size: 0.7rem"
+                    >Data do Campo</span
+                  >
+                  <h6 class="mb-0">24 Out 2024 • 14:35 BRT</h6>
+                </div>
+              </div>
+              <div class="d-flex gap-2 mt-3">
+                <span
+                  class="badge bg-danger-subtle text-danger border border-danger-subtle"
+                  ><i class="bi bi-circle-fill small"></i> 1 Item Crítico</span
+                >
+                <span
+                  class="badge bg-success-subtle text-success border border-success-subtle"
+                  ><i class="bi bi-circle-fill small"></i> 2 Conformes</span
+                >
+                <span class="badge bg-light text-dark border"
+                  ><i class="bi bi-check2-square text-primary"></i> Progresso da
+                  Validação: 2/3</span
+                >
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-8">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-3"
+                >
+                  <div>
+                    <h5 class="fw-bold mb-0">Auditoria Técnica Minuciosa</h5>
+                    <p class="text-muted small mb-0">
+                      Avalie os registos paramétricos, fotos operacionais e
+                      delibere sobre conformidade
+                    </p>
+                  </div>
+                  <button class="btn btn-sm btn-outline-secondary">
+                    Expandir Todos
+                  </button>
+                </div>
+
+                <div class="card border-danger-subtle shadow-sm mb-4">
+                  <div
+                    class="card-header bg-danger-subtle text-danger d-flex justify-content-between align-items-center border-bottom-0 py-2"
+                  >
+                    <div class="small fw-bold">
+                      <i class="bi bi-x-circle"></i> NÃO CONFORME
+                      <span class="text-muted ms-2 fw-normal"
+                        >ITEM #01 • MANÓMETRO PRINCIPAL</span
+                      >
+                    </div>
+                    <span
+                      class="badge bg-danger-subtle text-danger border border-danger"
+                      >+3.9 bar da tolerância</span
+                    >
+                  </div>
+                  <div class="card-body">
+                    <div class="row mb-3">
+                      <div class="col-sm-8">
+                        <h5 class="fw-bold mb-1">
+                          Medição de Pressão de Linha
+                        </h5>
+                        <p class="text-muted small">
+                          Verificação de pressão estática na válvula reguladora
+                          de entrada primária
+                        </p>
+                      </div>
+                      <div class="col-sm-4 text-end">
+                        <span
+                          class="text-muted text-uppercase small d-block"
+                          style="font-size: 0.7rem"
+                          >Valor Coletado</span
+                        >
+                        <h3 class="text-danger fw-bold mb-0">12.4 bar</h3>
+                        <span class="text-muted small" style="font-size: 0.7rem"
+                          >Limite Operacional: 8.5 bar max</span
+                        >
+                      </div>
+                    </div>
+
+                    <div class="bg-light p-3 rounded mb-3 border">
+                      <span
+                        class="text-muted text-uppercase small d-block mb-1"
+                        style="font-size: 0.7rem"
+                        >Relato do Técnico Carlos Mendes:</span
+                      >
+                      <p class="mb-0 small text-dark fst-italic">
+                        "Identificado ruído sibilante na conexão flangeada.
+                        Pressão estabilizada acima do padrão aos 10 minutos de
+                        pressurização contínua. Equipamento isolado
+                        temporariamente."
+                      </p>
+                    </div>
+
+                    <div class="mb-3">
+                      <span
+                        class="text-muted text-uppercase small d-block mb-2"
+                        style="font-size: 0.7rem"
+                        >Evidência Fotográfica Anexada pelo Campo</span
+                      >
+                      <div class="d-flex align-items-start gap-3">
+                        <img
+                          src="https://via.placeholder.com/120x80"
+                          alt="Evidência"
+                          class="img-thumbnail"
+                        />
+                        <div>
+                          <h6 class="mb-0 small fw-bold">
+                            Foto_Pressao_V12.jpg
+                          </h6>
+                          <p
+                            class="text-muted small mb-1"
+                            style="font-size: 0.75rem"
+                          >
+                            Resolução: 4032x3024 (12MP)
+                          </p>
+                          <a href="#" class="text-decoration-none small"
+                            ><i class="bi bi-zoom-in"></i> Visualizar em Alta
+                            Resolução</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mb-2">
+                      <label class="form-label small fw-bold text-primary"
+                        ><i class="bi bi-pencil-square"></i> Anotação /
+                        Determinação do Supervisor:</label
+                      >
+                      <textarea
+                        class="form-control text-dark border-primary-subtle bg-light"
+                        rows="3"
+                      >
+Necessário registar uma fotografia adicional da vedação e realizar contraprova com manómetro calibrado padrão.</textarea
+                      >
+                      <div class="d-flex justify-content-between mt-1">
+                        <span class="text-muted" style="font-size: 0.7rem"
+                          ><i class="bi bi-floppy"></i> Salvo automaticamente há
+                          2 minutos</span
+                        >
+                        <span class="text-muted" style="font-size: 0.7rem"
+                          >108/500 caracteres</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card border-success-subtle shadow-sm mb-4">
+                  <div
+                    class="card-header bg-success-subtle text-success d-flex justify-content-between align-items-center border-bottom-0 py-2"
+                  >
+                    <div class="small fw-bold">
+                      <i class="bi bi-check-circle"></i> CONFORME
+                      <span class="text-muted ms-2 fw-normal"
+                        >ITEM #02 • ACIONAMENTO MANUAL</span
+                      >
+                    </div>
+                    <span class="text-muted small" style="font-size: 0.75rem"
+                      >Status: Validado sem restrições</span
+                    >
+                  </div>
+                  <div class="card-body">
+                    <div
+                      class="d-flex justify-content-between align-items-start"
+                    >
+                      <div>
+                        <h5 class="fw-bold mb-1">Estado das Válvulas</h5>
+                        <p class="text-muted small">
+                          Inspeção física de integridade das sedes, ausência de
+                          corrosão e ciclo de curso 100%
+                        </p>
+                      </div>
+                      <i class="bi bi-shield-check text-success fs-4"></i>
+                    </div>
+
+                    <div
+                      class="row bg-light rounded py-2 px-1 mb-3 text-center border mx-0"
+                    >
+                      <div class="col-4 border-end">
+                        <span
+                          class="text-muted small d-block"
+                          style="font-size: 0.7rem"
+                          >Estanqueidade</span
+                        >
+                        <span class="fw-bold">100% Aprovado</span>
+                      </div>
+                      <div class="col-4 border-end">
+                        <span
+                          class="text-muted small d-block"
+                          style="font-size: 0.7rem"
+                          >Torque de Fechamento</span
+                        >
+                        <span class="fw-bold">45 N·m (Padrão)</span>
+                      </div>
+                      <div class="col-4">
+                        <span
+                          class="text-muted small d-block"
+                          style="font-size: 0.7rem"
+                          >Condição Mecânica</span
+                        >
+                        <span class="fw-bold">Sem folgas</span>
+                      </div>
+                    </div>
+
+                    <div>
+                      <label
+                        class="form-label text-muted small mb-1"
+                        style="font-size: 0.75rem"
+                        >Comentário do Supervisor (Opcional):</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control form-control-sm border-0 bg-light"
+                        value="Conforme parâmetros da norma ISO 10497. Sem objeções."
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4">
+                <div class="card border-danger-subtle shadow-sm mb-4">
+                  <div class="card-header bg-white border-bottom-0 pt-3">
+                    <h6 class="text-danger fw-bold mb-0">
+                      <i class="bi bi-exclamation-triangle"></i> Não
+                      Conformidade
+                      <span class="badge bg-danger text-white float-end"
+                        >#NC-0089</span
+                      >
+                    </h6>
+                  </div>
+                  <div class="card-body pt-2">
+                    <div
+                      class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-2"
+                    >
+                      <span class="text-muted small">Severidade:</span>
+                      <span
+                        class="badge bg-danger-subtle text-danger border border-danger-subtle"
+                        >CRÍTICA - NÍVEL 1</span
+                      >
+                    </div>
+                    <div
+                      class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-2"
+                    >
+                      <span class="text-muted small">Origem:</span>
+                      <span class="small fw-bold"
+                        >Item 01 (Pressão Elevada)</span
+                      >
+                    </div>
+                    <div
+                      class="d-flex justify-content-between align-items-start border-bottom pb-2 mb-3"
+                    >
+                      <span class="text-muted small">Ação Imediata:</span>
+                      <span class="small text-end fw-bold"
+                        >Despressurização & Teste Flange</span
+                      >
+                    </div>
+
+                    <div
+                      class="alert alert-primary bg-primary-subtle text-primary border-0 p-2 small mb-3"
+                    >
+                      <strong
+                        class="d-block mb-1 text-uppercase"
+                        style="font-size: 0.7rem"
+                        >Impacto Regulatório:</strong
+                      >
+                      Violação da tolerância NR-13 para vasos de pressão. Requer
+                      laudo assinado por engenheiro mecânico antes do reinício.
+                    </div>
+
+                    <button class="btn btn-sm btn-outline-primary w-100">
+                      <i class="bi bi-box-arrow-up-right"></i> Abrir Detalhes do
+                      Chamado #NC-0089
+                    </button>
+                  </div>
+                </div>
+
+                <div class="card shadow-sm mb-4 border-0">
+                  <div class="card-body">
+                    <div
+                      class="d-flex justify-content-between align-items-center mb-3"
+                    >
+                      <h6 class="fw-bold mb-0">
+                        <i class="bi bi-clock-history"></i> Histórico de
+                        Evidências
+                      </h6>
+                      <span
+                        class="text-muted small text-end"
+                        style="font-size: 0.7rem"
+                        >3<br />Registos</span
+                      >
+                    </div>
+
+                    <div
+                      class="border-start border-2 border-primary ms-2 ps-3 position-relative mb-3"
+                    >
+                      <span
+                        class="position-absolute top-0 start-0 translate-middle p-1 bg-danger border border-light rounded-circle"
+                      ></span>
+                      <p class="small mb-1">
+                        <strong class="text-muted">14:31:02</strong> • Leitura
+                        Analógica
+                      </p>
+                      <p class="small mb-1 fw-bold">
+                        Foto do manómetro com sobrepressão
+                      </p>
+                      <span class="text-muted" style="font-size: 0.7rem"
+                        >Dispositivo: CAT S62 Pro Rugged</span
+                      >
+                    </div>
+
+                    <div
+                      class="border-start border-2 border-primary ms-2 ps-3 position-relative mb-3"
+                    >
+                      <span
+                        class="position-absolute top-0 start-0 translate-middle p-1 bg-primary border border-light rounded-circle"
+                      ></span>
+                      <p class="small mb-1">
+                        <strong class="text-muted">14:26:15</strong> •
+                        Telemetria BLE
+                      </p>
+                      <p class="small mb-1 fw-bold">
+                        Sincronização de curva térmica PT100
+                      </p>
+                      <span class="text-muted" style="font-size: 0.7rem"
+                        >Gateway: FieldHub-Alpha-Node</span
+                      >
+                    </div>
+
+                    <div
+                      class="border-start border-2 border-primary ms-2 ps-3 position-relative mb-3 border-bottom-0"
+                    >
+                      <span
+                        class="position-absolute top-0 start-0 translate-middle p-1 bg-primary border border-light rounded-circle"
+                      ></span>
+                      <p class="small mb-1">
+                        <strong class="text-muted">14:15:40</strong> • Check-In
+                        GPS de Campo
+                      </p>
+                      <p class="small mb-1 fw-bold">
+                        Check-in no raio de 15m do ativo<br />-23.55052,
+                        -46.63330
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="fixed-bottom review-action-bar bg-white border-top shadow-lg p-3 z-3"
+          >
+            <div
+              class="container-fluid d-flex justify-content-between align-items-center"
+            >
+              <div class="d-flex align-items-center">
+                <span class="fw-bold"
+                  ><i class="bi bi-circle-fill text-danger small me-2"></i>
+                  Decisão de Revisão Pendente</span
+                >
+                <span class="text-muted small ms-3 border-start ps-3"
+                  >Há 1 inconformidade grave reportada</span
+                >
+              </div>
+              <div class="d-flex gap-3">
+                <button class="btn btn-outline-secondary btn-sm px-3">
+                  Salvar Rascunho de Revisão
+                </button>
+                <button
+                  class="btn btn-danger bg-danger-subtle text-danger border-danger fw-bold px-4"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalReprovar"
+                >
+                  <i class="bi bi-x"></i> Reprovar Inspeção
+                </button>
+                <button
+                  class="btn btn-primary fw-bold px-5"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalAprovar"
+                >
+                  <i class="bi bi-check2"></i> Aprovar Inspeção
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="modal fade"
+            id="modalReprovar"
+            tabindex="-1"
+            aria-labelledby="modalReprovarLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header bg-danger text-white border-bottom-0">
+                  <h5 class="modal-title fw-bold" id="modalReprovarLabel">
+                    <i class="bi bi-exclamation-octagon"></i> Confirmar
+                    Reprovação
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close btn-close-white"
+                    data-bs-dismiss="modal"
+                    aria-label="Fechar"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <p class="small text-muted mb-3">
+                    Está prestes a rejeitar o relatório de inspeção. É
+                    necessário justificar o motivo para que o técnico possa
+                    corrigir as falhas apontadas.
+                  </p>
+
+                  <div class="mb-4">
+                    <label
+                      for="motivoReprovacao"
+                      class="form-label fw-bold text-danger"
+                      >Motivo da Reprovação (Obrigatório) *</label
+                    >
+                    <textarea
+                      class="form-control border-danger"
+                      id="motivoReprovacao"
+                      rows="4"
+                      placeholder="Descreva os motivos técnicos para a reprovação e quais as próximas ações esperadas..."
+                    ></textarea>
+                  </div>
+
+                  <div class="form-check bg-light p-3 rounded border">
+                    <input
+                      class="form-check-input ms-1"
+                      type="checkbox"
+                      id="checkReprovar"
+                    />
+                    <label
+                      class="form-check-label small ms-2"
+                      for="checkReprovar"
+                    >
+                      <strong>Confirmação:</strong> Declaro que avaliei todos os
+                      itens e confirmo a decisão de <b>reprovar</b> esta
+                      inspeção. O técnico será notificado.
+                    </label>
+                  </div>
+                </div>
+                <div class="modal-footer bg-light border-top-0">
+                  <button
+                    type="button"
+                    class="btn btn-outline-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Cancelar
+                  </button>
+                  <button type="button" class="btn btn-danger">
+                    <i class="bi bi-x"></i> Confirmar Reprovação
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="modal fade"
+            id="modalAprovar"
+            tabindex="-1"
+            aria-labelledby="modalAprovarLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header bg-primary text-white border-bottom-0">
+                  <h5 class="modal-title fw-bold" id="modalAprovarLabel">
+                    <i class="bi bi-check2-circle"></i> Confirmar Aprovação
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close btn-close-white"
+                    data-bs-dismiss="modal"
+                    aria-label="Fechar"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <p class="small text-muted mb-3">
+                    Atenção: Existe
+                    <strong>1 Não Conformidade Crítica</strong> (Item #01)
+                    assinalada nesta inspeção. Tem a certeza de que deseja
+                    aprovar o formulário no estado atual?
+                  </p>
+
+                  <div class="mb-4">
+                    <label
+                      for="motivoAprovacao"
+                      class="form-label fw-bold text-primary"
+                      >Observação Final do Supervisor (Opcional)</label
+                    >
+                    <textarea
+                      class="form-control border-primary-subtle"
+                      id="motivoAprovacao"
+                      rows="2"
+                      placeholder="Adicione uma nota final de aprovação..."
+                    ></textarea>
+                  </div>
+
+                  <div class="form-check bg-light p-3 rounded border">
+                    <input
+                      class="form-check-input ms-1"
+                      type="checkbox"
+                      id="checkAprovar"
+                    />
+                    <label
+                      class="form-check-label small ms-2"
+                      for="checkAprovar"
+                    >
+                      <strong>Confirmação:</strong> Declaro que revi a
+                      conformidade e os anexos. Assumo a responsabilidade
+                      técnica pela <b>aprovação</b>.
+                    </label>
+                  </div>
+                </div>
+                <div class="modal-footer bg-light border-top-0">
+                  <button
+                    type="button"
+                    class="btn btn-outline-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Rever Inspeção
+                  </button>
+                  <button type="button" class="btn btn-primary">
+                    <i class="bi bi-check2"></i> Confirmar Aprovação
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </main>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./../menu-base/script.js"></script>
+  </body>
+</html>
