@@ -187,7 +187,7 @@
             </header>
 
             <main class="flex-grow-1 p-3 p-lg-4" style="background: var(--bg);">
-                <div class="d-flex flex-column p-3 bg-white border border-secundary rounded">
+                <div class="d-flex flex-column p-3 mb-3 bg-white border border-secundary rounded">
                     <div>
                         <span class="text-secondary fw-semibold">Operações > Inspeções de Equipamentos ></span>
                         <span class="text-primary fw-semibold">INS-00125</span>
@@ -196,8 +196,10 @@
                     <div class="d-flex justify-content-between border-bottom border-secundary mb-3">
                         <p class="fs-3 fw-bold">Gestão de Inspeções em campo</p>
                         <p
-                            class="badge bg-warning-subtle text-warning-emphasis border border-warning align-self-center"><i class="bi bi-clipboard2-data"></i>
-                            3 pendentes de revisão</p>
+                            class="badge bg-warning-subtle text-warning-emphasis border border-warning align-self-center">
+                            <i class="bi bi-clipboard2-data"></i>
+                            3 pendentes de revisão
+                        </p>
                     </div>
 
                     <div class="row align-items-end mb-3">
@@ -209,9 +211,11 @@
                             <button class="btn btn-sm align-self-center fw-semibold"
                                 style="background-color: #F3E8FF; color: #6D28D9; border: 1px solid #6D28D9;">
                                 Em revisão(2)</button>
-                            <button class="btn btn-sm bg-success-subtle text-success border border-success align-self-center fw-semibold">
+                            <button
+                                class="btn btn-sm bg-success-subtle text-success border border-success align-self-center fw-semibold">
                                 Aprovada</button>
-                            <button class="btn btn-sm bg-danger-subtle text-danger border border-danger align-self-center fw-semibold">
+                            <button
+                                class="btn btn-sm bg-danger-subtle text-danger border border-danger align-self-center fw-semibold">
                                 Reprovada</button>
                         </div>
 
@@ -237,91 +241,128 @@
                         </div>
 
                         <div class="col col-sm-12 col-md-2">
-                            <label for="filtroTecninco"
-                                class="form-label small text-body-secondary mb-1">Data</label>
-                                <input type="date" class="form-control align-self-center" id="exampleInputPassword1">
+                            <label for="filtroTecninco" class="form-label small text-body-secondary mb-1">Data</label>
+                            <input type="date" class="form-control align-self-center" id="exampleInputPassword1">
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col col-sm-12 col-md-4 bg-white border border-secundary rounded">
-                        <p class="fs-5 fw-semibold">Fila de inspeções</p>
-                        <div class="card w-75 rounded-0">
-                            <div class="card-body pb-0">
-                                <div class="d-flex justify-content-between">
-                                    <p class="text-primary fw-medium">#INS-00125</p>
-                                    <p class="badge"
-                                        style="background-color: #F3E8FF; color: #6D28D9; border: 1px solid #6D28D9;">
-                                        Em revisão(2)</p>
-                                </div>
-                                <div class="">
-                                    <h5 class="fs-5 fw-medium">Inspeção preventiva de compressor</h5>
-                                    <p class="text-secondary">Indústria Alpha Ltda Comp. 01</p>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <p class="text-secondary"><i class="bi bi-person me-1"></i>Carlos Mendes</p>
-                                    <p class="text-secondary">24/10/2024</p>
+                    <div class="col col-sm-12 col-md-4">
+                        <div class="d-flex flex-column align-items-center">
+                            <div class="card w-75 rounded-0 rounded-top">
+                                <div class="card-body pb-0 d-flex justify-content-between">
+                                    <p class="fs-5 fw-semibold">Fila de inspeções <span
+                                            class="badge bg-primary-subtle text-primary rounded-pill align-self-center">12</span>
+                                    </p>
+
+                                    <i class="bi bi-filter fs-5"></i>
+
                                 </div>
                             </div>
-                        </div>
-                        <div class="card w-75 rounded-0">
-                            <div class="card-body pb-0">
-                                <div class="d-flex justify-content-between">
-                                    <p class="text-primary fw-medium">#INS-00125</p>
-                                    <p class="badge"
-                                        style="background-color: #F3E8FF; color: #6D28D9; border: 1px solid #6D28D9;">
-                                        Em revisão(2)</p>
-                                </div>
-                                <div class="">
-                                    <h5 class="fs-5 fw-medium">Inspeção preventiva de compressor</h5>
-                                    <p class="text-secondary">Indústria Alpha Ltda Comp. 01</p>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <p class="text-secondary"><i class="bi bi-person me-1"></i>Carlos Mendes</p>
-                                    <p class="text-secondary">24/10/2024</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card w-75 rounded-0">
-                            <div class="card-body pb-0">
-                                <div class="d-flex justify-content-between">
-                                    <p class="text-primary fw-medium">#INS-00125</p>
-                                    <p class="badge"
-                                        style="background-color: #F3E8FF; color: #6D28D9; border: 1px solid #6D28D9;">
-                                        Em revisão(2)</p>
-                                </div>
-                                <div class="">
-                                    <h5 class="fs-5 fw-medium">Inspeção preventiva de compressor</h5>
-                                    <p class="text-secondary">Indústria Alpha Ltda Comp. 01</p>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <p class="text-secondary"><i class="bi bi-person me-1"></i>Carlos Mendes</p>
-                                    <p class="text-secondary">24/10/2024</p>
+                            <div class="card w-75 rounded-0"
+                                style="border-left: 4px solid #0d6efd; background: var(--bg);">
+                                <div class="card-body pb-0">
+                                    <div class="d-flex justify-content-between">
+                                        <p class="text-primary fw-medium">#INS-00125</p>
+                                        <p class="badge"
+                                            style="background-color: #F3E8FF; color: #6D28D9; border: 1px solid #6D28D9;">
+                                            Em revisão(2)</p>
+                                    </div>
+                                    <div class="">
+                                        <h5 class="fs-5 fw-medium">Inspeção preventiva de compressor</h5>
+                                        <p class="text-secondary">Indústria Alpha Ltda. • Comp. 01</p>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <p class="text-secondary"><i class="bi bi-person me-1"></i>Carlos Mendes</p>
+                                        <p class="text-secondary">24/10/2024</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card w-75 rounded-0">
-                            <div class="card-body pb-0">
-                                <div class="d-flex justify-content-between">
-                                    <p class="text-primary fw-medium">#INS-00125</p>
-                                    <p class="badge"
-                                        style="background-color: #F3E8FF; color: #6D28D9; border: 1px solid #6D28D9;">
-                                        Em revisão(2)</p>
+                            <div class="card w-75 rounded-0">
+                                <div class="card-body pb-0">
+                                    <div class="d-flex justify-content-between">
+                                        <p class="text-primary fw-medium">#INS-00124</p>
+                                        <p
+                                            class="badge bg-success-subtle text-success border border-success-subtle align-self-center fw-semibold">
+                                            Aprovada</p>
+                                    </div>
+                                    <div class="">
+                                        <h5 class="fs-5 fw-medium">Termografia de Painel de Distribuição MT</h5>
+                                        <p class="text-secondary">Petroquímica Beta • Comp. 01</p>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <p class="text-secondary"><i class="bi bi-person me-1"></i>Fernanda Lima</p>
+                                        <p class="text-secondary">24/10/2024</p>
+                                    </div>
                                 </div>
-                                <div class="">
-                                    <h5 class="fs-5 fw-medium">Inspeção preventiva de compressor</h5>
-                                    <p class="text-secondary">Indústria Alpha Ltda Comp. 01</p>
+                            </div>
+                            <div class="card w-75 rounded-0">
+                                <div class="card-body pb-0">
+                                    <div class="d-flex justify-content-between">
+                                        <p class="text-primary fw-medium">#INS-00123</p>
+                                        <p
+                                            class="badge bg-danger-subtle text-danger border border-danger-subtle align-self-center fw-semibold">
+                                            Reprovada</p>
+                                    </div>
+                                    <div class="">
+                                        <h5 class="fs-5 fw-medium">Inspeção de Válvulas de Alívio de Pressão</h5>
+                                        <p class="text-secondary">Termelétrica Gama • Linha B</p>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <p class="text-secondary"><i class="bi bi-person me-1"></i>Lucas Ribeiro</p>
+                                        <p class="text-secondary">23/10/2024</p>
+                                    </div>
                                 </div>
-                                <div class="d-flex justify-content-between">
-                                    <p class="text-secondary"><i class="bi bi-person me-1"></i>Carlos Mendes</p>
-                                    <p class="text-secondary">24/10/2024</p>
+                            </div>
+                            <div class="card w-75 rounded-0">
+                                <div class="card-body pb-0">
+                                    <div class="d-flex justify-content-between">
+                                        <p class="text-primary fw-medium">#INS-00122</p>
+                                        <p
+                                            class="badge bg-primary-subtle text-primary border border-primary-subtle align-self-center fw-semibold">
+                                            Atribuída</p>
+                                    </div>
+                                    <div class="">
+                                        <h5 class="fs-5 fw-medium">Calibração de Sensores de Vazão</h5>
+                                        <p class="text-secondary">Indústria Alpha Ltda. • Setor 3</p>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <p class="text-secondary"><i class="bi bi-person me-1"></i>Carlos Mendes</p>
+                                        <p class="text-secondary">25/10/2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card w-75 mb-3 rounded-0 rounded-bottom" style="background: var(--bg);">
+                                <div class="card-body d-flex justify-content-center">
+                                    <a class="text-primary fw-semibold"
+                                        style="text-decoration: none; cursor: pointer;">Ver todas as 48 inspeções</a>
+                                </div>
+                            </div>
+
+                            <div class="card w-75">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <p class="text-secondary fw-medium">TELEMETRIA DE PRESSÃO</p>
+                                        <p
+                                            class="badge rounded-1 bg-warning-subtle text-warning-emphasis border border-warning-subtle align-self-center fw-semibold">
+                                            +2.4 bar delta</p>
+                                    </div>
+                                    <div class="">
+                                        <p class="text-secondary">Pressão medida na saída do cabeçote durante o ensaio
+                                            dinâmico ultrapassou o limiar de conformidade.</p>
+                                    </div>
+                                    <div class="d-flex justify-content-between border p-2 rounded"
+                                        style="background: var(--bg);">
+                                        <p class="mb-0">baseline: <span class="fw-medium">7.0 bar</span></p>
+                                        <p class="text-danger fw-medium mb-0">Medido: 9.4 bar</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col col-sm-12 col-md-6 bg-white border border-secundary rounded">
+                    <div class="col col-sm-12 col-md-8 bg-white border border-secundary rounded">
 
                     </div>
                 </div>
