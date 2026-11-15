@@ -221,7 +221,8 @@
 
                         <div class="col col-sm-12 col-md-2">
                             <label for="filtroCliente" class="form-label small text-body-secondary mb-1">Cliente</label>
-                            <select class="form-select" id="filtroCliente" aria-label="Filtro cliente" style="background-color: var(--bg);">
+                            <select class="form-select" id="filtroCliente" aria-label="Filtro cliente"
+                                style="background-color: var(--bg);">
                                 <option selected>Indústria Alpha Ltda.</option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
@@ -232,7 +233,8 @@
                         <div class="col col-sm-12 col-md-2">
                             <label for="filtroTecninco"
                                 class="form-label small text-body-secondary mb-1">Técnico</label>
-                            <select class="form-select" id="filtroTecninco" aria-label="Filtro tecnico" style="background-color: var(--bg);">
+                            <select class="form-select" id="filtroTecninco" aria-label="Filtro tecnico"
+                                style="background-color: var(--bg);">
                                 <option selected>Carlos Mendes</option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
@@ -242,7 +244,8 @@
 
                         <div class="col col-sm-12 col-md-2">
                             <label for="filtroData" class="form-label small text-body-secondary mb-1">Data</label>
-                            <input type="date" class="form-control align-self-center" id="filtroData" style="background-color: var(--bg);">
+                            <input type="date" class="form-control align-self-center" id="filtroData"
+                                style="background-color: var(--bg);">
                         </div>
                     </div>
                 </div>
@@ -362,8 +365,145 @@
                         </div>
                     </div>
 
-                    <div class="col col-sm-12 col-md-8 bg-white border border-secundary rounded">
+                    <div class="col col-sm-12 col-md-8">
+                        <div class="p-3 bg-white border border-secundary rounded">
+                            <div class="d-flex justify-content-between">
+                                <div class="">
+                                    <p
+                                        class="badge me-3 rounded-0 bg-primary-subtle text-primary-emphasis border border-primary-subtle align-self-center fs-6 fw-bold">
+                                        #INS-00125</p>
+                                    <p class="badge rounded-pill me-3"
+                                        style="background-color: #F3E8FF; color: #6D28D9; border: 1px solid #6D28D9;">
+                                        Em revisão</p>
+                                    <span class="text-secondary fw-semibold">Atualizado há 25 minutos</span>
+                                </div>
 
+                                <div class="">
+                                    <button type="button"
+                                        class="btn btn-primary btn-sm d-inline-flex align-items-center gap-2"
+                                        data-bs-toggle="modal" data-bs-target="#modalNovoCliente"
+                                        title="Revisar inspeção">
+                                        <i class="bi bi-chat-left-text"></i><span class="d-none d-sm-inline">Revisar
+                                            inspeção</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="fs-3 fw-bold mb-0">Inspeção Preventiva de Compressor</p>
+                            <p class="text-secondary">Protocólo Técnico NBR-12100 • Auditoria Periódica Trimestral</p>
+
+                            <hr class="my-3">
+                            <p class="small fw-semibold text-body-secondary text-uppercase mb-3">Ciclo de vida do
+                                processo</p>
+
+                            <div class="row row-cols-5 g-0 w-100 pb-3">
+                                <div class="col text-center">
+                                    <div class="d-flex align-items-center">
+                                        <hr class="flex-grow-1 m-0">
+                                        <span
+                                            class="d-inline-flex align-items-center justify-content-center rounded-3 flex-shrink-0 bg-primary-subtle text-primary-emphasis border border-primary-subtle fw-semibold"
+                                            style="width: 2.25rem; height: 2.25rem;">5</span>
+                                        <hr class="flex-grow-1 m-0">
+                                    </div>
+                                    <div class="fw-semibold text-body-secondary small mt-2">Aprovada</div>
+                                    <small class="text-body-secondary d-block">Etapa final</small>
+                                </div>
+
+                                <div class="col text-center">
+                                    <div class="d-flex align-items-center">
+                                        <hr class="flex-grow-1 m-0">
+                                        <span
+                                            class="d-inline-flex align-items-center justify-content-center rounded-3 flex-shrink-0 text-white mx-1"
+                                            style="width: 2.25rem; height: 2.25rem; background-color: #6D28D9; box-shadow: 0 0 0 .3rem rgba(109, 40, 217, .2);"><i
+                                                class="bi bi-eye"></i></span>
+                                        <hr class="flex-grow-1 m-0">
+                                    </div>
+                                    <div class="fw-bold small mt-2" style="color: #6D28D9;">Em revisão</div>
+                                    <small class="fw-semibold d-block" style="color: #6D28D9;">Aguardando gestor</small>
+                                </div>
+
+                                <div class="col text-center">
+                                    <div class="d-flex align-items-center">
+                                        <hr class="flex-grow-1 m-0">
+                                        <span
+                                            class="d-inline-flex align-items-center justify-content-center rounded-3 flex-shrink-0 bg-success-subtle text-success border border-success-subtle"
+                                            style="width: 2.25rem; height: 2.25rem;"><i
+                                                class="bi bi-check-lg"></i></span>
+                                        <hr class="flex-grow-1 m-0">
+                                    </div>
+                                    <div class="fw-bold small mt-2">Enviada</div>
+                                    <small class="text-body-secondary d-block">24/10 11:42</small>
+                                </div>
+
+                                <div class="col text-center">
+                                    <div class="d-flex align-items-center">
+                                        <hr class="flex-grow-1 m-0">
+                                        <span
+                                            class="d-inline-flex align-items-center justify-content-center rounded-3 flex-shrink-0 bg-success-subtle text-success border border-success-subtle"
+                                            style="width: 2.25rem; height: 2.25rem;"><i
+                                                class="bi bi-check-lg"></i></span>
+                                        <hr class="flex-grow-1 m-0">
+                                    </div>
+                                    <div class="fw-bold small mt-2">Em andamento</div>
+                                    <small class="text-body-secondary d-block">24/10 09:15</small>
+                                </div>
+
+                                <div class="col text-center">
+                                    <div class="d-flex align-items-center">
+                                        <hr class="flex-grow-1 m-0">
+                                        <span
+                                            class="d-inline-flex align-items-center justify-content-center rounded-3 flex-shrink-0 bg-success-subtle text-success border border-success-subtle"
+                                            style="width: 2.25rem; height: 2.25rem;"><i
+                                                class="bi bi-check-lg"></i></span>
+                                        <hr class="flex-grow-1 m-0">
+                                    </div>
+                                    <div class="fw-bold small mt-2">Agendada</div>
+                                    <small class="text-body-secondary d-block">20/10</small>
+                                </div>
+                            </div>
+                            <hr class="my-3">
+
+                            <div class="d-flex justify-content-around mb-5">
+                                <div class="card" style="max-width: 190px; min-width: 190px; background: var(--bg);">
+                                    <div class="card-body">
+                                        <p class="fs-sm mb-0 text-secondary fw-semibold">Cliente</p>
+                                        <div class="d-flex">
+                                            <i class="bi bi-buildings text-primary me-1"></i>
+                                            <p class="fw-semibold mb-0">Indústria Alpha Ltda.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card" style="max-width: 190px; min-width: 190px; background: var(--bg);">
+                                    <div class="card-body">
+                                        <p class="fs-sm mb-0 text-secondary fw-semibold">Equipamento</p>
+                                        <div class="d-flex">
+                                            <i class="bi bi-gear-wide-connected text-primary me-1"></i>
+                                            <p class="fw-semibold mb-0">Compressor de Ar 01</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card" style="max-width: 190px; min-width: 190px; background: var(--bg);">
+                                    <div class="card-body">
+                                        <p class="fs-sm mb-0 text-secondary fw-semibold">Técnico Responsável</p>
+                                        <div class="d-flex">
+                                            <i class="bi bi-person text-primary me-1"></i>
+                                            <p class="fw-semibold mb-0">Carlos Mendes</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card" style="max-width: 190px; min-width: 190px; background: var(--bg);">
+                                    <div class="card-body">
+                                        <p class="fs-sm mb-0 text-secondary fw-semibold">Data da Inspeção</p>
+                                        <div class="d-flex">
+                                            <i class="bi bi-calendar4-event text-primary me-1"></i>
+                                            <p class="fw-semibold mb-0">24/10/2024</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </main>
