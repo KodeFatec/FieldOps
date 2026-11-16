@@ -187,13 +187,13 @@
             </header>
 
             <main class="flex-grow-1 p-3 p-lg-4" style="background: var(--bg);">
-                <div class="d-flex flex-column p-3 mb-3 bg-white border border-secundary rounded">
+                <div class="p-3 mb-3 bg-white border rounded">
                     <div>
                         <span class="text-secondary fw-semibold">Operações > Inspeções de Equipamentos ></span>
                         <span class="text-primary fw-semibold">INS-00125</span>
                     </div>
 
-                    <div class="d-flex justify-content-between border-bottom border-secundary mb-3">
+                    <div class="d-flex justify-content-between mb-3">
                         <p class="fs-3 fw-bold">Gestão de Inspeções em campo</p>
                         <p
                             class="badge bg-warning-subtle text-warning-emphasis border border-warning align-self-center">
@@ -202,8 +202,10 @@
                         </p>
                     </div>
 
-                    <div class="row align-items-end mb-3">
-                        <div class="col col-sm-12 col-md-6 d-flex justify-content-around">
+                    <hr class="my-3">
+
+                    <div class="row mb-3">
+                        <div class="col-12 col-md-6 d-flex flex-wrap justify-content-around">
                             <i class="bi bi-funnel"></i>
                             <button
                                 class="btn btn-sm bg-warning-subtle text-warning-emphasis border border-warning align-self-center fw-semibold">
@@ -219,30 +221,28 @@
                                 Reprovada</button>
                         </div>
 
-                        <div class="col col-sm-12 col-md-2">
+                        <div class="col-12 col-md-2">
                             <label for="filtroCliente" class="form-label small text-body-secondary mb-1">Cliente</label>
                             <select class="form-select" id="filtroCliente" aria-label="Filtro cliente"
                                 style="background-color: var(--bg);">
                                 <option selected>Indústria Alpha Ltda.</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                                <option value="1">Petroquímica Beta</option>
+                                <option value="2">Termelétrica Gama</option>
                             </select>
                         </div>
 
-                        <div class="col col-sm-12 col-md-2">
+                        <div class="col-12 col-md-2">
                             <label for="filtroTecninco"
                                 class="form-label small text-body-secondary mb-1">Técnico</label>
                             <select class="form-select" id="filtroTecninco" aria-label="Filtro tecnico"
                                 style="background-color: var(--bg);">
                                 <option selected>Carlos Mendes</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                                <option value="1">Fernanda Lima</option>
+                                <option value="2">Lucas Ribeiro</option>
                             </select>
                         </div>
 
-                        <div class="col col-sm-12 col-md-2">
+                        <div class="col-12 col-md-2">
                             <label for="filtroData" class="form-label small text-body-secondary mb-1">Data</label>
                             <input type="date" class="form-control align-self-center" id="filtroData"
                                 style="background-color: var(--bg);">
@@ -250,8 +250,8 @@
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col col-sm-12 col-md-4">
+                <div class="row g-2">
+                    <div class="col-12 col-md-4">
                         <div class="d-flex flex-column align-items-center">
                             <div class="card w-75 rounded-0 rounded-top">
                                 <div class="card-body pb-0 d-flex justify-content-between">
@@ -272,7 +272,7 @@
                                             style="background-color: #F3E8FF; color: #6D28D9; border: 1px solid #6D28D9;">
                                             Em revisão(2)</p>
                                     </div>
-                                    <div class="">
+                                    <div>
                                         <h5 class="fs-5 fw-medium">Inspeção preventiva de compressor</h5>
                                         <p class="text-secondary">Indústria Alpha Ltda. • Comp. 01</p>
                                     </div>
@@ -290,7 +290,7 @@
                                             class="badge bg-success-subtle text-success border border-success-subtle align-self-center fw-semibold">
                                             Aprovada</p>
                                     </div>
-                                    <div class="">
+                                    <div>
                                         <h5 class="fs-5 fw-medium">Termografia de Painel de Distribuição MT</h5>
                                         <p class="text-secondary">Petroquímica Beta • Comp. 01</p>
                                     </div>
@@ -308,7 +308,7 @@
                                             class="badge bg-danger-subtle text-danger border border-danger-subtle align-self-center fw-semibold">
                                             Reprovada</p>
                                     </div>
-                                    <div class="">
+                                    <div>
                                         <h5 class="fs-5 fw-medium">Inspeção de Válvulas de Alívio de Pressão</h5>
                                         <p class="text-secondary">Termelétrica Gama • Linha B</p>
                                     </div>
@@ -326,7 +326,7 @@
                                             class="badge bg-primary-subtle text-primary border border-primary-subtle align-self-center fw-semibold">
                                             Atribuída</p>
                                     </div>
-                                    <div class="">
+                                    <div>
                                         <h5 class="fs-5 fw-medium">Calibração de Sensores de Vazão</h5>
                                         <p class="text-secondary">Indústria Alpha Ltda. • Setor 3</p>
                                     </div>
@@ -351,7 +351,7 @@
                                             class="badge rounded-1 bg-warning-subtle text-warning-emphasis border border-warning-subtle align-self-center fw-semibold">
                                             +2.4 bar delta</p>
                                     </div>
-                                    <div class="">
+                                    <div>
                                         <p class="text-secondary">Pressão medida na saída do cabeçote durante o ensaio
                                             dinâmico ultrapassou o limiar de conformidade.</p>
                                     </div>
@@ -365,10 +365,10 @@
                         </div>
                     </div>
 
-                    <div class="col col-sm-12 col-md-8">
+                    <div class="col-12 col-md-8">
                         <div class="p-3 bg-white border rounded mb-3">
                             <div class="d-flex justify-content-between">
-                                <div class="">
+                                <div>
                                     <p
                                         class="badge me-3 rounded-0 bg-primary-subtle text-primary-emphasis border border-primary-subtle align-self-center fs-6 fw-bold">
                                         #INS-00125</p>
@@ -378,7 +378,7 @@
                                     <span class="text-secondary fw-semibold">Atualizado há 25 minutos</span>
                                 </div>
 
-                                <div class="">
+                                <div>
                                     <button type="button"
                                         class="btn btn-primary btn-sm d-inline-flex align-items-center gap-2"
                                         data-bs-toggle="modal" data-bs-target="#modalNovoCliente"
@@ -460,45 +460,58 @@
                                     <small class="text-body-secondary d-block">20/10</small>
                                 </div>
                             </div>
+
                             <hr class="my-3">
 
-                            <div class="d-flex justify-content-around mb-5">
-                                <div class="card" style="max-width: 190px; min-width: 190px; background: var(--bg);">
-                                    <div class="card-body">
-                                        <p class="fs-sm mb-0 text-secondary fw-semibold">Cliente</p>
-                                        <div class="d-flex">
-                                            <i class="bi bi-buildings text-primary me-1"></i>
-                                            <p class="fw-semibold mb-0">Indústria Alpha Ltda.</p>
+                            <div class="row g-2 mb-5">
+                                <div class="col col-sm-6 col-md-3">
+                                    <div class="card"
+                                        style="max-width: 12rem; min-width: 12rem; max-height: 6rem; min-height: 6rem; background: var(--bg);">
+                                        <div class="card-body">
+                                            <p class="fs-sm mb-0 text-secondary fw-semibold">Cliente</p>
+                                            <div class="d-flex">
+                                                <i class="bi bi-buildings text-primary me-1"></i>
+                                                <p class="fw-semibold mb-0">Indústria Alpha Ltda.</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="card" style="max-width: 190px; min-width: 190px; background: var(--bg);">
-                                    <div class="card-body">
-                                        <p class="fs-sm mb-0 text-secondary fw-semibold">Equipamento</p>
-                                        <div class="d-flex">
-                                            <i class="bi bi-gear-wide-connected text-primary me-1"></i>
-                                            <p class="fw-semibold mb-0">Compressor de Ar 01</p>
+                                <div class="col col-sm-6 col-md-3">
+                                    <div class="card"
+                                        style="max-width: 12rem; min-width: 12rem; max-height: 6rem; min-height: 6rem; background: var(--bg);">
+                                        <div class="card-body">
+                                            <p class="fs-sm mb-0 text-secondary fw-semibold">Equipamento</p>
+                                            <div class="d-flex">
+                                                <i class="bi bi-gear-wide-connected text-primary me-1"></i>
+                                                <p class="fw-semibold mb-0">Compressor de Ar 01</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="card" style="max-width: 190px; min-width: 190px; background: var(--bg);">
-                                    <div class="card-body">
-                                        <p class="fs-sm mb-0 text-secondary fw-semibold">Técnico Responsável</p>
-                                        <div class="d-flex">
-                                            <i class="bi bi-person text-primary me-1"></i>
-                                            <p class="fw-semibold mb-0">Carlos Mendes</p>
+                                <div class="col col-sm-6 col-md-3">
+                                    <div class="card"
+                                        style="max-width: 12rem; min-width: 12rem; max-height: 6rem; min-height: 6rem; background: var(--bg);">
+                                        <div class="card-body">
+                                            <p class="fs-sm mb-0 text-secondary fw-semibold">Técnico Responsável</p>
+                                            <div class="d-flex">
+                                                <i class="bi bi-person text-primary me-1"></i>
+                                                <p class="fw-semibold mb-0">Carlos Mendes</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="card" style="max-width: 190px; min-width: 190px; background: var(--bg);">
-                                    <div class="card-body">
-                                        <p class="fs-sm mb-0 text-secondary fw-semibold">Data da Inspeção</p>
-                                        <div class="d-flex">
-                                            <i class="bi bi-calendar4-event text-primary me-1"></i>
-                                            <p class="fw-semibold mb-0">24/10/2024</p>
+                                <div class="col col-sm-6 col-md-3">
+                                    <div class="card"
+                                        style="max-width: 12rem; min-width: 12rem; max-height: 6rem; min-height: 6rem; background: var(--bg);">
+                                        <div class="card-body">
+                                            <p class="fs-sm mb-0 text-secondary fw-semibold">Data da Inspeção</p>
+                                            <div class="d-flex">
+                                                <i class="bi bi-calendar4-event text-primary me-1"></i>
+                                                <p class="fw-semibold mb-0">24/10/2024</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -507,12 +520,12 @@
 
                         <div class="p-3 bg-white border rounded mb-3">
                             <div class="row">
-                                <div class="col col-sm-12 col-md-6">
+                                <div class="col-12 col-md-6">
                                     <p class="fs-4 fw-bold mb-0">Checklist de Verificação</p>
                                     <p class="text-secondary">Critérios de avaliação segundo norma regulamentadora NR-13
                                     </p>
                                 </div>
-                                <div class="col col-sm-12 col-md-6 text-end">
+                                <div class="col-12 col-md-6 text-end">
                                     <p
                                         class="badge me-3 rounded-0 bg-success-subtle text-success border border-success-subtle align-self-center fw-bold">
                                         4 conformes</p>
@@ -619,7 +632,7 @@
 
                             <hr class="my-3">
 
-                            <div class="row">
+                            <div class="row g-2">
                                 <div class="col-12 col-md-4">
                                     <div class="card h-100">
                                         <img src="Evidencia-01.png" class="card-img-top"
@@ -694,7 +707,7 @@
                                 </div>
 
                                 <div class="col-12 col-lg text-lg-end">
-                                    <button type="button" class="btn btn-outline-danger btn-sm me-1">Reprovar
+                                    <button type="button" class="btn btn-outline-danger btn-sm me-1 mb-1">Reprovar
                                         Laudo</button>
                                     <button type="button" class="btn btn-primary btn-sm">Aprovar e Emitir Laudo
                                         ART</button>
