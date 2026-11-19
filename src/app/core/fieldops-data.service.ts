@@ -3,14 +3,14 @@ import { ClientRecord, EquipmentRecord, InspectionRecord, InspectionTemplate, No
 
 @Injectable({ providedIn: 'root' })
 export class FieldOpsDataService {
-  users: UserRecord[] = this.load('fieldops.users', [
+  users: UserRecord[] = this.load<UserRecord>('fieldops.users', [
     { id: 1, name: 'Mariana Souza', email: 'mariana.souza@fieldops.com', phone: '(11) 99999-1001', role: 'Supervisor', status: 'Ativo', lastAccess: 'Hoje, 09:42' },
     { id: 2, name: 'Carlos Henrique', email: 'carlos.henrique@fieldops.com', phone: '(11) 99999-1002', role: 'Técnico', status: 'Ativo', lastAccess: 'Hoje, 08:16' },
     { id: 3, name: 'Paula Mendes', email: 'paula.mendes@fieldops.com', phone: '(11) 99999-1003', role: 'Técnico', status: 'Ativo', lastAccess: 'Ontem, 17:25' },
     { id: 4, name: 'Rafael Lima', email: 'rafael.lima@fieldops.com', phone: '(11) 99999-1004', role: 'Administrador', status: 'Ativo', lastAccess: 'Hoje, 10:03' },
     { id: 5, name: 'Ana Ribeiro', email: 'ana.ribeiro@fieldops.com', phone: '(11) 99999-1005', role: 'Cliente', status: 'Inativo', lastAccess: '12/11/2026' }
   ]);
-  clients: ClientRecord[] = this.load('fieldops.clients', [
+  clients: ClientRecord[] = this.load<ClientRecord>('fieldops.clients', [
     { id: 1, code: 'CLI-0018', name: 'Indústria Alpha', legalName: 'Indústria Alpha de Componentes Ltda.', cnpj: '12.345.678/0001-90', email: 'contato@alpha.com.br', phone: '(11) 3000-1000', segment: 'Manufatura', status: 'Ativo', manager: 'Mariana Souza' },
     { id: 2, code: 'CLI-0017', name: 'Metalúrgica Horizonte', legalName: 'Horizonte Metalúrgica S.A.', cnpj: '23.456.789/0001-01', email: 'operacoes@horizonte.com.br', phone: '(11) 3000-2000', segment: 'Metalurgia', status: 'Ativo', manager: 'Rafael Lima' },
     { id: 3, code: 'CLI-0016', name: 'Energia Sul', legalName: 'Energia Sul Ltda.', cnpj: '34.567.890/0001-12', email: 'engenharia@energiasul.com.br', phone: '(11) 3000-3000', segment: 'Energia', status: 'Em revisão', manager: 'Mariana Souza' }
@@ -27,7 +27,7 @@ export class FieldOpsDataService {
     { id: 'INS-2026-016', client: 'Energia Sul', equipment: 'Quadro Geral QGBT-01', technician: 'Carlos Henrique', date: '17/11/2026', status: 'Aprovada', progress: 100 },
     { id: 'INS-2026-015', client: 'Indústria Alpha', equipment: 'Bomba de Recalque 02', technician: 'Paula Mendes', date: '16/11/2026', status: 'Reprovada', progress: 100 }
   ];
-  templates: InspectionTemplate[] = this.load('fieldops.templates', [
+  templates: InspectionTemplate[] = this.load<InspectionTemplate>('fieldops.templates', [
     { id: 1, name: 'Preventiva de Compressor', category: 'Mecânica & Sistemas Rotativos', version: 3, updatedAt: '15/11/2026', sections: [{ title: 'Identificação', items: ['Conferir placa e número de série', 'Registrar condição geral'] }, { title: 'Inspeção visual', items: ['Verificar vazamentos', 'Conferir proteções e conexões'] }] },
     { id: 2, name: 'Segurança Elétrica — NR-10', category: 'Elétrica & Automação', version: 2, updatedAt: '12/11/2026', sections: [{ title: 'Instalação', items: ['Verificar sinalização', 'Conferir integridade dos cabos'] }] },
     { id: 3, name: 'Equipamento Hidráulico', category: 'Hidráulica', version: 1, updatedAt: '08/11/2026', sections: [{ title: 'Sistema hidráulico', items: ['Verificar mangueiras', 'Verificar pressão'] }] }

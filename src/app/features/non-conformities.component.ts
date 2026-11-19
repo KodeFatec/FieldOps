@@ -7,4 +7,7 @@ export class NonConformitiesComponent {
   search='';severityFilter='Todas';
   constructor(public readonly data:FieldOpsDataService){}
   get filtered():NonConformityRecord[]{return this.data.nonConformities.filter(item=>(this.severityFilter==='Todas'||item.severity===this.severityFilter)&&[item.code,item.title,item.equipment,item.owner].some(v=>v.toLowerCase().includes(this.search.toLowerCase())));}
+  get criticalCount():number{return this.data.nonConformities.filter(item=>item.severity==='Crítica').length;}
+  get highCount():number{return this.data.nonConformities.filter(item=>item.severity==='Alta').length;}
+  get inTreatmentCount():number{return this.data.nonConformities.filter(item=>item.status==='Em tratamento').length;}
 }
