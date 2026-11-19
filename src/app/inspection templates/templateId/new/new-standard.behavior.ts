@@ -1,6 +1,6 @@
 // @ts-nocheck
 declare const bootstrap: any;
-export function initializeNewStandard(): void {
+export function initializeNewStandard(navigate?: (url: string) => void): void {
 const STORAGE_KEY = "opsCustomStandards";
 const RESERVED_CODES = new Set(["NR-10", "NR-12", "NR-13", "NR-18", "NR-33", "NR-35"]);
 const form = document.getElementById("standardForm");
@@ -84,7 +84,7 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
-  window.location.href = `/app/inspection-templates/new?selected=${encodeURIComponent(code)}`;
+  navigate ? navigate(`/app/inspection-templates/new?selected=${encodeURIComponent(code)}`) : window.location.assign(`/app/inspection-templates/new?selected=${encodeURIComponent(code)}`);
 });
 
 addSection();

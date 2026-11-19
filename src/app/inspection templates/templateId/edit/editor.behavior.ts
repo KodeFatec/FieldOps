@@ -1,6 +1,6 @@
 // @ts-nocheck
 declare const bootstrap: any;
-export function initializeTemplateEditor(): void {
+export function initializeTemplateEditor(navigate?: (url: string) => void): void {
 const editorToast = bootstrap.Toast.getOrCreateInstance(document.getElementById("editorToast"));
 const toastMessage = document.getElementById("toastMessage");
 const modelNameField = document.getElementById("modelName");
@@ -168,6 +168,7 @@ function saveDraft() {
 document.getElementById("saveDraft").addEventListener("click", saveDraft);
 document.getElementById("goBack").addEventListener("click", () => {
   if (window.history.length > 1) window.history.back();
+  else if (navigate) navigate("/app/inspection-templates");
   else window.location.href = "/app/inspection-templates";
 });
 document.getElementById("publishModel").addEventListener("click", () => {

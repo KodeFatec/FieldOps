@@ -25,7 +25,7 @@ function filtrarEquipamentos() {
         registroEquipamento.hidden =
             !(correspondePesquisa && correspondeSituacao);
     });
-  (window as any).selecionarEquipamento = selecionarEquipamento;
+
 }
 
 campoPesquisa.addEventListener("input", filtrarEquipamentos);
@@ -181,5 +181,6 @@ function selecionarEquipamento(nome, codigo, situacao, localizacao) {
 }
 
   // Expõe a seleção para o template Angular convertido.
+
   (window as any).selecionarEquipamento = selecionarEquipamento;
 }

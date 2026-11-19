@@ -1,6 +1,6 @@
 // @ts-nocheck
 declare const bootstrap: any;
-export function initializeNewTemplate(): void {
+export function initializeNewTemplate(navigate?: (url: string) => void): void {
 const standards = {
   "NR-10": {
     title: "Segurança em instalações e serviços em eletricidade",
@@ -186,7 +186,7 @@ document.getElementById("createFromStandard").addEventListener("click", () => {
     window.alert("Não foi possível guardar a seleção neste navegador. Tente novamente ou habilite o armazenamento local.");
     return;
   }
-  window.location.href = `/app/inspection-templates/new/edit?source=nr&norma=${encodeURIComponent(selectedCode)}`;
+  navigate ? navigate(`/app/inspection-templates/new/edit?source=nr&norma=${encodeURIComponent(selectedCode)}`) : window.location.assign(`/app/inspection-templates/new/edit?source=nr&norma=${encodeURIComponent(selectedCode)}`);
 });
 
 const initialCard = standardCards.find((card) => card.dataset.standard === selectedCode) || standardCards[0];
