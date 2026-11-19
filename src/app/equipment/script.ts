@@ -180,4 +180,6 @@ function selecionarEquipamento(nome, codigo, situacao, localizacao) {
     exibirHistoricoManutencoes(codigo);
 }
 
+  // Expõe a seleção para o template Angular convertido.
+  (window as any).selecionarEquipamento = selecionarEquipamento;
 }
