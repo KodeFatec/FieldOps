@@ -20,4 +20,6 @@ registrationForm.addEventListener('submit', (event) => {
   const submitButton = registrationForm.querySelector('[type="submit"]');
   submitButton.disabled = true;
   submitButton.innerHTML = '<span class="spinner-border spinner-border-sm" aria-hidden="true"></span><span>Cadastrando...</span>';
+
+  window.location.href = '../../app/dashboard/index.html';
 });

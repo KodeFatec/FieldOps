@@ -10,5 +10,10 @@ passwordToggle.addEventListener('click', () => {
 
 document.getElementById('loginForm').addEventListener('submit', (event) => {
   event.preventDefault();
-  event.currentTarget.classList.add('was-validated');
+  const form = event.currentTarget;
+  form.classList.add('was-validated');
+
+  if (!form.checkValidity()) return;
+
+  window.location.href = '../app/dashboard/index.html';
 });
