@@ -1,4 +1,4 @@
-:root {
+:host {
   --login-primary: #1d4ed8;
   --login-border: #dce5f2;
   --login-text: #1c2b3f;
@@ -7,14 +7,6 @@
 
 * {
   box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  min-width: 320px;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  color: var(--login-text);
-  background: #f8fafc;
 }
 
 .login-page {
