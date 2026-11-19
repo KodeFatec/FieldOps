@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { Chart } from 'chart.js';
+import Chart from 'chart.js/auto';
 export function initializeDashboardPage(): void {
 
     const ctx = document.getElementById('inspecoesChart');

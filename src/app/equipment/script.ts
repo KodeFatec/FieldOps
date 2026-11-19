@@ -182,5 +182,6 @@ function selecionarEquipamento(nome, codigo, situacao, localizacao) {
 
   // Expõe a seleção para o template Angular convertido.
 
+  // Expõe a função usada pelo evento Angular no template original.
   (window as any).selecionarEquipamento = selecionarEquipamento;
 }
