@@ -1,134 +1,64 @@
-# README
+# FieldOps — Angular
 
-# FieldOps
+Aplicação de gerenciamento de inspeções técnicas em campo, migrada de páginas HTML/CSS/Bootstrap e scripts JavaScript para **Angular com NgModules (sem componentes standalone)**.
 
-Sistema para gerenciamento de inspeções técnicas em campo.
+## Stack
+- Angular 22.2
+- TypeScript 6
+- Bootstrap 5.3.8 e Bootstrap Icons
+- ng-bootstrap 21 (Angular powered Bootstrap)
+- Angular Router, FormsModule e Chart.js
 
-#### **Desenvolvido por:**
+A compatibilidade de versões segue a matriz de ng-bootstrap: ng-bootstrap 21 para Angular 22 e Bootstrap CSS 5.3.8.
 
-> Bryan Castilho Garcia,
-> 
+## Requisitos
+- Node.js 22.22.3+ (ou uma versão 24 compatível com Angular 22)
+- npm
 
-> Eduardo Couss de Oliveira,
-> 
+## Executar
+```bash
+npm install
+npm start
+```
+Aplicação em `http://localhost:4200`.
 
-> João Victor Batista Ferreira,
-> 
-
-> Nicolas Trabachini Spinelli,
-> 
-
-> Raphael Scapin Pereira,
-> 
-
-> Vinícius de Lúcio Porto
-> 
-
-## 📌 Sobre o projeto
-
-O **FieldOps** é uma plataforma desenvolvida para facilitar o planejamento, execução e acompanhamento de inspeções técnicas realizadas em campo.
-
-O sistema permite que supervisores organizem as inspeções e que técnicos realizem suas atividades pelo aplicativo, registrando informações, fotos, checklists e possíveis problemas encontrados durante a inspeção.
-
-Um dos principais diferenciais do projeto é o **funcionamento offline**, permitindo que o técnico continue trabalhando mesmo sem conexão com a internet.
-
----
-
-## 🎯 Objetivo
-
-Digitalizar e organizar o processo de inspeções técnicas, centralizando as informações e facilitando o acompanhamento das atividades.
-
-O fluxo principal do sistema é:
-
-**Planejar → Atribuir → Inspecionar → Registrar → Sincronizar → Revisar → Aprovar**
-
----
-
-## ⚙️ Principais funcionalidades
-
-- Gerenciamento de usuários e permissões
-- Cadastro de clientes, locais e equipamentos
-- Criação de modelos e checklists de inspeção
-- Agendamento e atribuição de inspeções
-- Execução de inspeções pelo aplicativo
-- Funcionamento offline
-- Sincronização dos dados
-- Registro de fotos e evidências
-- Leitura de QR Code dos equipamentos
-- Registro de não conformidades
-- Registro de localização
-- Revisão, aprovação e reprovação de inspeções
-- Histórico e rastreabilidade
-
----
-
-## 👥 Usuários do sistema
-
-### 👨‍🔧 Técnico
-
-Realiza as inspeções em campo, responde os checklists e registra evidências e problemas encontrados.
-
-### 👩‍💼 Supervisor
-
-Cria e agenda inspeções, acompanha os resultados e realiza a revisão e aprovação.
-
-### 👨‍💻 Administrador
-
-Gerencia usuários, clientes, locais, equipamentos e permissões do sistema.
-
----
-
-## Tecnologias
-
-- 
-
----
-
-## 📱 Funcionamento Offline
-
-O técnico pode realizar a inspeção mesmo sem internet.
-
-Os dados são armazenados localmente no dispositivo e, quando a conexão é restabelecida, são sincronizados com o servidor.
-
----
-
-
-## 🎓 Projeto acadêmico
-
-O FieldOps está sendo desenvolvido como um projeto acadêmico com o objetivo de aplicar conhecimentos de **Análise de Sistemas, Engenharia de Software, Desenvolvimento Web, Desenvolvimento Mobile e Banco de Dados**.
-
----
-
-## 🗂️ Estrutura Conceitual
-```text
-├── /login
-└── /app
-    ├── /dashboard
-    ├── /users
-    ├── /clients
-    │   └── /:clientId/sites
-    ├── /sites
-    │   └── /:siteId/equipment
-    ├── /equipment
-    ├── /inspection-templates
-    │   ├── /new
-    │   ├── /:templateId/edit
-    │   ├── /:templateId/preview
-    │   └── /:templateId/versions
-    ├── /inspections
-    │   ├── /new
-    │   ├── /:inspectionId
-    │   └── /:inspectionId/review
-    ├── /non-conformities
-    └── /audit
+## Build
+```bash
+npm run build
 ```
 
-**🚧 FieldOps — Organizando inspeções em campo.**
+## Estrutura
+```text
+src/
+├── app/
+│   ├── auth/                 # Login e cadastro
+│   ├── core/
+│   │   ├── models.ts         # Interfaces TypeScript do domínio
+│   │   └── fieldops-data.service.ts
+│   ├── features/             # Dashboard, clientes, usuários, ativos,
+│   │                          # inspeções, revisões e checklists
+│   ├── layout/               # Shell, menu lateral e barra superior
+│   ├── app-routing.module.ts
+│   └── app.module.ts
+├── assets/
+└── styles.css
+```
 
-## 📊 Status do projeto
+## Rotas
+- `/login`, `/register`
+- `/app/dashboard`
+- `/app/users`, `/app/clients`, `/app/equipment`
+- `/app/inspection-templates`
+- `/app/inspection-templates/new`, `/app/inspection-templates/new-standard`
+- `/app/inspection-templates/:templateId/edit`
+- `/app/inspections`, `/app/reviews`, `/app/non-conformities`
 
-Inicialização: 15/09/2026             Finalizado:
+## Notas da migração
+- O shell (menu, cabeçalho, notificações e navegação responsiva) agora é compartilhado por todas as rotas internas.
+- Cada área tem seu componente Angular e os arquivos de comportamento estão em TypeScript; não há mais scripts JS de página acoplados ao DOM.
+- Dados de clientes, usuários e modelos de inspeção são demonstrativos, tipados e salvos no localStorage do navegador.
+- O login/cadastro mantém o comportamento de demonstração do protótipo. Não existe autenticação real nem API de backend neste repositório.
+- As operações de criação e edição locais não substituem persistência, sincronização offline ou controle de permissões no servidor.
+- As três imagens de evidência originais foram preservadas em `src/assets/evidence/`.
 
-🟡 **Em desenvolvimento**
-
-Projeto acadêmico desenvolvido em grupo.
+**FieldOps — Organizando inspeções em campo.**

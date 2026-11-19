@@ -1,0 +1,47 @@
+<div class="app-frame d-lg-flex min-vh-100">
+  <aside class="sidebar" [class.collapsed]="collapsed" [class.mobile-open]="mobileMenuOpen">
+    <div class="sidebar-head">
+      <a routerLink="/app/dashboard" class="brand" (click)="closeMobileMenu()">
+        <span class="brand-icon"><i class="bi bi-clipboard-check"></i></span>
+        <span class="brand-copy"><strong>OPS</strong><small>INSPEÇÕES TÉCNICAS</small></span>
+      </a>
+      <button class="sidebar-collapse d-none d-lg-grid" type="button" (click)="toggleSidebar()" [attr.aria-label]="collapsed ? 'Expandir menu' : 'Recolher menu'">
+        <i class="bi" [ngClass]="collapsed ? 'bi-chevron-right' : 'bi-chevron-left'"></i>
+      </button>
+    </div>
+    <div class="unit-chip"><span class="online-dot"></span><span class="nav-label">UNIDADE ALPHA 01</span><small class="nav-label">SaaS v2.4</small></div>
+    <nav class="sidebar-nav" aria-label="Módulos do FieldOps">
+      <a routerLink="/app/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" (click)="closeMobileMenu()"><i class="bi bi-grid-1x2"></i><span class="nav-label">Dashboard</span></a>
+      <a routerLink="/app/users" routerLinkActive="active" (click)="closeMobileMenu()"><i class="bi bi-people"></i><span class="nav-label">Usuários</span></a>
+      <a routerLink="/app/clients" routerLinkActive="active" (click)="closeMobileMenu()"><i class="bi bi-buildings"></i><span class="nav-label">Clientes</span></a>
+      <a routerLink="/app/equipment" routerLinkActive="active" (click)="closeMobileMenu()"><i class="bi bi-broadcast-pin"></i><span class="nav-label">Equipamentos</span></a>
+      <a routerLink="/app/inspection-templates" routerLinkActive="active" (click)="closeMobileMenu()"><i class="bi bi-clipboard-data"></i><span class="nav-label">Modelos de Inspeção</span></a>
+      <a routerLink="/app/inspections" routerLinkActive="active" (click)="closeMobileMenu()"><i class="bi bi-clipboard-check"></i><span class="nav-label">Inspeções</span><span class="nav-count">18</span></a>
+      <a routerLink="/app/reviews" routerLinkActive="active" (click)="closeMobileMenu()"><i class="bi bi-check2-square"></i><span class="nav-label">Revisões</span></a>
+      <a routerLink="/app/non-conformities" routerLinkActive="active" (click)="closeMobileMenu()"><i class="bi bi-exclamation-triangle"></i><span class="nav-label">Não Conformidades</span><span class="nav-count danger">4</span></a>
+    </nav>
+    <div class="sidebar-user">
+      <span class="user-avatar">MS</span>
+      <span class="nav-label"><strong>Mariana Souza</strong><small>Supervisora Geral</small></span>
+      <button class="logout-button" type="button" title="Sair" (click)="logout()"><i class="bi bi-box-arrow-left"></i></button>
+    </div>
+  </aside>
+  <div class="mobile-backdrop d-lg-none" *ngIf="mobileMenuOpen" (click)="closeMobileMenu()"></div>
+  <section class="workspace flex-grow-1">
+    <header class="topbar">
+      <button class="btn btn-outline-secondary d-lg-none" type="button" (click)="toggleMobileMenu()" aria-label="Abrir navegação"><i class="bi bi-list"></i></button>
+      <div class="search-box"><i class="bi bi-search"></i><input type="search" placeholder="Pesquisar" aria-label="Pesquisar"></div>
+      <div class="topbar-spacer"></div>
+      <a class="btn btn-primary btn-sm" routerLink="/app/inspections"><i class="bi bi-plus-lg me-1"></i>Nova inspeção</a>
+      <div ngbDropdown placement="bottom-end">
+        <button class="icon-button" type="button" ngbDropdownToggle aria-label="Notificações"><i class="bi bi-bell"></i><span class="notification-dot"></span></button>
+        <div ngbDropdownMenu class="dropdown-menu-end p-3 notification-menu">
+          <strong>Notificações</strong><p class="small mt-2 mb-2">Existem 4 não conformidades em aberto.</p>
+          <a routerLink="/app/non-conformities" class="small text-decoration-none" ngbDropdownItem>Ver ocorrências</a>
+        </div>
+      </div>
+      <div class="profile-chip"><span class="user-avatar">MS</span><span><strong>Mariana Souza</strong><small>Supervisora</small></span></div>
+    </header>
+    <router-outlet></router-outlet>
+  </section>
+</div>

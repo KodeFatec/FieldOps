@@ -1,0 +1,19 @@
+<main class="auth-page register-page">
+  <div class="auth-center">
+    <section class="auth-card">
+      <div class="auth-brand"><span class="brand-icon"><i class="bi bi-clipboard-check"></i></span><span><strong>FIELDOPS</strong><small>INSPEÇÕES TÉCNICAS</small></span></div>
+      <h1>Criar conta corporativa</h1><p class="auth-subtitle">Solicite seu acesso ao ambiente FieldOps.</p>
+      <form (ngSubmit)="submit()" #registerForm="ngForm" [class.was-validated]="submitted" novalidate>
+        <label class="form-label" for="fullName">Nome completo</label><input id="fullName" class="form-control mb-3" name="fullName" [(ngModel)]="name" required minlength="3" placeholder="Seu nome completo">
+        <label class="form-label" for="registerEmail">E-mail corporativo</label><input id="registerEmail" class="form-control mb-3" type="email" name="email" [(ngModel)]="email" required email placeholder="voce@empresa.com">
+        <label class="form-label" for="company">Empresa</label><input id="company" class="form-control mb-3" name="company" [(ngModel)]="company" required placeholder="Nome da organização">
+        <label class="form-label" for="role">Perfil de acesso</label><select id="role" class="form-select mb-3" name="role" [(ngModel)]="role"><option>Técnico</option><option>Supervisor</option><option>Cliente</option></select>
+        <label class="form-label" for="registerPassword">Senha</label><div class="input-group mb-3"><input id="registerPassword" class="form-control" [type]="showPassword?'text':'password'" name="password" [(ngModel)]="password" required minlength="8" placeholder="Mínimo de 8 caracteres"><button type="button" class="btn btn-outline-secondary" (click)="showPassword=!showPassword"><i class="bi" [ngClass]="showPassword?'bi-eye-slash':'bi-eye'"></i></button></div>
+        <label class="form-check small mb-3"><input class="form-check-input" type="checkbox" name="terms" [(ngModel)]="accepted" required><span class="form-check-label">Concordo com os termos de uso e a política de privacidade.</span></label>
+        <button class="btn btn-primary w-100 py-2" type="submit">Solicitar cadastro <i class="bi bi-arrow-right ms-1"></i></button>
+      </form>
+      <p class="auth-bottom">Já possui uma conta? <a routerLink="/login">Voltar para o login</a></p>
+    </section>
+  </div>
+  <footer class="auth-footer">© 2026 FieldOps · Plataforma de Inspeções Técnicas</footer>
+</main>
