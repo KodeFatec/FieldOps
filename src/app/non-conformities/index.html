@@ -25,13 +25,13 @@
 
             <nav class="flex-grow-1 overflow-y-auto overflow-x-hidden">
               <ul class="nav flex-column gap-1">
-                <li><a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2" routerLink="/app/dashboard" title="Dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><i class="bi bi-grid-1x2 fs-6"></i><span class="sb-label">Dashboard</span></a></li>
-                <li><a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2" routerLink="/app/users" title="Usuários" routerLinkActive="active"><i class="bi bi-people fs-6"></i><span class="sb-label">Usuários</span></a></li>
-                <li><a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2" routerLink="/app/clients" title="Clientes" routerLinkActive="active"><i class="bi bi-buildings fs-6"></i><span class="sb-label">Clientes</span></a></li>
-                <li><a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2" routerLink="/app/equipment" title="Equipamentos" routerLinkActive="active"><i class="bi bi-broadcast-pin fs-6"></i><span class="sb-label">Equipamentos</span></a></li>
-                <li><a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2" routerLink="/app/inspection-templates" title="Modelos de Inspeção" routerLinkActive="active"><i class="bi bi-clipboard-data fs-6"></i><span class="sb-label">Modelos de Inspeção</span></a></li>
-                <li><a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2" routerLink="/app/inspections" title="Inspeções" routerLinkActive="active"><i class="bi bi-image fs-6"></i><span class="sb-label">Inspeções</span><span class="sb-badge badge rounded-pill text-bg-primary ms-auto">18</span></a></li>
-                <li><a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative" routerLink="/app/non-conformities" title="Não Conformidades" routerLinkActive="active"><i class="bi bi-exclamation-triangle fs-6"></i><span class="sb-label">Não Conformidades</span><span class="sb-badge badge rounded-pill text-bg-danger ms-auto">4</span></a></li>
+                <li><a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2" routerLink="/app/dashboard" title="Dashboard" routerLinkActive="" [routerLinkActiveOptions]="{ exact: true }"><i class="bi bi-grid-1x2 fs-6"></i><span class="sb-label">Dashboard</span></a routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"></li>
+                <li><a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2" routerLink="/app/users" title="Usuários" routerLinkActive=""><i class="bi bi-people fs-6"></i><span class="sb-label">Usuários</span></a routerLinkActive="active"></li>
+                <li><a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2" routerLink="/app/clients" title="Clientes" routerLinkActive=""><i class="bi bi-buildings fs-6"></i><span class="sb-label">Clientes</span></a routerLinkActive="active"></li>
+                <li><a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2" routerLink="/app/equipment" title="Equipamentos" routerLinkActive=""><i class="bi bi-broadcast-pin fs-6"></i><span class="sb-label">Equipamentos</span></a routerLinkActive="active"></li>
+                <li><a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2" routerLink="/app/inspection-templates" title="Modelos de Inspeção" routerLinkActive=""><i class="bi bi-clipboard-data fs-6"></i><span class="sb-label">Modelos de Inspeção</span></a routerLinkActive="active"></li>
+                <li><a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2" routerLink="/app/inspections" title="Inspeções" routerLinkActive=""><i class="bi bi-image fs-6"></i><span class="sb-label">Inspeções</span><span class="sb-badge badge rounded-pill text-bg-primary ms-auto">18</span></a routerLinkActive="active"></li>
+                <li><a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative" routerLink="/app/non-conformities" title="Não Conformidades" routerLinkActive=""><i class="bi bi-exclamation-triangle fs-6"></i><span class="sb-label">Não Conformidades</span><span class="sb-badge badge rounded-pill text-bg-danger ms-auto">4</span></a routerLinkActive="active"></li>
               </ul>
             </nav>
 
@@ -40,7 +40,7 @@
                 <i class="bi bi-person-circle fs-5 text-white-50"></i>
                 <div class="sb-label lh-sm"><div class="fw-semibold small text-white">Mariana Souza</div><small class="text-secondary">Supervisora Geral</small></div>
               </div>
-              <a routerLink="/login" class="sb-item nav-link rounded-2 d-flex align-items-center gap-2" title="Sair" routerLinkActive="active"><i class="bi bi-box-arrow-left fs-6"></i><span class="sb-label">Sair</span></a>
+              <a routerLink="/login" class="sb-item nav-link rounded-2 d-flex align-items-center gap-2" title="Sair" routerLinkActive=""><i class="bi bi-box-arrow-left fs-6"></i><span class="sb-label">Sair</span></a routerLinkActive="active">
             </div>
           </div>
         </div>
@@ -151,7 +151,8 @@
             </article>
           </div>
 
-          <footer class="table-footer"><span id="footerCount">Mostrando 1 a 4 de 4 registros ativos</span><nav aria-label="Paginação"><ul class="pagination pagination-sm mb-0"><li class="page-item disabled"><a class="page-link" href="#">Anterior</a></li><li class="page-item active"><a class="page-link" href="#">1</a></li><li class="page-item"><a class="page-link" href="#">2</a></li><li class="page-item"><a class="page-link" href="#">3</a></li><li class="page-item"><a class="page-link" href="#">Próximo</a></li></ul></nav></footer>
+          <footer class="table-footer"><span id="footerCount">Mostrando 1 a 4 de 4 registros ativos</span><nav aria-label="Paginação"><ul class="pagination pagination-sm mb-0"><li class="page-item disabled"><a class="page-link" href="#">Anterior</a></li>
+<li><a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative" routerLink="/app/review" routerLinkActive="active" title="Revisões"><i class="bi bi-check2-square fs-6"></i><span class="sb-label">Revisões</span></a></li><li class="page-item active"><a class="page-link" href="#">1</a></li><li class="page-item"><a class="page-link" href="#">2</a></li><li class="page-item"><a class="page-link" href="#">3</a></li><li class="page-item"><a class="page-link" href="#">Próximo</a></li></ul></nav></footer>
         </section>
       </main>
     </div>
