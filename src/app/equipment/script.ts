@@ -25,6 +25,7 @@ function filtrarEquipamentos() {
         registroEquipamento.hidden =
             !(correspondePesquisa && correspondeSituacao);
     });
+  (window as any).selecionarEquipamento = selecionarEquipamento;
 }
 
 campoPesquisa.addEventListener("input", filtrarEquipamentos);

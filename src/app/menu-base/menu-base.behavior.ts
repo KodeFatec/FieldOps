@@ -1,4 +1,5 @@
 export function initializeMenuBase(): void {
+  document.documentElement.setAttribute('data-bs-theme', 'dark');
   const card = document.getElementById('sbCard');
   const toggle = document.getElementById('sbToggle');
   if (!card || !toggle) return;
