@@ -1,18 +1,4 @@
-<!doctype html>
-<html lang="pt-BR" data-bs-theme="dark">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>OPS – Inspeções Técnicas</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="../menu-base/styles.css" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="../../../styles.css" />
-</head>
-
-<body class="">
   <div class="d-lg-flex min-vh-100">
     <nav class="d-lg-flex">
 
@@ -53,38 +39,38 @@
             <nav class="flex-grow-1 overflow-y-auto overflow-x-hidden">
               <ul class="nav flex-column gap-1">
                 <li>
-                  <a class="sb-item nav-link active rounded-2 d-flex align-items-center gap-2 position-relative"
-                    href="#" title="Dashboard" aria-current="page"><i class="bi bi-grid-1x2 fs-6"></i><span
+                  <a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative"
+                    routerLink="/app/dashboard" title="Dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><i class="bi bi-grid-1x2 fs-6"></i><span
                       class="sb-label">Dashboard</span></a>
                 </li>
                 <li>
-                  <a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative" href="#"
-                    title="Usuários"><i class="bi bi-people fs-6"></i><span class="sb-label">Usuários</span></a>
+                  <a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative" routerLink="/app/users"
+                    title="Usuários" routerLinkActive="active"><i class="bi bi-people fs-6"></i><span class="sb-label">Usuários</span></a>
                 </li>
                 <li>
-                  <a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative" href="#"
-                    title="Clientes"><i class="bi bi-buildings fs-6"></i><span class="sb-label">Clientes</span></a>
+                  <a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative" routerLink="/app/clients"
+                    title="Clientes" routerLinkActive="active"><i class="bi bi-buildings fs-6"></i><span class="sb-label">Clientes</span></a>
                 </li>
                 <li>
-                  <a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative" href="#"
-                    title="Equipamentos"><i class="bi bi-broadcast-pin fs-6"></i><span
+                  <a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative" routerLink="/app/equipment"
+                    title="Equipamentos" routerLinkActive="active"><i class="bi bi-broadcast-pin fs-6"></i><span
                       class="sb-label">Equipamentos</span></a>
                 </li>
                 <li>
-                  <a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative" href="#"
-                    title="Modelos de Inspeção"><i class="bi bi-clipboard-data fs-6"></i><span class="sb-label">Modelos
+                  <a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative" routerLink="/app/inspection-templates"
+                    title="Modelos de Inspeção" routerLinkActive="active"><i class="bi bi-clipboard-data fs-6"></i><span class="sb-label">Modelos
                       de Inspeção</span></a>
                 </li>
                 <li>
-                  <a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative" href="#"
-                    title="Inspeções (18)">
+                  <a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative" routerLink="/app/inspections"
+                    title="Inspeções (18)" routerLinkActive="active">
                     <i class="bi bi-image fs-6"></i><span class="sb-label">Inspeções</span>
                     <span class="sb-badge badge rounded-pill text-bg-primary ms-auto">18</span>
                   </a>
                 </li>
                 <li>
-                  <a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative" href="#"
-                    title="Não Conformidades (4)">
+                  <a class="sb-item nav-link rounded-2 d-flex align-items-center gap-2 position-relative" routerLink="/app/non-conformities"
+                    title="Não Conformidades (4)" routerLinkActive="active">
                     <i class="bi bi-exclamation-triangle fs-6"></i><span class="sb-label">Não Conformidades</span>
                     <span class="sb-badge badge rounded-pill text-bg-danger ms-auto">4</span>
                   </a>
@@ -102,7 +88,7 @@
                   <small class="text-secondary">Supervisora Geral</small>
                 </div>
               </div>
-              <a href="#" class="sb-item nav-link rounded-2 d-flex align-items-center gap-2" title="Sair">
+              <a routerLink="/login" class="sb-item nav-link rounded-2 d-flex align-items-center gap-2" title="Sair" routerLinkActive="active">
                 <i class="bi bi-box-arrow-left fs-6"></i><span class="sb-label">Sair</span>
               </a>
             </div>
@@ -128,7 +114,7 @@
 
         <div class="vr d-none d-xl-block"></div>
         <nav class="nav d-none d-xl-flex" aria-label="Atalhos">
-          <a class="nav-link text-body-secondary px-2" href="#">Inspeções</a>
+          <a class="nav-link text-body-secondary px-2" routerLink="/app/inspections">Inspeções</a>
         </nav>
 
         <div class="ms-auto d-flex align-items-center gap-2">
@@ -274,7 +260,7 @@
                             alt="Compressor industrial" loading="lazy"></td>
                         <td>
                           <button class="btn btn-link text-start text-decoration-none p-0"
-                            onclick="selecionarEquipamento('Compressor de Ar 01', 'EQ-COMP-01', 'Operacional', 'Galpão 03 — Setor de Pressurização')">
+                            (click)="selecionarEquipamento('Compressor de Ar 01', 'EQ-COMP-01', 'Operacional', 'Galpão 03 — Setor de Pressurização')">
                             <strong>Compressor de Ar 01</strong>
                             <br><small class="text-secondary">EQ-COMP-01</small>
                           </button>
@@ -289,7 +275,7 @@
                             alt="Máquina industrial CNC" loading="lazy"></td>
                         <td>
                           <button class="btn btn-link text-start text-decoration-none p-0"
-                            onclick="selecionarEquipamento('Torno CNC Horizon 500', 'EQ-CNC-04', 'Em Manutenção', 'Sala Técnica')">
+                            (click)="selecionarEquipamento('Torno CNC Horizon 500', 'EQ-CNC-04', 'Em Manutenção', 'Sala Técnica')">
                             <strong>Torno CNC Horizon 500</strong>
                             <br><small class="text-secondary">EQ-CNC-04</small>
                           </button>
@@ -304,7 +290,7 @@
                             alt="Componente de equipamento técnico" loading="lazy"></td>
                         <td>
                           <button class="btn btn-link text-start text-decoration-none p-0"
-                            onclick="selecionarEquipamento('Bomba de Recalque 02', 'EQ-BOMB-12', 'Pendente de Inspeção', 'Subsolo Técnico')">
+                            (click)="selecionarEquipamento('Bomba de Recalque 02', 'EQ-BOMB-12', 'Pendente de Inspeção', 'Subsolo Técnico')">
                             <strong>Bomba de Recalque 02</strong>
                             <br><small class="text-secondary">EQ-BOMB-12</small>
                           </button>
@@ -319,7 +305,7 @@
                             alt="Painel elétrico industrial" loading="lazy"></td>
                         <td>
                           <button class="btn btn-link text-start text-decoration-none p-0"
-                            onclick="selecionarEquipamento('Quadro Geral QGBT-01', 'EQ-EL-99', 'Operacional', 'Subestação A')">
+                            (click)="selecionarEquipamento('Quadro Geral QGBT-01', 'EQ-EL-99', 'Operacional', 'Subestação A')">
                             <strong>Quadro Geral QGBT-01</strong>
                             <br><small class="text-secondary">EQ-EL-99</small>
                           </button>
@@ -349,7 +335,7 @@
                   <p class="small text-secondary mb-2">
                     Identificação demonstrativa do ativo selecionado.
                   </p>
-                  <button class="btn btn-outline-primary btn-sm" onclick="window.print()">
+                  <button class="btn btn-outline-primary btn-sm" (click)="printPage()">
                     <i class="bi bi-printer me-1"></i> Imprimir ficha
                   </button>
                 </div>
@@ -434,12 +420,12 @@
 
                 <div class="d-flex flex-wrap gap-2 mt-4">
                   <button class="btn btn-outline-secondary btn-sm"
-                    onclick="alert('Função de edição ainda não implementada.')">
+                    (click)="showAlert('Função de edição ainda não implementada.')">
                     Editar cadastro
                   </button>
 
                   <button class="btn btn-primary btn-sm"
-                    onclick="alert('A execução da inspeção será implementada em uma próxima etapa.')">
+                    (click)="showAlert('A execução da inspeção será implementada em uma próxima etapa.')">
                     <i class="bi bi-clipboard-check me-1"></i> Iniciar inspeção
                   </button>
                 </div>
@@ -451,9 +437,6 @@
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../menu-base/script.js"></script>
-  <script src="script.js"></script>
-</body>
-
-</html>
+  
+  
+  
